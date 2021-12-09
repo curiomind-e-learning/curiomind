@@ -1,9 +1,20 @@
-import Navbar from '../../components/Navbar/Navbar'
-
 import React from 'react'
+import Navbar from '../../components/Navbar/Navbar.jsx'
+import Banner from '../../components/Banner/Banner.jsx'
+import Badges from '../../components/Badges/Badges.jsx'
+import Cards from '../../components/Cards/Cards.jsx'
+import Courses from '../../components/Courses/Courses.jsx'
 
 const Home = () => {
-  return <Navbar />
+  return( 
+    <>
+    <Navbar />
+    <Banner/>
+    <Badges/>
+    <Cards/>
+    <Courses/>
+    </>
+  )
 }
 
 export default Home
