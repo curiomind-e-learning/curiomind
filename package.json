@@ -17,7 +17,7 @@
     "dev": "craco start",
     "start": "craco start",
     "build": "CI=false && craco build",
-    "test": "craco test --env=jsdom",
+    "test": "craco test --env=jsdom --passWithNoTests",
     "eject": "craco eject",
     "heroku-postbuild": "npm run build"
   },
