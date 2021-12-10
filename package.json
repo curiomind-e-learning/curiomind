@@ -19,7 +19,7 @@
     "build": "CI=false && craco build",
     "test": "craco test --env=jsdom",
     "eject": "craco eject",
-    "heroku-postbuild": "craco build"
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": [
