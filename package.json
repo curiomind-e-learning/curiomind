@@ -14,10 +14,12 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "dev": "craco start",
     "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "eject": "react-scripts eject"
+    "build": "CI=false && craco build",
+    "test": "craco test --env=jsdom",
+    "eject": "craco eject",
+    "heroku-postbuild": "craco build"
   },
   "eslintConfig": {
     "extends": [
