@@ -1,5 +1,6 @@
 import CoursesCard from '../CoursesCard/CoursesCard'
 import courses from './Courses.json'
+
 const Courses = () => {
   return (
     <div>
@@ -18,9 +19,9 @@ const Courses = () => {
           {courses.map(({imgUrl,courseName,courseDetail})=>(
             <div style={{ width: "270px" }} key={courseName}>
             <CoursesCard
-              name={courseName}
-              key={courseDetail}
               imgUrl={imgUrl}
+              courseName={courseName}
+              courseDetail={courseDetail}
             />
           </div>
           ))}

@@ -1,20 +1,22 @@
-const CoursesCard = ({imgUrl, courseName, couseDetail}) => {
+import styles from './asset/Courses.module.css'
+
+const CoursesCard = ({imgUrl, courseName, courseDetail}) => {
   return (
-    <figure style={{backgroundColor:"#F7F7F7"}} className="shadow-lg rounded-3xl p-8 shadow-xl w-100 h-30">
+    <figure className={styles.CoursesBox}>
       <img
-        className="rounded-full mx-auto"
+        className={styles.CourseImg}
         src={imgUrl}
         alt=""
         width="auto"
         height="512"
       />
-      <div className="pt-6  text-center space-y-4">
+      <div className="pt-6 space-y-4">
         <blockquote>
-          <p className="text-lg font-semibold">{courseName}</p>
+          <p className="text-m font-semibold">{courseName}</p>
         </blockquote>
-        <figcaption className="font-medium">
-          <div className="text-gray-dark">{couseDetail}</div>
-        </figcaption>
+        <p className="font-medium">
+          <div className="text-gray-dark">{courseDetail}</div>
+        </p>
       </div>
     </figure>
   )

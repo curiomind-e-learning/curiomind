@@ -23,9 +23,9 @@ const Navbar = () => {
         <div className="rounded-full py-3 px-6 bg-purple-400 text-white">
           Login
         </div>
-        <div className="rounded-full py-3 px-6 bg-purple-400 text-white">
+        {/* <div className="rounded-full py-3 px-6 bg-purple-400 text-white">
           Sign Up
-        </div>
+        </div> */}
       </div>
     </div>
   )
