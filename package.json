@@ -16,7 +16,7 @@
   "scripts": {
     "dev": "craco start",
     "start": "craco start",
-    "build": "CI=false && craco build",
+    "build": "CI=false && react-scripts build",
     "test": "craco test --env=jsdom --passWithNoTests",
     "eject": "craco eject",
     "heroku-postbuild": "npm run build"
