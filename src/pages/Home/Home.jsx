@@ -6,13 +6,13 @@ import Cards from '../../components/Cards/Cards.jsx'
 import Courses from '../../components/Courses/Courses.jsx'
 
 const Home = () => {
-  return( 
+  return (
     <>
-    <Navbar />
-    <Banner/>
-    <Badges/>
-    <Cards/>
-    <Courses/>
+      <Navbar />
+      <Banner />
+      <Badges />
+      <Cards />
+      <Courses />
     </>
   )
 }
