@@ -12,8 +12,8 @@ const Courses = () => {
             We offer a wide range of opportunity for you. See <br/> what you’ll get and your benefits
         </div> */}
       <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-10 grid-flow-row px-8 py-10 place-items-center">
-        {courses.map(({ imgUrl, courseName, courseDetail }) => (
-          <div style={{ width: '270px' }} key={courseName}>
+        {courses.map(({ imgUrl, courseName, courseDetail }, index) => (
+          <div style={{ width: '270px' }} key={`${courseName}${index}`}>
             <CoursesCard
               imgUrl={imgUrl}
               courseName={courseName}

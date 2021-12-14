@@ -1,0 +1,23 @@
+.container {
+  position: relative;
+  width: 1147px;
+  height: 573.5px;
+  background: #f8f8f8;
+  margin: auto;
+  display: block;
+  margin-top: 5rem;
+}
+
+.slideCard {
+  position: absolute;
+  width: 573.5px;
+  height: 573.5px;
+  left: 0px;
+  top: 0px;
+
+  background: linear-gradient(
+    0.39deg,
+    #24bdde 28.12%,
+    rgba(53, 239, 72, 0) 167.4%
+  );
+}

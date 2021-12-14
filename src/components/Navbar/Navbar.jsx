@@ -2,7 +2,7 @@
 const Navbar = () => {
   const menuItems = ['Home', 'Services', 'About', 'Courses', 'Contact us']
   return (
-    <div className="flex justify-between items-center text-secondary">
+    <div className="flex justify-between items-center text-secondary overflow-hidden">
       <div
         className="leading-loose text-3xl px-8"
         style={{ fontFamily: 'Pacifico' }}

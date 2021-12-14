@@ -14,8 +14,8 @@ const CoursesCard = ({imgUrl, courseName, courseDetail}) => {
         <blockquote>
           <p className="text-m font-semibold">{courseName}</p>
         </blockquote>
-        <p className="font-medium">
-          <div className="text-gray-dark">{courseDetail}</div>
+        <p className="font-medium text-gray-dark">
+          {courseDetail}
         </p>
       </div>
     </figure>

@@ -3,7 +3,10 @@ import styles from './asset/Testimonials.module.css'
 import testimonials from './Testimonials.json'
 
 const breakPoints = [
-    { itemsToShow: 3}
+  { width: 1, itemsToShow: 1 },
+  { width: 550, itemsToShow: 2 },
+  { width: 768, itemsToShow: 3 },
+  { width: 1200, itemsToShow: 3 }
 ]
 const Testimonials = () => {
   return (
@@ -15,13 +18,9 @@ const Testimonials = () => {
       
       <Carousel breakPoints={breakPoints}>
 
-        {testimonials.map((item) => (
+        {testimonials.map((item, index) => (
 
-            <div className={styles.TestimonialsBox} style={{
-              backgroundImage: `url(${item.imgUrl})` 
-            }}>
-
-            <img src="https://www.linkpicture.com/q/Vector-1.svg" className={styles.vector} alt="..."></img>
+            <div className={styles.TestimonialsBox}  key={`${item}${index}`}>
             
             <div className={styles.TestimonialsText}>
               {item.testimonal}
