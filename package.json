@@ -3,23 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@craco/craco": "^6.4.2",
     "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-elastic-carousel": "^0.11.5",
-    "react-router-dom": "^6.1.1",
-    "react-scripts": "4.0.3",
+    "react-router-dom": "^6.2.1",
+    "react-scripts": "5.0.0",
     "styled-components": "^5.3.3",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^2.1.2"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "CI=false && craco build",
-    "test": "craco test --env=jsdom --passWithNoTests",
-    "eject": "craco eject",
+    "start": "react-scripts start",
+    "build": "CI=false && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
@@ -41,8 +40,8 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^9.8.8",
-    "postcss": "^7.0.39",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.7"
   }
 }
