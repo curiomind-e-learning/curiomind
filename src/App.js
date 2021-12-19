@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './pages/Home/Home'
-import Login from './pages/Login/Login'
 import NotFound from './pages/NotFound/NotFound'
+import SignUp from './pages/SignUp/SignUp'
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route path="*" element={<NotFound />} />
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
         {/* <Footer /> */}
       </Router>
