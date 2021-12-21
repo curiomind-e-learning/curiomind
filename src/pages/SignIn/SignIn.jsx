@@ -3,14 +3,13 @@ import { Link } from 'react-router-dom'
 const SignUp = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [name, setName] = useState('')
   const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
     setLoading(true)
-    fetch('/api/signup', {
+    fetch('/api/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -18,7 +17,6 @@ const SignUp = () => {
       body: JSON.stringify({
         email,
         password,
-        name,
       }),
     })
   }
@@ -26,40 +24,31 @@ const SignUp = () => {
   return (
     <div class="flex h-screen font-nunito">
       <div class="m-auto grid grid-cols-1 md:grid-cols-2 gap-0 w-2/3 h-3/4">
-        <div className="order-last rounded-r-2xl from-blue-700 to-blue-400 bg-gradient-to-tr shadow-2xl">
+        <div className="rounded-l-2xl from-blue-700 to-blue-400 bg-gradient-to-tr shadow-2xl">
           <div className="flex flex-col justify-center items-center h-full">
             <h1 className="text-center text-white text-3xl font-bold">
-              Already a customer?
+              Hello, There!
             </h1>
-            <p className="text-center text-white text-xl"> Sign in here</p>
+            <p className="text-center text-white text-xl">
+              Start your learning journey with us
+            </p>
             <Link
-              to="/signin"
+              to="/signup"
               className="ring-2 ring-whitecolor text-white rounded-full
               mt-5 py-2 px-4 bg-blue-500 hover:bg-blue-700"
             >
               {' '}
-              Sign In
+              Register
             </Link>
           </div>
         </div>
-        <div className="rounded-l-2xl bg-slate-100 shadow-2xl">
+        <div className="rounded-r-2xl bg-slate-100 shadow-2xl">
           <div className="flex flex-col justify-center items-center h-full">
             <h1 className="text-center font-nunito font-bold text-3xl">
-              Register
+              Login
             </h1>
             <form className="mt-4 p-6 w-3/4">
               <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
-                <div className="col-span-1">
-                  <input
-                    className="rounded-full appearance-none border w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    type="text"
-                    placeholder="Your Name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    required="true"
-                  />
-                </div>
-
                 <div className="col-span-1">
                   <input
                     className="rounded-full appearance-none border w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -98,7 +87,7 @@ const SignUp = () => {
                       handleSubmit(e)
                     }}
                   >
-                    Register
+                    Sign In
                   </button>
                 )}
               </div>
