@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 // import logo from './asset/logo.png'
 const Navbar = () => {
   const menuItems = ['Home', 'Services', 'About', 'Courses', 'Contact us']
@@ -20,9 +21,11 @@ const Navbar = () => {
         ))}
       </div>
       <div className="flex space-x-3 p-3">
-        <div className="rounded-full py-3 px-6 bg-purple-400 text-white">
-          Login
-        </div>
+        <Link to="signin">
+          <div className="rounded-full py-3 px-6 bg-purple-400 text-white">
+            Login
+          </div>
+        </Link>
         {/* <div className="rounded-full py-3 px-6 bg-purple-400 text-white">
           Sign Up
         </div> */}

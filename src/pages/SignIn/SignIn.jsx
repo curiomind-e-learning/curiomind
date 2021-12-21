@@ -1,23 +1,29 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 const SignUp = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
 
+  let navigate = useNavigate()
+
   const handleSubmit = async (e) => {
     e.preventDefault()
 
     setLoading(true)
-    fetch('/api/login', {
+    fetch(`${process.env.REACT_APP_API}/user/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
       },
       body: JSON.stringify({
         email,
         password,
       }),
+    }).then((res) => {
+      // console.log(res)
+      navigate('/')
     })
   }
 
@@ -77,7 +83,7 @@ const SignUp = () => {
                     className="animate-pulse bg-blue-500 hover:bg-blue-700 text-white rounded-full font-bold py-3 px-5 focus:outline-none focus:shadow-outline"
                     type="submit"
                   >
-                    Register
+                    Sign In
                   </button>
                 ) : (
                   <button

@@ -1,25 +1,31 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
 const SignUp = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
   const [loading, setLoading] = useState(false)
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
     setLoading(true)
-    fetch('/api/signup', {
+    fetch(`${process.env.REACT_APP_API}/user`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
       },
       body: JSON.stringify({
         email,
         password,
         name,
+        role: 'student',
       }),
+    }).then((res) => {
+      navigate('/signin')
     })
   }
 
