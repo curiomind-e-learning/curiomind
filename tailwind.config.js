@@ -9,6 +9,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['sans-serif', 'Pacifico'],
+        nunito: ['Nunito', 'sans-serif'],
       },
     },
   },
