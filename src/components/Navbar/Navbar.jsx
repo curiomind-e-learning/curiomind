@@ -22,7 +22,7 @@ const Navbar = () => {
       </div>
       <div className="flex space-x-3 p-3">
         <Link to="signin">
-          <div className="rounded-full py-3 px-6 bg-purple-400 text-white">
+          <div className="rounded-full py-3 px-6 bg-purple-400 text-white shadow-sm hover:shadow-md">
             Login
           </div>
         </Link>
