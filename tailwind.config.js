@@ -6,6 +6,8 @@ module.exports = {
         secondary: '#7F7F7F',
         whitecolor: '#F7F7F7',
         greycolor: '#C4C4C4',
+        gradientBlue: '#24BDDE',
+        gradientGreen: '#35EF48',
       },
       fontFamily: {
         sans: ['sans-serif', 'Pacifico'],

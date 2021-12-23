@@ -12,16 +12,16 @@ const SignUp = () => {
     e.preventDefault()
 
     setLoading(true)
-    fetch(`${process.env.REACT_APP_API}/user`, {
+    fetch(`${process.env.REACT_APP_API}/user/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
       },
       body: JSON.stringify({
+        name,
         email,
         password,
-        name,
         role: 'student',
       }),
     }).then((res) => {
@@ -32,7 +32,7 @@ const SignUp = () => {
   return (
     <div class="flex h-screen font-nunito">
       <div class="m-auto grid grid-cols-1 md:grid-cols-2 gap-0 w-2/3 h-3/4">
-        <div className="order-last rounded-r-2xl from-blue-700 to-blue-400 bg-gradient-to-tr shadow-2xl">
+        <div className="order-last rounded-r-2xl from-gradientBlue to-gradientGreen bg-gradient-to-t shadow-2xl">
           <div className="flex flex-col justify-center items-center h-full">
             <h1 className="text-center text-white text-3xl font-bold">
               Already a customer?
@@ -41,7 +41,7 @@ const SignUp = () => {
             <Link
               to="/signin"
               className="ring-2 ring-whitecolor text-white rounded-full
-              mt-5 py-2 px-4 bg-blue-500 hover:bg-blue-700"
+              mt-5 py-2 px-4 bg-transparent"
             >
               {' '}
               Sign In
@@ -91,14 +91,14 @@ const SignUp = () => {
               <div className="text-center mt-9">
                 {loading ? (
                   <button
-                    className="animate-pulse bg-blue-500 hover:bg-blue-700 text-white rounded-full font-bold py-3 px-5 focus:outline-none focus:shadow-outline"
+                    className="animate-pulse bg-green-500 hover:bg-green-700 text-white rounded-full font-bold py-2 px-5 focus:outline-none focus:shadow-outline"
                     type="submit"
                   >
                     Register
                   </button>
                 ) : (
                   <button
-                    className="bg-blue-500 hover:bg-blue-700 text-white rounded-full font-bold py-3 px-5 focus:outline-none focus:shadow-outline"
+                    className="bg-green-500 hover:bg-green-700 text-white rounded-full font-bold py-2 px-5 focus:outline-none focus:shadow-outline"
                     type="submit"
                     onClick={(e) => {
                       handleSubmit(e)
