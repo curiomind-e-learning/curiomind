@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom'
-// import logo from './asset/logo.png'
+
 const Navbar = () => {
-  const menuItems = ['Home', 'Services', 'About', 'Courses', 'Contact us']
+  const menuItems = ['Home', 'Services', 'Courses', 'Testimonial', 'Contact us']
+
+  const getPath = (page) => {
+      return `/#${page}`;
+  };
   return (
+    <div className={`w-full fixed`} style={{ zIndex: "1" }}>
     <div className="flex justify-between items-center text-secondary overflow-hidden">
       <div
         className="leading-loose text-3xl px-8"
@@ -10,13 +15,10 @@ const Navbar = () => {
       >
         Curiomind
       </div>
-      {/* <div>
-        <img src={logo} width={100} alt="logoImage"></img>
-      </div> */}
       <div className="flex space-x-14">
         {menuItems.map((item) => (
           <div key={item} className="text-xl font-light">
-            {item}
+            <a href={getPath(item)}>{item}</a>
           </div>
         ))}
       </div>
@@ -26,10 +28,8 @@ const Navbar = () => {
             Login
           </div>
         </Link>
-        {/* <div className="rounded-full py-3 px-6 bg-purple-400 text-white">
-          Sign Up
-        </div> */}
       </div>
+    </div>
     </div>
   )
 }

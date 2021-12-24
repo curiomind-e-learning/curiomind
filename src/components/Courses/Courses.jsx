@@ -4,7 +4,7 @@ import courses from './Courses.json'
 const Courses = () => {
   return (
     <div>
-      <div className="flex justify-center pt-20 pb-10">
+      <div className="flex justify-center pt-20 pb-10" id="Courses">
         <hr className="w-1/4 border-b-2 border-gray-400" />
       </div>
       <div className="flex justify-center text-3xl px-8">Explore Courses</div>

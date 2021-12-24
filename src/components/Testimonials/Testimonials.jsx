@@ -11,7 +11,7 @@ const breakPoints = [
 const Testimonials = () => {
   return (
     <div className="mb-20">
-      <div className="flex justify-center pt-10 pb-5">
+      <div className="flex justify-center pt-10 pb-5" id="Testimonial">
         <hr className="w-1/4 border-b-2 border-gray-400" />
       </div>
       <div className="flex justify-center text-3xl px-8 pb-12">Testimonials</div>
