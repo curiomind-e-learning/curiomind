@@ -3,7 +3,7 @@ import Medal from './Medal.svg'
 
 const Card = ({ courseName, category }) => {
   return (
-    <figure className="flex items-center justify-left shadow-inner p-5 w-full rounded-3xl">
+    <figure className="flex items-center justify-left drop-shadow-lg p-5 w-4/5 rounded-3xl bg-whitecolor">
       <img className="rounded-full" src={Medal} alt="" />
       <div className="px-6">
         <blockquote>

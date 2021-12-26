@@ -35,9 +35,9 @@ const Achievements = () => {
   }, [])
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto mt-10">
       <div className="flex flex-col">
-        <div className="flex justify-left text-3xl px-8 py-4">Achievements</div>
+        <div className="flex justify-left text-3xl px-8 pb-2">Achievements</div>
       </div>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4 grid-flow-row p-8 place-items-center">
         {achievements.map(({ courseName, category }, index) => (
