@@ -22,7 +22,11 @@ const SignUp = () => {
         password,
       }),
     }).then((res) => {
-      // console.log(res)
+      if (res.status === 200) {
+        res.json().then((data) => {
+          sessionStorage.setItem('token', data.token)
+        })
+      }
       navigate('/')
     })
   }
