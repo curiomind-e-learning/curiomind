@@ -3,7 +3,7 @@ import CardContent from './Cards.json'
 const Cards = () => {
   return (
     <div>
-      <div className="flex justify-center pt-20 pb-10">
+      <div className="flex justify-center pt-20 pb-10" id="Services">
         <hr className="w-1/4 border-b-2 border-gray-400"></hr>
       </div>
       <div className="flex justify-center text-3xl px-8">

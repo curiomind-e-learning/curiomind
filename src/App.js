@@ -5,6 +5,7 @@ import NotFound from './pages/NotFound/NotFound'
 import SignUp from './pages/SignUp/SignUp'
 import SignIn from './pages/SignIn/SignIn'
 import Profile from './pages/Profile/Profile'
+import Course from './pages/Course/Course'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/course" element={<Course />} />
         </Routes>
         {/* <Footer /> */}
       </Router>
