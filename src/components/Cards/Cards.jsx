@@ -6,7 +6,7 @@ const Cards = () => {
       <div className="flex justify-center pt-20 pb-10" id="Services">
         <hr className="w-1/4 border-b-2 border-gray-400"></hr>
       </div>
-      <div className="flex justify-center text-3xl px-8">
+      <div className="leading-loose flex justify-center text-3xl px-8">
         Why choose Curiomind?
       </div>
       <div className="flex justify-center font-extralight text-center text-gray-500 text-xl px-8 py-5">
