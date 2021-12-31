@@ -27,7 +27,9 @@ const SignUp = () => {
           sessionStorage.setItem('token', data.token)
         })
       }
-      navigate('/')
+      setTimeout(() => {
+        navigate('/')
+      }, 500)
     })
   }
 
