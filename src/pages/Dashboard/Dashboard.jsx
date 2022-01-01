@@ -7,14 +7,13 @@ import CourseNavbar from '../../components/CourseNavbar/CourseNavbar.jsx'
 const Dashboard = () => {
   return (
     <div>
-      <Navbar/>
-      <WelcomeBanner/>
-      <CourseNavbar/>
-      <CourseBanner/>
-      <Courses/>
+      <Navbar />
+      <WelcomeBanner />
+      <CourseNavbar />
+      <CourseBanner />
+      <Courses />
     </div>
   )
-  }
+}
 
 export default Dashboard
-
