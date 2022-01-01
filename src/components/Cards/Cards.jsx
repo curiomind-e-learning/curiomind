@@ -1,26 +1,22 @@
 import Card from '../Card/Card'
 import CardContent from './Cards.json'
+import Title from '../Title/Title'
 const Cards = () => {
   return (
-    <div>
-      <div className="flex justify-center pt-20 pb-10" id="Services">
-        <hr className="w-1/4 border-b-2 border-gray-400"></hr>
-      </div>
-      <div className="leading-loose flex justify-center text-3xl px-8">
-        Why choose Curiomind?
-      </div>
-      <div className="flex justify-center font-extralight text-center text-gray-500 text-xl px-8 py-5">
-        We offer a wide range of opportunity for you. See <br /> what you’ll get
-        and your benefits
-      </div>
-      <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4 grid-flow-row px-8 py-10 place-items-center">
+    <section>
+      <Title
+        title="Why choose Curiomind?"
+        desc1="We offer a wide range of opportunity for you."
+        desc2="See what you’ll get and your benefits"
+      />
+      <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-0 grid-flow-row place-items-center p-8">
         {CardContent.map(({ imgUrl, text, color }) => (
-          <div style={{ width: '320px' }} key={text}>
+          <div className="p-2" style={{ width: '20rem' }} key={text}>
             <Card imgUrl={imgUrl} text={text} color={color} />
           </div>
         ))}
       </div>
-    </div>
+    </section>
   )
 }
 

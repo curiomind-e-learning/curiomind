@@ -1,4 +1,5 @@
 import Carousel from 'react-elastic-carousel'
+import Title from '../Title/Title'
 import styles from './asset/Testimonials.module.css'
 import testimonials from './Testimonials.json'
 
@@ -10,13 +11,8 @@ const breakPoints = [
 ]
 const Testimonials = () => {
   return (
-    <div className="p-20">
-      <div className="flex justify-center pt-10 pb-5" id="Testimonial">
-        <hr className="w-1/4 border-b-2 border-gray-400" />
-      </div>
-      <div className="leading-loose flex justify-center text-3xl px-8">
-        Testimonials
-      </div>
+    <div className="p-20" id="Testimonial">
+      <Title title="Testimonials" desc1="What our customers say" desc2="" />
 
       <Carousel breakPoints={breakPoints}>
         {testimonials.map((item, index) => (

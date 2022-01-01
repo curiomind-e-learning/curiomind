@@ -1,15 +1,15 @@
 import CoursesCard from '../CoursesCard/CoursesCard'
+import Title from '../Title/Title'
 import courses from './Courses.json'
 
 const Courses = () => {
   return (
-    <div>
-      <div className="flex justify-center pt-20 pb-10" id="Courses">
-        <hr className="w-1/4 border-b-2 border-gray-400" />
-      </div>
-      <div className="leading-loose flex justify-center text-3xl px-8">
-        Explore Courses
-      </div>
+    <div id="Courses">
+      <Title
+        title="Explore Courses"
+        desc1="Build career-relevant skills"
+        desc2="with courses from top industry experts"
+      />
       {/* <div className="flex justify-center font-extralight text-center text-gray-500 text-xl px-8 py-5">
             We offer a wide range of opportunity for you. See <br/> what you’ll get and your benefits
         </div> */}

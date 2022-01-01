@@ -1,17 +1,20 @@
 import badges from './Badges.json'
 const Badges = () => {
   return (
-    <>
-    <div className="flex justify-around items-center text-secondary" >
-        {badges.map(({imgUrl,text}) =>(
-            <div key={text}>
-                <img src={imgUrl} alt="badge"></img>
-                <br/>
-                    {text}
-            </div>
+    <section className="container mx-auto py-8">
+      <div className="flex flex-col md:flex-row justify-around items-center">
+        {badges.map(({ imgUrl, text }) => (
+          <div
+            className="flex flex-col justify-around items-center p-3 text-secondary"
+            key={text}
+          >
+            <img src={imgUrl} alt="badge"></img>
+            <br />
+            {text}
+          </div>
         ))}
-    </div>
-    </>
+      </div>
+    </section>
   )
 }
 
