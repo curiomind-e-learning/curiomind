@@ -3,6 +3,7 @@ import './App.css'
 import Home from './pages/Home/Home'
 import Login from './pages/Login/Login'
 import NotFound from './pages/NotFound/NotFound'
+import Dashboard from './pages/Dashboard/Dashboard'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
         {/* <Footer /> */}
       </Router>
