@@ -1,10 +1,10 @@
 .TestimonialsBox {
   width: 19rem;
-  padding: 0rem 1rem;
-  height: 28rem;
+  /* padding: 0rem 1rem; */
+  height: 30rem;
   border-radius: 2rem;
-  background-image: url('https://www.linkpicture.com/q/Vector-1.svg');
-  background-size: cover;
+  /* background-image: url('https://www.linkpicture.com/q/Vector-1.svg'); */
+  background-size: contain;
+  position: relative;
   background-repeat: no-repeat;
-  background-position-y: 5ch;
 }
