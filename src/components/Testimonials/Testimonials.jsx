@@ -7,7 +7,6 @@ const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 550, itemsToShow: 2 },
   { width: 768, itemsToShow: 3 },
-  { width: 1200, itemsToShow: 4 },
 ]
 const Testimonials = () => {
   return (
@@ -16,7 +15,19 @@ const Testimonials = () => {
 
       <Carousel breakPoints={breakPoints}>
         {testimonials.map((item, index) => (
-          <div className={styles.TestimonialsBox} key={`${item}${index}`}>
+          <div
+            style={{
+              backgroundImage: `url(${item.imgUrl})`,
+              backgroundSize: 'contain',
+            }}
+            className={styles.TestimonialsBox}
+            key={`${item}${index}`}
+          >
+            <img
+              src="https://www.linkpicture.com/q/Vector-1.svg"
+              alt=".."
+              className="w-full absolute bottom-0 right-0 rounded-2xl"
+            ></img>
             <div className={styles.TestimonialsText}>{item.testimonal}</div>
           </div>
         ))}
