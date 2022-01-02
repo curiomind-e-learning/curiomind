@@ -39,7 +39,7 @@ const Navbar = () => {
         </div>
         <div className="flex p-2">
           {token ? (
-            <Menu as="div" className="relative">
+            <Menu as="div" className="relative ">
               <Menu.Button>
                 <HiUserCircle size={40} className="text-blue-400" />
               </Menu.Button>
@@ -53,7 +53,7 @@ const Navbar = () => {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                <Menu.Items className="origin-top-right absolute right-2 mt-2 w-32  rounded-xl shadow-lg shadow-gray-300 py-2">
+                <Menu.Items className="origin-top-right absolute right-2 mt-2 w-32  rounded-xl shadow-lg shadow-gray-300 py-2 bg-white">
                   <Menu.Item>
                     {({ active }) => (
                       <div>

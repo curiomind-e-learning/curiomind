@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const WelcomeBanner = () => {
   return (
     <div
-      className="flex flex-row justify-around items-center h-96 pt-64 pb-56"
+      className="flex flex-row justify-around items-center h-96 "
       style={{ backgroundColor: '#C4D1EA' }}
     >
       <div className="flex flex-row items-center justify-center">

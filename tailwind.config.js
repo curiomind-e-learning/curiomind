@@ -9,7 +9,8 @@ module.exports = {
         gradientBlue: '#24BDDE',
         gradientGreen: '#35EF48',
         gradientBlue1: "#589398",
-        lightBlue: "#DAEFF1"
+        lightBlue: "#DAEFF1",
+        veryLightBlue: '#C4E5EAED'
       },
       fontFamily: {
         sans: ['sans-serif', 'Pacifico'],

@@ -12,7 +12,7 @@ const breakPoints = [
 const Testimonials = () => {
   return (
     <div className="p-20" id="Testimonial">
-      <Title title="Testimonials" desc1="What our customers say..." desc2="" />
+      <Title title="Testimonials" desc1="What our users say..." desc2="" />
 
       <Carousel breakPoints={breakPoints}>
         {testimonials.map((item, index) => (
