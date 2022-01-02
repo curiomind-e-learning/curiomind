@@ -12,7 +12,7 @@ const breakPoints = [
 const Testimonials = () => {
   return (
     <div className="p-20" id="Testimonial">
-      <Title title="Testimonials" desc1="What our customers say" desc2="" />
+      <Title title="Testimonials" desc1="What our customers say..." desc2="" />
 
       <Carousel breakPoints={breakPoints}>
         {testimonials.map((item, index) => (
@@ -28,7 +28,7 @@ const Testimonials = () => {
               <svg
                 width="361"
                 height="338"
-                viewBox="0 0 250 300"
+                viewBox="0 0 250 265"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >

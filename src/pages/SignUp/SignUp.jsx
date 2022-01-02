@@ -54,7 +54,7 @@ const SignUp = () => {
               Register
             </h1>
             <form className="mt-4 p-6 w-3/4">
-              <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-1 gap-3">
                 <div className="col-span-1">
                   <input
                     className="rounded-full appearance-none border w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -86,8 +86,8 @@ const SignUp = () => {
                     required
                   />
                 </div>
-                <div className="col-span-1">
-                  <div className="mt-4">
+                <div>
+                  <div className="w-full py-3 px-3">
                     <span className="text-gray-600 text-lg">
                       Select Your Role
                     </span>
