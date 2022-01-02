@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`w-full fixed bg-whitecolor backdrop-blur-sm`}
+      className={`w-full fixed bg-white backdrop-blur-sm`}
       style={{ zIndex: '1' }}
     >
       <div className="flex justify-between items-center text-secondary ">
