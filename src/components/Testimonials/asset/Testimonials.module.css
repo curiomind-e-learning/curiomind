@@ -1,10 +1,8 @@
 .TestimonialsBox {
   width: 19rem;
-  padding: 0rem 1rem;
-  height: 28rem;
-  border-radius: 2rem;
-  background-image: url('https://www.linkpicture.com/q/Vector-1.svg');
-  background-size: cover;
+  height: 27rem;
+  border-radius: 2.5rem;
+  position: relative;
   background-repeat: no-repeat;
-  background-position-y: 5ch;
+  overflow: hidden;
 }
