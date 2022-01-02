@@ -4,7 +4,7 @@ const Banner = () => {
   return (
     <section
       id="Home"
-      className="grid grid-cols-1 md:grid-cols-2 grid-flow-col bg-gray-light place-items-center min-h-screen"
+      className="grid grid-cols-1 md:grid-cols-2 grid-flow-col bg-gray-light place-items-center pt-24"
     >
       <div className="col-span-1">
         <div>
