@@ -86,6 +86,33 @@ const SignUp = () => {
                     required
                   />
                 </div>
+                <div className="col-span-1">
+                  <div className="mt-4">
+                    <span className="text-gray-600 text-lg">
+                      Select Your Role
+                    </span>
+                    <div className="mt-2">
+                      <label className="inline-flex items-center">
+                        <input
+                          type="radio"
+                          className="form-radio"
+                          name="Type"
+                          value="Student"
+                        />
+                        <span className="ml-2">Student</span>
+                      </label>
+                      <label className="inline-flex items-center ml-6">
+                        <input
+                          type="radio"
+                          className="form-radio"
+                          name="Type"
+                          value="Faculty"
+                        />
+                        <span className="ml-2">Faculty</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div className="text-center mt-9">

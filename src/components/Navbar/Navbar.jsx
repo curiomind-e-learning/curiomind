@@ -39,41 +39,53 @@ const Navbar = () => {
         </div>
         <div className="flex p-2">
           {token ? (
-            <Menu as="div" className="relative inline-block text-center">
+            <Menu as="div" className="relative">
               <Menu.Button>
                 <HiUserCircle size={40} className="text-blue-400" />
               </Menu.Button>
 
-              <Transition as={Fragment}>
+              <Transition
+                as={Fragment}
+                enter="transition ease-out duration-100"
+                enterFrom="transform opacity-0 scale-95"
+                enterTo="transform opacity-100 scale-100"
+                leave="transition ease-in duration-75"
+                leaveFrom="transform opacity-100 scale-100"
+                leaveTo="transform opacity-0 scale-95"
+              >
                 <Menu.Items className="origin-top-right absolute right-2 mt-2 w-32  rounded-xl shadow-lg shadow-gray-300 py-2">
                   <Menu.Item>
                     {({ active }) => (
-                      <Link
-                        to="/profile"
-                        className={classNames(
-                          active ? 'bg-gray-100' : ' ',
-                          'block px-4 py-2 text-sm text-gray-900'
-                        )}
-                      >
-                        Profile
-                      </Link>
+                      <div>
+                        <Link
+                          to="/profile"
+                          className={classNames(
+                            active ? 'bg-gray-100' : ' ',
+                            'text-center tracking-widest block py-2 text-sm text-gray-900'
+                          )}
+                        >
+                          Profile
+                        </Link>
+                      </div>
                     )}
                   </Menu.Item>
                   <Menu.Item>
                     {({ active }) => (
-                      <button
-                        onClick={(e) => {
-                          sessionStorage.removeItem('token')
-                          navigate('/')
-                        }}
-                        to="/signin"
-                        className={classNames(
-                          active ? 'bg-gray-100' : ' ',
-                          'block px-4 py-2 text-sm text-gray-900'
-                        )}
-                      >
-                        LogOut
-                      </button>
+                      <div>
+                        <Link
+                          onClick={(e) => {
+                            sessionStorage.removeItem('token')
+                            navigate('/')
+                          }}
+                          to="/signin"
+                          className={classNames(
+                            active ? 'bg-gray-100' : ' ',
+                            'text-center tracking-widest block py-2 text-sm text-gray-900'
+                          )}
+                        >
+                          Logout
+                        </Link>
+                      </div>
                     )}
                   </Menu.Item>
                 </Menu.Items>
