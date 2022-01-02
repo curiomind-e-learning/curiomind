@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { HiUserCircle } from 'react-icons/hi'
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
@@ -9,6 +9,7 @@ function classNames(...classes) {
 
 const Navbar = () => {
   const menuItems = ['Home', 'Services', 'Courses', 'Testimonial', 'Contact us']
+  const navigate = useNavigate()
   let token = sessionStorage.getItem('token')
 
   const getPath = (page) => {
@@ -60,7 +61,11 @@ const Navbar = () => {
                   </Menu.Item>
                   <Menu.Item>
                     {({ active }) => (
-                      <Link
+                      <button
+                        onClick={(e) => {
+                          sessionStorage.removeItem('token')
+                          navigate('/')
+                        }}
                         to="/signin"
                         className={classNames(
                           active ? 'bg-gray-100' : ' ',
@@ -68,7 +73,7 @@ const Navbar = () => {
                         )}
                       >
                         LogOut
-                      </Link>
+                      </button>
                     )}
                   </Menu.Item>
                 </Menu.Items>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import Card from '../Card/Card'
+import Navbar from '../Navbar/Navbar'
 import styles from './asset/CourseOverview.module.css'
 import profileImg from './asset/profile.svg'
 
@@ -24,46 +25,43 @@ const CourseOverview = () => {
     <>
       <div className="flex min-h-screen" style={{ fontFamily: 'Nunito' }}>
         <div className="w-64 bg-white border-r border-gray-300">
-          <div
-            className="leading-loose text-3xl px-8 text-secondary"
-            style={{ fontFamily: 'Pacifico' }}
-          >
-            Curiomind
-          </div>
-          {sideNavItems.map(({ name, items }) =>
-            name === 'Overview' ? (
-              <div className="mt-12 flex flex-col">
-                <div
-                  className="ml-9 px-6 py-2 text-gray-600 text-xl font-regular"
-                  id={styles.navItem}
-                >
-                  <button onClick={(e) => setIsVisible(!isVisible)}>
-                    {name}
-                  </button>
-                </div>
-                {items.map((item) => (
-                  <button
-                    className={
-                      isVisible
-                        ? 'flex justify-center py-2 text-slate-400'
-                        : 'hidden'
-                    }
+          <Navbar />
+          <div className="flex flex-col py-16 justify-center">
+            {sideNavItems.map(({ name, items }) =>
+              name === 'Overview' ? (
+                <div className=" flex flex-col">
+                  <div
+                    className="px-6 py-4 w-full text-gray-600 text-xl font-regular hover:text-blue-400 hover:bg-blue-100 transition-all duration-500 ease-in-out"
+                    id={styles.navItem}
                   >
-                    {item}
-                  </button>
-                ))}
-              </div>
-            ) : (
-              <div className="mt-12 flex">
-                <div
-                  className="ml-9 px-6 py-2 text-gray-600 text-xl font-regular"
-                  id={styles.navItem}
-                >
-                  <a href="/course">{name}</a>
+                    <button onClick={(e) => setIsVisible(!isVisible)}>
+                      {name}
+                    </button>
+                  </div>
+                  {items.map((item) => (
+                    <button
+                      className={
+                        isVisible
+                          ? 'flex justify-start px-12 py-2 text-slate-400 transition-all duration-500 ease-in-out'
+                          : 'hidden text-slate-400'
+                      }
+                    >
+                      {item}
+                    </button>
+                  ))}
                 </div>
-              </div>
-            )
-          )}
+              ) : (
+                <div className="flex ">
+                  <div
+                    className="px-6 py-4 w-full text-gray-600 text-xl font-regular hover:text-blue-400 hover:bg-blue-100 transition-all duration-500 ease-in-out"
+                    id={styles.navItem}
+                  >
+                    <a href="/course">{name}</a>
+                  </div>
+                </div>
+              )
+            )}
+          </div>
         </div>
         <div className="flex-1">
           <div className="flex justify-around mt-4">
