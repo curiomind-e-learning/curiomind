@@ -77,7 +77,7 @@ const Navbar = () => {
                             sessionStorage.removeItem('token')
                             navigate('/')
                           }}
-                          to="/signin"
+                          to="/"
                           className={classNames(
                             active ? 'bg-gray-100' : ' ',
                             'text-center tracking-widest block py-2 text-sm text-gray-900'

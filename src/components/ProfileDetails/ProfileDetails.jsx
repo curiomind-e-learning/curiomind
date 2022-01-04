@@ -52,7 +52,21 @@ const Profile = () => {
             src={User}
             alt=""
           />
-          <p className="text-3xl text-blue-600 px-6" style={{fontFamily:'Nunito'}}>{user.name}</p>
+          <div className="flex flex-col">
+            <p
+              className="text-3xl text-blue-600 px-6"
+              style={{ fontFamily: 'Nunito' }}
+            >
+              {user.name}
+            </p>
+
+            <p
+              className="text-xl py-2 text-blue-400 px-6"
+              style={{ fontFamily: 'Nunito' }}
+            >
+              {user.role}
+            </p>
+          </div>
         </div>
 
         <div className="flex flex-col">
@@ -91,13 +105,21 @@ const Profile = () => {
       </div>
       <div className="container mx-auto">
         <div className="flex flex-col">
-          <div className="flex justify-left text-3xl px-8 py-4" style={{fontFamily:'Nunito'}}>
+          <div
+            className="flex justify-left text-3xl px-8 py-4"
+            style={{ fontFamily: 'Nunito' }}
+          >
             Personal Details
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 p-8 gap-4">
           <div className="col-span-1">
-            <label className="text-md text-gray-400 ml-5" style={{fontFamily:'Nunito'}}>Name</label>
+            <label
+              className="text-md text-gray-400 ml-5"
+              style={{ fontFamily: 'Nunito' }}
+            >
+              Name
+            </label>
             <input
               className="rounded-full appearance-none border w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
@@ -111,7 +133,12 @@ const Profile = () => {
             />
           </div>
           <div className="col-span-1">
-            <label className="text-md text-gray-400 ml-5" style={{fontFamily:'Nunito'}}>Email</label>
+            <label
+              className="text-md text-gray-400 ml-5"
+              style={{ fontFamily: 'Nunito' }}
+            >
+              Email
+            </label>
             <input
               className="rounded-full appearance-none border w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="email"
@@ -125,7 +152,12 @@ const Profile = () => {
             />
           </div>
           <div className="col-span-1">
-            <label className="text-md text-gray-400 ml-5" style={{fontFamily:'Nunito'}}>Phone</label>
+            <label
+              className="text-md text-gray-400 ml-5"
+              style={{ fontFamily: 'Nunito' }}
+            >
+              Phone
+            </label>
             <input
               className="rounded-full appearance-none border w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="tel"
@@ -139,7 +171,12 @@ const Profile = () => {
             />
           </div>
           <div className="col-span-1">
-            <label className="text-md text-gray-400 ml-5" style={{fontFamily:'Nunito'}}>Id</label>
+            <label
+              className="text-md text-gray-400 ml-5"
+              style={{ fontFamily: 'Nunito' }}
+            >
+              Id
+            </label>
             <input
               className="rounded-full appearance-none border w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
