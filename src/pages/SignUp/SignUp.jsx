@@ -5,6 +5,7 @@ const SignUp = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
+  const [role, setRole] = useState('')
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
 
@@ -22,7 +23,7 @@ const SignUp = () => {
         name,
         email,
         password,
-        role: 'student',
+        role,
       }),
     }).then((res) => {
       navigate('/signin')
@@ -98,6 +99,7 @@ const SignUp = () => {
                           className="form-radio"
                           name="Type"
                           value="Student"
+                          onChange={(e) => setRole(e.target.value)}
                         />
                         <span className="ml-2">Student</span>
                       </label>
@@ -107,6 +109,7 @@ const SignUp = () => {
                           className="form-radio"
                           name="Type"
                           value="Faculty"
+                          onChange={(e) => setRole(e.target.value)}
                         />
                         <span className="ml-2">Faculty</span>
                       </label>
@@ -118,9 +121,13 @@ const SignUp = () => {
               <div className="text-center mt-9">
                 {loading ? (
                   <button
-                    className="animate-pulse bg-green-500 hover:bg-green-700 text-white rounded-full font-bold py-2 px-5 focus:outline-none focus:shadow-outline"
+                    className=" bg-green-500 hover:bg-green-700 text-white rounded-full font-bold py-2 px-5 focus:outline-none focus:shadow-outline"
                     type="submit"
                   >
+                    <svg
+                      class="animate-spin h-5 w-5 mr-3 ..."
+                      viewBox="0 0 24 24"
+                    ></svg>
                     Register
                   </button>
                 ) : (
