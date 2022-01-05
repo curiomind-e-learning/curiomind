@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Loader from '../../components/Loader/Loader'
+import { GrClose } from 'react-icons/gr'
 
 const SignUp = () => {
   const [email, setEmail] = useState('')
@@ -37,6 +38,13 @@ const SignUp = () => {
       <div className="flex h-screen font-nunito">
         <div className="m-auto grid grid-cols-1 md:grid-cols-2 gap-0 w-2/3 h-3/4">
           <div className="order-last rounded-r-2xl from-gradientBlue to-gradientGreen bg-gradient-to-t shadow-2xl">
+            <div className="flex justify-end transform -translate-x-5 translate-y-5">
+              <GrClose
+                size={20}
+                className="cursor-pointer"
+                onClick={(e) => navigate('/')}
+              />
+            </div>
             <div className="flex flex-col justify-center items-center h-full">
               <h1 className="text-center text-white text-3xl font-bold">
                 Already a customer?

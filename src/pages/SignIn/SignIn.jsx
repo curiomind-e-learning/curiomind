@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Loader from '../../components/Loader/Loader'
+import { GrClose } from 'react-icons/gr'
 
 const SignUp = () => {
   const [email, setEmail] = useState('')
@@ -59,6 +60,13 @@ const SignUp = () => {
             </div>
           </div>
           <div className="rounded-r-2xl bg-slate-100 shadow-2xl">
+            <div className="flex justify-end transform -translate-x-5 translate-y-5">
+              <GrClose
+                size={20}
+                className="cursor-pointer"
+                onClick={(e) => navigate('/')}
+              />
+            </div>
             <div className="flex flex-col justify-center items-center h-full">
               <h1 className="text-center font-nunito font-bold text-3xl">
                 Login
