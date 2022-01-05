@@ -8,12 +8,18 @@ function classNames(...classes) {
 }
 
 const Navbar = () => {
-  const menuItems = ['Home', 'Services', 'Courses', 'Testimonial', 'Contact us']
+  const menuItems = ['Home', 'Services', 'Courses', 'Testimonial', 'Contact Us']
   const navigate = useNavigate()
   let token = sessionStorage.getItem('token')
 
   const getPath = (page) => {
-    return `/#${page}`
+    switch (page) {
+      case 'Contact Us':
+        return '/contact'
+
+      default:
+        return `/#${page}`
+    }
   }
 
   return (
