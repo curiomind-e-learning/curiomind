@@ -3,7 +3,6 @@ import Title from '../Title/Title'
 import styles from './asset/Testimonials.module.css'
 import testimonials from './Testimonials.json'
 
-
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 550, itemsToShow: 2 },
@@ -36,7 +35,7 @@ const Testimonials = () => {
                   d="M357.838 5.75146C357.838 5.75146 119.005 180.327 3 94.461V214.723V334.986H357.838V5.75146Z"
                   fill="#83C6CF"
                   stroke="#83C6CF"
-                  stroke-opacity="0.8"
+                  strokeOpacity="0.8"
                   stroke-width="5.6865"
                   stroke-linecap="round"
                 />
