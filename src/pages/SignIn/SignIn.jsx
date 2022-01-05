@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import styles from '../SignUp/asset/SignUp.module.css'
+import Loader from '../../components/Loader/Loader'
+
 const SignUp = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -35,14 +36,8 @@ const SignUp = () => {
   }
 
   return (
-    <>
-      {loading ? (
-        <div className={styles.linearActivity}>
-          <div className={styles.indeterminate}></div>
-        </div>
-      ) : (
-        <div className="h-6"></div>
-      )}
+    <section className="overflow-hidden max-h-screen">
+      <Loader active={loading} />
       <div className="flex h-screen font-nunito">
         <div className="m-auto grid grid-cols-1 md:grid-cols-2 gap-0 w-2/3 h-3/4">
           <div className="rounded-l-2xl from-gradientBlue to-gradientGreen bg-gradient-to-t shadow-2xl">
@@ -117,7 +112,7 @@ const SignUp = () => {
           </div>
         </div>
       </div>
-    </>
+    </section>
   )
 }
 

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import styles from './asset/SignUp.module.css'
+import Loader from '../../components/Loader/Loader'
+
 const SignUp = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -31,14 +32,8 @@ const SignUp = () => {
   }
 
   return (
-    <>
-      {loading ? (
-        <div className={styles.linearActivity}>
-          <div className={styles.indeterminate}></div>
-        </div>
-      ) : (
-        <div className="h-6"></div>
-      )}
+    <section className="overflow-hidden max-h-screen">
+      <Loader active={loading} />
       <div className="flex h-screen font-nunito">
         <div className="m-auto grid grid-cols-1 md:grid-cols-2 gap-0 w-2/3 h-3/4">
           <div className="order-last rounded-r-2xl from-gradientBlue to-gradientGreen bg-gradient-to-t shadow-2xl">
@@ -71,7 +66,7 @@ const SignUp = () => {
                       placeholder="Your Name"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      required="true"
+                      required={true}
                     />
                   </div>
 
@@ -106,7 +101,8 @@ const SignUp = () => {
                             type="radio"
                             className="form-radio"
                             name="Type"
-                            value="Student"
+                            value="student"
+                            defaultChecked
                             onChange={(e) => setRole(e.target.value)}
                           />
                           <span className="ml-2">Student</span>
@@ -116,7 +112,7 @@ const SignUp = () => {
                             type="radio"
                             className="form-radio"
                             name="Type"
-                            value="Faculty"
+                            value="faculty"
                             onChange={(e) => setRole(e.target.value)}
                           />
                           <span className="ml-2">Faculty</span>
@@ -127,24 +123,6 @@ const SignUp = () => {
                 </div>
 
                 <div className="text-center mt-9">
-                  {/* {loading ? (
-                  <button
-                    className=" bg-green-500 hover:bg-green-700 text-white rounded-full font-bold py-2 px-5 focus:outline-none focus:shadow-outline"
-                    type="submit"
-                  >
-                    Register
-                  </button>
-                ) : (
-                  <button
-                    className="bg-green-500 hover:bg-green-700 text-white rounded-full font-bold py-2 px-5 focus:outline-none focus:shadow-outline"
-                    type="submit"
-                    onClick={(e) => {
-                      handleSubmit(e)
-                    }}
-                  >
-                    Register
-                  </button>
-                )} */}
                   <button
                     className="bg-green-500 hover:bg-green-700 text-white rounded-full font-bold py-2 px-5 focus:outline-none focus:shadow-outline"
                     type="submit"
@@ -160,7 +138,7 @@ const SignUp = () => {
           </div>
         </div>
       </div>
-    </>
+    </section>
   )
 }
 
