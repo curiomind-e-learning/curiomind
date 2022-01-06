@@ -13,13 +13,7 @@ const Navbar = () => {
   let token = sessionStorage.getItem('token')
 
   const getPath = (page) => {
-    switch (page) {
-      case 'Contact Us':
-        return '/contact'
-
-      default:
-        return `/#${page}`
-    }
+    return `/#${page}`
   }
 
   return (
@@ -39,7 +33,11 @@ const Navbar = () => {
         <div className="flex flex-col md:flex-row md:space-x-14">
           {menuItems.map((item) => (
             <div key={item} className="text-xl font-medium p-3 md:p-0">
-              <a href={getPath(item)}>{item}</a>
+              {item === 'Contact Us' ? (
+                <button onClick={() => navigate('/contact')}>{item}</button>
+              ) : (
+                <a href={getPath(item)}>{item}</a>
+              )}
             </div>
           ))}
         </div>

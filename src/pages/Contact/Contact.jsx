@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Navbar from '../../components/Navbar/Navbar.jsx'
 import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
+import Footer from '../../components/Footer/Footer.jsx'
 
 const Contact = () => {
   const [firstName, setFirstName] = useState('')
@@ -11,7 +12,7 @@ const Contact = () => {
   return (
     <>
       <Navbar />
-      <section className="pt-24 px-5 container mx-auto">
+      <section className="pt-24 px-28 container mx-auto">
         <div className="divide-y-2">
           <h1 className="text-5xl font-nunito leading-loose">Contact Us</h1>
           <div className="w-full"></div>
@@ -52,25 +53,29 @@ const Contact = () => {
               </div>
             </div>
           </div>
-
           <div className="w-1/2 h-full select-none p-5">
             <img src="https://www.linkpicture.com/q/contact.svg" alt="" />
           </div>
         </div>
       </section>
-      <section className="pt-24 px-5 container mx-auto">
+
+      <section className="pt-24 px-28 container mx-auto pb-10">
         <div className="divide-y-2">
           <h1 className="text-5xl font-nunito leading-loose">
             Send us your feedback
           </h1>
-          <div className="w-full"></div>
+          <div className="w-full pb-5"></div>
         </div>
         <div className="flex w-full">
           <div className="w-1/2 h-full select-none p-5">
-            <img src="https://www.linkpicture.com/q/feedback.svg" alt="" />
+            <img
+              src="https://www.linkpicture.com/q/feedback.svg"
+              width="500px"
+              alt=""
+            />
           </div>
           <div className=" w-1/2 h-40">
-            <form className="w-full max-w-lg p-6">
+            <form className="w-full max-w-lg p-6 ml-20">
               <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full px-3 mb-6 md:mb-0">
                   <label
@@ -139,6 +144,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   )
 }
