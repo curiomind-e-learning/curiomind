@@ -8,6 +8,7 @@ import SignIn from './pages/SignIn/SignIn'
 import Profile from './pages/Profile/Profile'
 import Course from './pages/Course/Course'
 import Contact from './pages/Contact/Contact'
+import Week from './components/Week/Week'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/course/:id" element={<Course />} />
+          <Route path="/course/:id/week/:no" element={<Week />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         {/* <Footer /> */}

@@ -2,15 +2,15 @@ import React from 'react'
 import { useState } from 'react'
 import Card from '../Card/Card'
 import { Link } from 'react-router-dom'
-import CourseNavbar from '../CourseNavbar/CourseNavbar'
+import Footer from '../Footer/Footer.jsx'
 
-const CourseOverview = ({ courseName, instructorName, description }) => {
+const CourseOverview = ({ courseName, instructorName, description, id }) => {
   const [isVisible, setIsVisible] = useState(false)
   const sideNavItems = [
     { name: 'About' },
     {
       name: 'Overview',
-      items: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+      week: ['1', '2', '3', '4', '5', '6'],
     },
     { name: 'Assignment' },
     { name: 'Exam' },
@@ -19,9 +19,9 @@ const CourseOverview = ({ courseName, instructorName, description }) => {
   return (
     <>
       <div className="flex min-h-screen" style={{ fontFamily: 'Nunito' }}>
-        <div className="w-2/5 bg-white border-r border-gray-300">
+        <div className="w-1/4 bg-white border-r border-gray-300">
           <div className="py-24">
-            {sideNavItems.map(({ name, items }) =>
+            {sideNavItems.map(({ name, week }) =>
               name === 'Overview' ? (
                 <div>
                   <div className="px-10 py-4 w-full text-gray-600 text-xl rounded-3xl font-regular hover:text-blue-400 hover:bg-blue-100 transition-all duration-500 ease-in-out">
@@ -31,22 +31,23 @@ const CourseOverview = ({ courseName, instructorName, description }) => {
                       </button>
                     </div>
                   </div>
-                  {items.map((item) => (
-                    <button
+                  {week.map((no) => (
+                    <Link
                       className={
                         isVisible
                           ? 'flex justify-start px-12 py-2 text-slate-400 transition-all duration-500 ease-in-out'
                           : 'hidden text-slate-400'
                       }
+                      to={`/course/${id}/week/${no}`}
                     >
-                      {item}
-                    </button>
+                      Week {no}
+                    </Link>
                   ))}
                 </div>
               ) : (
                 <div className="flex py-2">
                   <Link
-                    to="/course"
+                    to={`/course/${id}`}
                     className="px-10 py-4 w-full text-gray-600 text-xl font-regular hover:text-blue-400 rounded-3xl hover:bg-blue-100 transition-all duration-500 ease-in-out"
                   >
                     <div>{name}</div>
@@ -75,11 +76,9 @@ const CourseOverview = ({ courseName, instructorName, description }) => {
               </div>
             </div>
           </div>
-          <div className="py-20">
-            <CourseNavbar />
-          </div>
         </div>
       </div>
+      <Footer />
     </>
   )
 }

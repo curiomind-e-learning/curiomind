@@ -9,7 +9,7 @@ const CourseBanner = ({ toShow, course }) => {
       case 'Ongoing':
         return course
       case 'Completed':
-        return course
+        return course.slice(0, 0)
       default:
         return []
     }
@@ -21,13 +21,14 @@ const CourseBanner = ({ toShow, course }) => {
         getCards().map((card) => (
           <Link
             key={card._id}
-            to={`/course/${card._id}`}
+            to={`/course/${card.course._id}`}
             state={{
               name: card.course.name,
               instructorName: card.course.instructors,
               category: card.course.category,
               description: card.course.description,
               videos: card.course.videos,
+              id: card.course._id,
             }}
             className="w-full"
           >

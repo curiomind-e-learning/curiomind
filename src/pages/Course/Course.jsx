@@ -5,7 +5,7 @@ import Navbar from '../../components/Navbar/Navbar.jsx'
 
 const Course = () => {
   const location = useLocation()
-  const { name, instructorName, description } = location.state
+  const { name, instructorName, description, videos, id } = location.state
   return (
     <>
       <Navbar />
@@ -14,6 +14,8 @@ const Course = () => {
         courseName={name}
         instructorName={instructorName}
         description={description}
+        videos={videos}
+        id={id}
       />
     </>
   )
