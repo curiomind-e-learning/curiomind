@@ -1,8 +1,28 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import CourseBanner from '../CourseBanner/CourseBanner'
 const CourseNavbar = () => {
   const menuItems = ['Home', 'Ongoing', 'Completed']
   const [toShow, setToShow] = useState('Home')
+  const [course, setCourse] = useState([])
+
+  const getCourses = async () => {
+    const res = await fetch(`${process.env.REACT_APP_API}/course/`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+      },
+    })
+    const data = await res.json()
+    setCourse(data)
+  }
+
+  useEffect(() => {
+    getCourses()
+    return () => {
+      setCourse({})
+    }
+  }, [])
 
   return (
     <>
@@ -19,7 +39,7 @@ const CourseNavbar = () => {
           ))}
         </div>
       </div>
-      <CourseBanner toShow={toShow} />
+      <CourseBanner toShow={toShow} course={course} />
     </>
   )
 }

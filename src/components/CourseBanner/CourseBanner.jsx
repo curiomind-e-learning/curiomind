@@ -1,54 +1,14 @@
 import Card from './Card/Card'
 
-const CourseBanner = ({ toShow }) => {
+const CourseBanner = ({ toShow, course }) => {
   const getCards = () => {
     switch (toShow) {
       case 'Home':
-        return [
-          {
-            title: 'Introduction to React',
-            description: 'Learn how to build a React app from scratch',
-            image: 'https://i.imgur.com/7YQQKHx.png',
-            link: 'https://www.udemy.com/course/react-the-complete-guide-incl-redux/',
-          },
-          {
-            title: 'Introduction to Vue',
-            description: 'Learn how to build a Vue app from scratch',
-            image: 'https://i.imgur.com/7YQQKHx.png',
-            link: 'https://www.udemy.com/course/vue-the-complete-guide-incl-vuex/',
-          },
-        ]
+        return course.slice(0, 1)
       case 'Ongoing':
-        return [
-          {
-            title: 'Ongoing Introduction to React',
-            description: 'Ongoing Learn how to build a React app from scratch',
-            image: 'https://i.imgur.com/7YQQKHx.png',
-            link: 'https://www.udemy.com/course/react-the-complete-guide-incl-redux/',
-          },
-          {
-            title: 'Ongoing Introduction to Vue',
-            description: 'Ongoing Learn how to build a Vue app from scratch',
-            image: 'https://i.imgur.com/7YQQKHx.png',
-            link: 'https://www.udemy.com/course/vue-the-complete-guide-incl-vuex/',
-          },
-        ]
+        return course
       case 'Completed':
-        return [
-          {
-            title: 'Completed Introduction to React',
-            description:
-              'Completed Learn how to build a React app from scratch',
-            image: 'https://i.imgur.com/7YQQKHx.png',
-            link: 'https://www.udemy.com/course/react-the-complete-guide-incl-redux/',
-          },
-          {
-            title: 'Completed Introduction to Vue',
-            description: 'Completed Learn how to build a Vue app from scratch',
-            image: 'https://i.imgur.com/7YQQKHx.png',
-            link: 'https://www.udemy.com/course/vue-the-complete-guide-incl-vuex/',
-          },
-        ]
+        return course
       default:
         return []
     }
@@ -56,9 +16,15 @@ const CourseBanner = ({ toShow }) => {
 
   return (
     <section className="bg-gray-light flex flex-col items-center justify-center p-8 space-y-4">
-      {getCards().map((card, index) => (
-        <Card title={card.title} key={index} />
-      ))}
+      {course && course.length > 0 ? (
+        getCards().map((card) => (
+          <Card title={card.course.name} key={card._id} />
+        ))
+      ) : (
+        <div className="text-3xl font-nunito leading-relaxed text-gray-700">
+          No enrolled courses
+        </div>
+      )}
     </section>
   )
 }
