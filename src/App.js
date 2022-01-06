@@ -21,7 +21,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/course" element={<Course />} />
+          <Route path="/course/:id" element={<Course />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         {/* <Footer /> */}

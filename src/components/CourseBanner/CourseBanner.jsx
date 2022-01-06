@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Card from './Card/Card'
 
 const CourseBanner = ({ toShow, course }) => {
@@ -18,7 +19,20 @@ const CourseBanner = ({ toShow, course }) => {
     <section className="bg-gray-light flex flex-col items-center justify-center p-8 space-y-4">
       {course && course.length > 0 ? (
         getCards().map((card) => (
-          <Card title={card.course.name} key={card._id} />
+          <Link
+            key={card._id}
+            to={`/course/${card._id}`}
+            state={{
+              name: card.course.name,
+              instructorName: card.course.instructors,
+              category: card.course.category,
+              description: card.course.description,
+              videos: card.course.videos,
+            }}
+            className="w-full"
+          >
+            <Card title={card.course.name} courseId={card._id} />
+          </Link>
         ))
       ) : (
         <div className="text-3xl font-nunito leading-relaxed text-gray-700">

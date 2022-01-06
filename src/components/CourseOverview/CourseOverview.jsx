@@ -2,10 +2,9 @@ import React from 'react'
 import { useState } from 'react'
 import Card from '../Card/Card'
 import { Link } from 'react-router-dom'
-import Navbar from '../Navbar/Navbar'
 import CourseNavbar from '../CourseNavbar/CourseNavbar'
 
-const CourseOverview = () => {
+const CourseOverview = ({ courseName, instructorName, description }) => {
   const [isVisible, setIsVisible] = useState(false)
   const sideNavItems = [
     { name: 'About' },
@@ -21,7 +20,6 @@ const CourseOverview = () => {
     <>
       <div className="flex min-h-screen" style={{ fontFamily: 'Nunito' }}>
         <div className="w-2/5 bg-white border-r border-gray-300">
-          <Navbar />
           <div className="py-24">
             {sideNavItems.map(({ name, items }) =>
               name === 'Overview' ? (
@@ -61,24 +59,17 @@ const CourseOverview = () => {
         <div className=" mt-20">
           <div className="w-4/5 mx-10 h-40 bg-veryLightBlue rounded-3xl shadow-xl p-10 flex flex-row">
             <div className="w-20 h-20 bg-slate-400 rounded-3xl"></div>
-            <div className="font-regular text-2xl px-10 pt-5">Course Name</div>
+            <div className="font-regular text-2xl px-10 pt-5">{courseName}</div>
           </div>
           <div className=" mx-8 text-lg font-light text-gray-600 py-10 flex justify-center p-4">
-            A course description is. a short, pithy statement which informs a
-            student about the subject matter, approach, breadth, and
-            applicability of the course. It focuses on the content. We are
-            looking for a list of topics. about 80 words maximum. The course
-            description orients students by outlining the rationale for the
-            course subject or theme, framing a brief overview of the key
-            content, knowledge and skills to be learned and stating the major
-            learning strategies and activities that students will experience.
+            {description}
           </div>
           <div>
             <div className="grid sm:grid-cols-1 md:grid-cols-1 ml-36">
               <div style={{ width: '250px' }}>
                 <Card
                   imgUrl="https://www.linkpicture.com/q/Vector-2.svg"
-                  text="Professor Name Professor Position University Of Something"
+                  text={instructorName[0].name}
                   color="#E7EAC4"
                 />
               </div>
