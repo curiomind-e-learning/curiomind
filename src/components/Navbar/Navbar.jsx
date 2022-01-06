@@ -27,18 +27,18 @@ const Navbar = () => {
       className={`w-full fixed bg-gray-100 backdrop-blur-sm`}
       style={{ zIndex: '1' }}
     >
-      <div className="flex justify-between items-center text-secondary ">
+      <div className="flex flex-col md:flex-row justify-center md:justify-between items-start md:items-center text-secondary">
         <Link to="/">
           <div
-            className="leading-loose text-3xl px-8"
+            className="leading-loose text-3xl p-3 md:px-8 md:py-0"
             style={{ fontFamily: 'Pacifico' }}
           >
             Curiomind
           </div>
         </Link>
-        <div className="flex space-x-14">
+        <div className="flex flex-col md:flex-row md:space-x-14">
           {menuItems.map((item) => (
-            <div key={item} className="text-xl font-medium">
+            <div key={item} className="text-xl font-medium p-3 md:p-0">
               <a href={getPath(item)}>{item}</a>
             </div>
           ))}
@@ -67,10 +67,25 @@ const Navbar = () => {
                           to="/profile"
                           className={classNames(
                             active ? 'bg-gray-100' : ' ',
-                            'text-center tracking-widest block py-2 text-sm text-gray-900'
+                            'px-5 tracking-widest block py-2 text-sm text-gray-900'
                           )}
                         >
                           Profile
+                        </Link>
+                      </div>
+                    )}
+                  </Menu.Item>
+                  <Menu.Item>
+                    {({ active }) => (
+                      <div>
+                        <Link
+                          to="/dashboard"
+                          className={classNames(
+                            active ? 'bg-gray-100' : ' ',
+                            'px-5 tracking-widest block py-2 text-sm text-gray-900'
+                          )}
+                        >
+                          Dashboard
                         </Link>
                       </div>
                     )}
@@ -86,7 +101,7 @@ const Navbar = () => {
                           to="/"
                           className={classNames(
                             active ? 'bg-gray-100' : ' ',
-                            'text-center tracking-widest block py-2 text-sm text-gray-900'
+                            'px-5 tracking-widest block py-2 text-sm text-gray-900'
                           )}
                         >
                           Logout

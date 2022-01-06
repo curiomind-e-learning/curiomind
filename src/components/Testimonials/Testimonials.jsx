@@ -36,8 +36,8 @@ const Testimonials = () => {
                   fill="#83C6CF"
                   stroke="#83C6CF"
                   strokeOpacity="0.8"
-                  stroke-width="5.6865"
-                  stroke-linecap="round"
+                  strokeWidth="5.6865"
+                  strokeLinecap="round"
                 />
               </svg>
             </div>

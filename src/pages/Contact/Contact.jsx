@@ -12,8 +12,9 @@ const Contact = () => {
     <>
       <Navbar />
       <section className="pt-24 px-5 container mx-auto">
-        <div className="">
+        <div className="divide-y-2">
           <h1 className="text-5xl font-nunito leading-loose">Contact Us</h1>
+          <div className="w-full"></div>
         </div>
         <div className="flex w-full">
           <div className=" w-1/2 h-40">
@@ -57,11 +58,12 @@ const Contact = () => {
           </div>
         </div>
       </section>
-      <section className="pt-28 px-5 container mx-auto">
-        <div className="">
+      <section className="pt-24 px-5 container mx-auto">
+        <div className="divide-y-2">
           <h1 className="text-5xl font-nunito leading-loose">
             Send us your feedback
           </h1>
+          <div className="w-full"></div>
         </div>
         <div className="flex w-full">
           <div className="w-1/2 h-full select-none p-5">
