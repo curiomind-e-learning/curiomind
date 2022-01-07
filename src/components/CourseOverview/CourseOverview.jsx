@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import Card from '../Card/Card'
 import Footer from '../Footer/Footer.jsx'
 import Sidebar from '../Sidebar/Sidebar'
@@ -13,7 +13,7 @@ const CourseOverview = () => {
   const [isLoading, setisLoading] = useState(false)
   let params = useParams()
 
-  const getCourseDetails = async () => {
+  const getCourseDetails = useCallback(async () => {
     setisLoading(true)
     const response = await fetch(
       `${process.env.REACT_APP_API}/course/${params.id}`,
@@ -31,7 +31,7 @@ const CourseOverview = () => {
     setDescription(data.description)
     setCourseId(data._id)
     setisLoading(false)
-  }
+  }, [params.id])
 
   useEffect(() => {
     getCourseDetails()
@@ -42,7 +42,7 @@ const CourseOverview = () => {
       setCourseId('')
       setisLoading(false)
     }
-  }, [])
+  }, [getCourseDetails])
 
   return (
     <>
