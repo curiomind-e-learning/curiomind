@@ -7,7 +7,7 @@ const Sidebar = ({ courseId }) => {
     { name: 'About' },
     {
       name: 'Overview',
-      week: ['1', '2', '3', '4', '5', '6'],
+      week: ['0', '1', '2', '3', '4'],
     },
     { name: 'Assignment' },
     { name: 'Exam' },
