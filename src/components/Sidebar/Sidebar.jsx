@@ -7,7 +7,7 @@ const Sidebar = ({ courseId }) => {
     { name: 'About' },
     {
       name: 'Overview',
-      week: ['0', '1', '2', '3', '4'],
+      week: ['1', '2', '3', '4', '5'],
     },
     { name: 'Assignment' },
     { name: 'Exam' },
@@ -32,10 +32,10 @@ const Sidebar = ({ courseId }) => {
                     ? 'flex justify-start px-12 py-2 text-slate-400 transition-all duration-500 ease-in-out'
                     : 'hidden text-slate-400'
                 }
-                to={`/course/${courseId}/week/${Number(no) + 1}`}
+                to={`/course/${courseId}/week/${no}`}
                 key={no}
               >
-                Week {Number(no) + 1}
+                Week {no}
               </Link>
             ))}
           </div>

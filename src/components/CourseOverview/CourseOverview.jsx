@@ -56,7 +56,11 @@ const CourseOverview = () => {
         {!isLoading ? (
           <div className=" mt-20">
             <div className="w-4/5 mx-10 h-40 bg-veryLightBlue rounded-3xl shadow-xl p-10 flex flex-row">
-              <div className="w-20 h-20 bg-slate-400 rounded-3xl"></div>
+              <img
+                className="rounded-3xl mr-4"
+                src={`${imgUrl}`}
+                alt="..."
+              ></img>
               <div className="font-regular text-2xl px-10 pt-5">
                 {courseName}
               </div>
@@ -68,7 +72,7 @@ const CourseOverview = () => {
               <div className="grid sm:grid-cols-1 md:grid-cols-1 ml-36">
                 <div style={{ width: '250px' }}>
                   <Card
-                    imgUrl={`${imgUrl}`}
+                    imgUrl="https://www.linkpicture.com/q/Vector-3.svg"
                     text={instructorName}
                     color="#E7EAC4"
                   />

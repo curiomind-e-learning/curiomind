@@ -1,15 +1,16 @@
 .CoursesBox {
   box-shadow: 0px 5px 5px 0px #00000040;
   background-color: #f7f7f7;
-  height: 120px;
-  width: 300px;
+  height: 145px;
+  width: 320px;
   border-radius: 2rem;
+  padding: 0.5rem;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   display: flex;
 }
 .CourseImg {
   border-radius: 2rem;
   padding: 1rem;
-  height: 120px;
-  width: 120px;
+  height: 130px;
+  width: 140px;
 }
