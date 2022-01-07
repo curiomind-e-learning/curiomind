@@ -10,6 +10,7 @@ const CourseOverview = () => {
   const [instructorName, setInstructorName] = useState('')
   const [description, setDescription] = useState('')
   const [courseId, setCourseId] = useState('')
+  const [imgUrl, setImgUrl] = useState('')
   const [isLoading, setisLoading] = useState(false)
   let params = useParams()
 
@@ -31,6 +32,7 @@ const CourseOverview = () => {
     setDescription(data.description)
     setCourseId(data._id)
     setisLoading(false)
+    setImgUrl(data.imgUrl)
   }, [params.id])
 
   useEffect(() => {
@@ -66,7 +68,7 @@ const CourseOverview = () => {
               <div className="grid sm:grid-cols-1 md:grid-cols-1 ml-36">
                 <div style={{ width: '250px' }}>
                   <Card
-                    imgUrl="https://www.linkpicture.com/q/Vector-2.svg"
+                    imgUrl={`${imgUrl}`}
                     text={instructorName}
                     color="#E7EAC4"
                   />
