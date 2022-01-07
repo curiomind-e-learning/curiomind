@@ -9,6 +9,7 @@ import Profile from './pages/Profile/Profile'
 import Course from './pages/Course/Course'
 import Contact from './pages/Contact/Contact'
 import Week from './components/Week/Week'
+import CourseUploadForm from './components/CourseUploadForm/CourseUploadForm'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/course/:id" element={<Course />} />
           <Route path="/course/:id/week/:no" element={<Week />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/courseupload" element={<CourseUploadForm />} />
         </Routes>
         {/* <Footer /> */}
       </Router>
