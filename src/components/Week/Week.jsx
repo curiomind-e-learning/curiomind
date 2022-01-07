@@ -50,7 +50,7 @@ const Week = () => {
         >
           <ReactPlayer
             className="react-player fixed-bottom"
-            url={`${videos[params.no]}`}
+            url={`${videos[params.no - 1]}`}
             width="100%"
             height="100%"
             playing

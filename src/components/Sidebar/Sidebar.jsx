@@ -32,10 +32,10 @@ const Sidebar = ({ courseId }) => {
                     ? 'flex justify-start px-12 py-2 text-slate-400 transition-all duration-500 ease-in-out'
                     : 'hidden text-slate-400'
                 }
-                to={`/course/${courseId}/week/${no}`}
+                to={`/course/${courseId}/week/${Number(no) + 1}`}
                 key={no}
               >
-                Week {no}
+                Week {Number(no) + 1}
               </Link>
             ))}
           </div>
