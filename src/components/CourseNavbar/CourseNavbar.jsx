@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react'
 import CourseBanner from '../CourseBanner/CourseBanner'
+import Loader from '../Loader/Loader'
+
 const CourseNavbar = () => {
   const menuItems = ['Home', 'Ongoing', 'Completed']
   const [toShow, setToShow] = useState('Home')
   const [course, setCourse] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
 
   const getCourses = async () => {
+    setIsLoading(true)
     const res = await fetch(`${process.env.REACT_APP_API}/course/`, {
       method: 'GET',
       headers: {
@@ -15,17 +19,20 @@ const CourseNavbar = () => {
     })
     const data = await res.json()
     setCourse(data)
+    setIsLoading(false)
   }
 
   useEffect(() => {
     getCourses()
     return () => {
       setCourse({})
+      setIsLoading(false)
     }
   }, [])
 
   return (
     <>
+      <Loader active={isLoading} />
       <div className="flex justify-between items-center text-secondary w-full border-b-4 border-blue-400">
         <div className="flex">
           {menuItems.map((item) => (
