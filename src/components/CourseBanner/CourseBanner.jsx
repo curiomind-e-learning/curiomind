@@ -22,14 +22,6 @@ const CourseBanner = ({ toShow, course }) => {
           <Link
             key={card._id}
             to={`/course/${card.course._id}`}
-            state={{
-              name: card.course.name,
-              instructorName: card.course.instructors,
-              category: card.course.category,
-              description: card.course.description,
-              videos: card.course.videos,
-              id: card.course._id,
-            }}
             className="w-full"
           >
             <Card title={card.course.name} courseId={card._id} />

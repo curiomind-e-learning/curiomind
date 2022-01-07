@@ -3,11 +3,10 @@ import ReactPlayer from 'react-player'
 import Footer from '../Footer/Footer'
 import Navbar from '../Navbar/Navbar'
 import Sidebar from '../Sidebar/Sidebar'
-// import { useLocation } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 const Week = () => {
-  //   const location = useLocation()
-  //   const { videos } = location.state
+  let params = useParams()
   return (
     <>
       <Navbar />
@@ -16,7 +15,7 @@ const Week = () => {
         style={{ fontFamily: 'Nunito' }}
       >
         <div className="w-1/6 bg-white border-r border-gray-300">
-          <Sidebar />
+          <Sidebar courseId={params.id} />
         </div>
         <div
           style={{
