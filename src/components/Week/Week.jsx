@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import ReactPlayer from 'react-player'
 import Footer from '../Footer/Footer'
 import Navbar from '../Navbar/Navbar'
@@ -6,7 +6,29 @@ import Sidebar from '../Sidebar/Sidebar'
 import { useParams } from 'react-router-dom'
 
 const Week = () => {
+  const [videos, setVideos] = useState('')
   let params = useParams()
+  const getVideoDetails = useCallback(async () => {
+    const response = await fetch(
+      `${process.env.REACT_APP_API}/course/${params.id}`,
+      {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+        },
+      }
+    )
+    const data = await response.json()
+    setVideos(data.videos)
+  }, [params.id])
+
+  useEffect(() => {
+    getVideoDetails()
+    return () => {
+      setVideos('')
+    }
+  }, [getVideoDetails])
   return (
     <>
       <Navbar />
@@ -28,7 +50,7 @@ const Week = () => {
         >
           <ReactPlayer
             className="react-player fixed-bottom"
-            url="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+            url={`${videos[params.no]}`}
             width="100%"
             height="100%"
             playing
