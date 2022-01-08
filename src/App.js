@@ -10,12 +10,12 @@ import Course from './pages/Course/Course'
 import Contact from './pages/Contact/Contact'
 import Week from './components/Week/Week'
 import FacultyDashboard from './pages/FacultyDashboard/FacultyDashboard'
+import CourseUploadForm from './components/CourseUploadForm/CourseUploadForm'
 
 function App() {
   return (
     <div className="App">
       <Router>
-        {/* <Navbar /> */}
         <Routes>
           <Route path="*" element={<NotFound />} />
           <Route path="/" element={<Home />} />
@@ -26,7 +26,8 @@ function App() {
           <Route path="/course/:id" element={<Course />} />
           <Route path="/course/:id/week/:no" element={<Week />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/course-upload" element={<FacultyDashboard />} />
+          <Route path="/course-upload" element={<CourseUploadForm />} />
+          <Route path="/faculty-dashboard" element={<FacultyDashboard />} />
         </Routes>
       </Router>
     </div>

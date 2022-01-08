@@ -19,12 +19,8 @@ const CourseBanner = ({ toShow, course }) => {
     <section className="bg-gray-light flex flex-col items-center justify-center p-8 space-y-4">
       {course && course.length > 0 ? (
         getCards().map((card) => (
-          <Link
-            key={card._id}
-            to={`/course/${card.course._id}`}
-            className="w-full"
-          >
-            <Card title={card.course.name} courseId={card._id} />
+          <Link key={card._id} to={`/course/${card._id}`} className="w-full">
+            <Card title={card.name} courseId={card._id} />
           </Link>
         ))
       ) : (

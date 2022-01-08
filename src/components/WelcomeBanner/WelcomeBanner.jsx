@@ -1,4 +1,3 @@
-// import CourseCard from '../../components/CourseCard/CourseCard.jsx'
 import { IoMdCompass } from 'react-icons/io'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'

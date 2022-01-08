@@ -3,6 +3,8 @@ import storage from '../../firebase/firebase.config.js'
 import Loader from '../../components/Loader/Loader'
 
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
+import Navbar from '../Navbar/Navbar.jsx'
+import Footer from '../Footer/Footer.jsx'
 
 const CourseUploadForm = () => {
   const [image, setImage] = useState(null)
@@ -71,6 +73,7 @@ const CourseUploadForm = () => {
   return (
     <>
       <Loader active={loading} />
+      <Navbar />
       <div className="w-2/5 m-auto py-28">
         <p className="flex justify-center text-2xl p-2 border-b-4 border-blue-500 mb-5 font-nunito">
           UPLOAD COURSE
@@ -140,6 +143,7 @@ const CourseUploadForm = () => {
           </div>
         </form>
       </div>
+      <Footer />
     </>
   )
 }
