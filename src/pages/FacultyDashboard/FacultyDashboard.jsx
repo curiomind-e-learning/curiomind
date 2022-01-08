@@ -1,12 +1,12 @@
 import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import FacultyCourse from '../../components/FacultyCourse/FacultyCourse'
+import { MdEdit, MdPostAdd } from 'react-icons/md'
 
 const FacultyDashboard = () => {
   const [user, setUser] = useState([])
-  const navigate = useNavigate()
   const getName = async () => {
     const res = await fetch(`${process.env.REACT_APP_API}/user/profile/`, {
       method: 'GET',
@@ -41,16 +41,19 @@ const FacultyDashboard = () => {
           <p className="font-nunito text-4xl p-3">Welcome Back {user.name} !</p>
         </div>
 
-        <div className="flex flex-row">
-          <button
-            className="p-3 mx-2 mb-4 w-36 rounded-xl bg-white shadow-slate-500 shadow-lg "
-            onClick={(e) => navigate('/course-upload')}
-          >
-            Upload Course
-          </button>
-          <button className="p-3 mb-4 mx-2 w-36 rounded-xl bg-white shadow-slate-500 shadow-lg ">
-            Edit Course
-          </button>
+        <div className="flex flex-row justify-evenly space-x-2">
+          <Link to="/course-upload">
+            <button className=" flex items-center justify-evenly px-5 py-3 rounded-xl bg-white shadow-slate-500 shadow-lg ">
+              <MdPostAdd size={25} />
+              <span>Upload Course</span>
+            </button>
+          </Link>
+          <Link to="#">
+            <button className="flex items-center justify-evenly px-5 py-3 rounded-xl bg-white shadow-slate-500 shadow-lg ">
+              <MdEdit size={25} />
+              <span>Edit Course</span>
+            </button>
+          </Link>
         </div>
       </div>
       <FacultyCourse />
