@@ -35,7 +35,7 @@ const Courses = () => {
 
         <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-10 grid-flow-row px-8 py-10 place-items-center">
           {courses.map(({ imgUrl, name, category }, index) => (
-            <div style={{ width: '270px' }} key={`${name}${index}`}>
+            <div key={`${name}${index}`}>
               <CoursesCard
                 imgUrl={imgUrl}
                 courseName={name}
