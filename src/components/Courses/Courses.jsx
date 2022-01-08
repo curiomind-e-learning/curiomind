@@ -2,6 +2,7 @@ import CoursesCard from '../CoursesCard/CoursesCard'
 import Title from '../Title/Title'
 import Loader from '../Loader/Loader'
 import { useState, useEffect, useCallback } from 'react'
+import { Link } from 'react-router-dom'
 
 const Courses = () => {
   const [courses, setCourses] = useState([])
@@ -34,14 +35,14 @@ const Courses = () => {
         />
 
         <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-10 grid-flow-row px-8 py-10 place-items-center">
-          {courses.map(({ imgUrl, name, category }, index) => (
-            <div key={`${name}${index}`}>
+          {courses.map(({ imgUrl, name, category, _id }, index) => (
+            <Link key={`${name}${index}`} to={`/course/${_id}`}>
               <CoursesCard
                 imgUrl={imgUrl}
                 courseName={name}
                 courseDetail={category}
               />
-            </div>
+            </Link>
           ))}
         </div>
       </div>
