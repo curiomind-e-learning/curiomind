@@ -9,7 +9,6 @@ import Profile from './pages/Profile/Profile'
 import Course from './pages/Course/Course'
 import Contact from './pages/Contact/Contact'
 import Week from './components/Week/Week'
-import FacultyDashboard from './pages/FacultyDashboard/FacultyDashboard'
 import CourseUploadForm from './components/CourseUploadForm/CourseUploadForm'
 import AllCourses from './pages/AllCourses/AllCourses'
 
@@ -29,7 +28,6 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/course-upload" element={<CourseUploadForm />} />
           <Route path="/allcourses" element={<AllCourses />} />
-          <Route path="/faculty-dashboard" element={<FacultyDashboard />} />
         </Routes>
       </Router>
     </div>

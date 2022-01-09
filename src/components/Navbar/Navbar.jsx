@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { HiUserCircle } from 'react-icons/hi'
-import { Fragment, useState, useEffect } from 'react'
+import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 
 function classNames(...classes) {
@@ -10,34 +10,11 @@ function classNames(...classes) {
 const Navbar = () => {
   const menuItems = ['Home', 'Services', 'Courses', 'Testimonial', 'Contact Us']
   const navigate = useNavigate()
-
+  let token = sessionStorage.getItem('token')
   const getPath = (page) => {
     return `/#${page}`
   }
 
-  let token = sessionStorage.getItem('token')
-  const [user, setUser] = useState({})
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await fetch(`${process.env.REACT_APP_API}/user/profile`, {
-        method: 'GET',
-
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${sessionStorage.getItem('token')}`,
-        },
-      })
-      result.json().then((data) => {
-        setUser(data)
-      })
-    }
-    fetchData()
-    return () => {
-      setUser({})
-    }
-  }, [])
-  console.log(user.role)
   return (
     <div
       className={`w-full fixed bg-gray-100 backdrop-blur-sm`}
@@ -98,27 +75,15 @@ const Navbar = () => {
                   <Menu.Item>
                     {({ active }) => (
                       <div>
-                        {user.role === 'faculty' ? (
-                          <Link
-                            to="/faculty-dashboard"
-                            className={classNames(
-                              active ? 'bg-gray-100' : ' ',
-                              'px-5 tracking-widest block py-2 text-sm text-gray-900'
-                            )}
-                          >
-                            Dashboard
-                          </Link>
-                        ) : (
-                          <Link
-                            to="/dashboard"
-                            className={classNames(
-                              active ? 'bg-gray-100' : ' ',
-                              'px-5 tracking-widest block py-2 text-sm text-gray-900'
-                            )}
-                          >
-                            Dashboard
-                          </Link>
-                        )}
+                        <Link
+                          to="/dashboard"
+                          className={classNames(
+                            active ? 'bg-gray-100' : ' ',
+                            'px-5 tracking-widest block py-2 text-sm text-gray-900'
+                          )}
+                        >
+                          Dashboard
+                        </Link>
                       </div>
                     )}
                   </Menu.Item>

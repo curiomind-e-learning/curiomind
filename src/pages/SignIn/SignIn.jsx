@@ -31,7 +31,7 @@ const SignUp = () => {
         })
       }
       setTimeout(() => {
-        navigate('/profile')
+        navigate('/dashboard')
       }, 500)
     })
   }

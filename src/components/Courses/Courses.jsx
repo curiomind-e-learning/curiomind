@@ -3,6 +3,7 @@ import Title from '../Title/Title'
 import Loader from '../Loader/Loader'
 import { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
+import CourseNavbar from '../CourseNavbar/CourseNavbar'
 
 const Courses = () => {
   const [courses, setCourses] = useState([])
@@ -47,7 +48,7 @@ const Courses = () => {
         <div className="flex justify-end">
           <Link
             to="/allcourses"
-            className="text-xl text-blue-900 underline px-11"
+            className="text-xl text-blue-900 underline px-11 pb-3"
             style={{ fontFamily: 'Nunito' }}
           >
             View All
