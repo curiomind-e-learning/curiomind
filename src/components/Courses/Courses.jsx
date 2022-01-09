@@ -12,7 +12,6 @@ const Courses = () => {
     setLoading(true)
     const res = await fetch(`${process.env.REACT_APP_API}/course/explore`)
     const data = await res.json()
-    console.log(data)
     setCourses(data)
     setLoading(false)
   }, [])
@@ -44,6 +43,15 @@ const Courses = () => {
               />
             </Link>
           ))}
+        </div>
+        <div className="flex justify-end">
+          <Link
+            to="/allcourses"
+            className="text-xl text-blue-900 underline px-11"
+            style={{ fontFamily: 'Nunito' }}
+          >
+            View All
+          </Link>
         </div>
       </div>
     </>
