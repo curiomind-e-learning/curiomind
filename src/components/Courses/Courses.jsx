@@ -3,7 +3,6 @@ import Title from '../Title/Title'
 import Loader from '../Loader/Loader'
 import { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
-import CourseNavbar from '../CourseNavbar/CourseNavbar'
 
 const Courses = () => {
   const [courses, setCourses] = useState([])

@@ -12,6 +12,7 @@ import Week from './components/Week/Week'
 import CourseUploadForm from './components/CourseUploadForm/CourseUploadForm'
 import AllCourses from './pages/AllCourses/AllCourses'
 import CourseDetails from './pages/CourseDetails/CourseDetails'
+import CourseAssignment from './pages/CourseAssignment/CourseAssignment'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/course/:id" element={<Course />} />
+          <Route path="/course/:id/assignment" element={< CourseAssignment />} />
           <Route path="/course/:id/week/:no" element={<Week />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/course-upload" element={<CourseUploadForm />} />
