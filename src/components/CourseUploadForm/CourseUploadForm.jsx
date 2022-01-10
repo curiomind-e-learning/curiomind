@@ -20,12 +20,13 @@ const CourseUploadForm = () => {
   const [loading, setLoading] = useState(false)
 
   const uploadFileAndSubmit = async (file, setFile) => {
-    if (image == null) {
+    if (file == null) {
       return
     }
+    console.log(file)
     setLoading(true)
     const storageRef = ref(storage, `files/${file.name}`)
-    const uploadTask = uploadBytesResumable(storageRef, file.name)
+    const uploadTask = uploadBytesResumable(storageRef, file)
 
     uploadTask.on(
       'state_changed',
@@ -156,7 +157,8 @@ const CourseUploadForm = () => {
               placeholder="Enter Image Url"
               accept="video/*"
               onChange={(e) => {
-                uploadFileAndSubmit(e.target.files[0], setVideo1Url)
+                e.target.files[0] &&
+                  uploadFileAndSubmit(e.target.files[0], setVideo1Url)
               }}
             />
           </div>
@@ -171,7 +173,8 @@ const CourseUploadForm = () => {
               placeholder="Enter Image Url"
               accept="video/*"
               onChange={(e) => {
-                uploadFileAndSubmit(e.target.files[0], setVideo2Url)
+                e.target.files[0] &&
+                  uploadFileAndSubmit(e.target.files[0], setVideo2Url)
               }}
             />
           </div>
@@ -186,7 +189,8 @@ const CourseUploadForm = () => {
               placeholder="Enter Image Url"
               accept="video/*"
               onChange={(e) => {
-                uploadFileAndSubmit(e.target.files[0], setVideo3Url)
+                e.target.files[0] &&
+                  uploadFileAndSubmit(e.target.files[0], setVideo3Url)
               }}
             />
           </div>
@@ -201,7 +205,8 @@ const CourseUploadForm = () => {
               placeholder="Enter Image Url"
               accept="video/*"
               onChange={(e) => {
-                uploadFileAndSubmit(e.target.files[0], setVideo4Url)
+                e.target.files[0] &&
+                  uploadFileAndSubmit(e.target.files[0], setVideo4Url)
               }}
             />
           </div>
@@ -215,9 +220,10 @@ const CourseUploadForm = () => {
               required
               placeholder="Enter Image Url"
               accept="video/*"
-              onChange={(e) => {
+              onChange={(e) =>
+                e.target.files[0] &&
                 uploadFileAndSubmit(e.target.files[0], setVideo5Url)
-              }}
+              }
             />
           </div>
 
