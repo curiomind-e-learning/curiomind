@@ -6,8 +6,7 @@ const CourseAssignment = () => {
   const [isLoading, setisLoading] = useState(false)
   let params = useParams()
 
-  const getCourseDetails = async () => {
-    setisLoading(true)
+  const getCourseDetails = useCallback(async () => {
     const response = await fetch(
       `${process.env.REACT_APP_API}/assignment/${params.id}`,
       {
@@ -20,48 +19,67 @@ const CourseAssignment = () => {
     )
     const data = await response.json()
     setAssignment(data)
-    console.log(assignment)
+    console.log(data)
     setisLoading(false)
-  }
+  }, [params])
 
   useEffect(() => {
+    setisLoading(true)
     getCourseDetails()
     return () => {
       setAssignment([])
       setisLoading(false)
     }
-  }, [])
+  }, [getCourseDetails])
 
   return (
-    <div>
-      <div className="w-full py-3 px-3">
-        <span className="text-gray-600 text-lg">{assignment.question}</span>
-        <div className="mt-2 flex flex-col">
-          <label className="inline-flex items-center">
-            <input
-              type="radio"
-              className="form-radio"
-              name="Type"
-              value="1"
-              defaultChecked
-            />
-            <span className="ml-2">1</span>
-          </label>
-          <label className="inline-flex items-center">
-            <input type="radio" className="form-radio" name="Type" value="2" />
-            <span className="ml-2">2</span>
-          </label>
-          <label className="inline-flex items-center">
-            <input type="radio" className="form-radio" name="Type" value="3" />
-            <span className="ml-2">3</span>
-          </label>
-          <label className="inline-flex items-center">
-            <input type="radio" className="form-radio" name="Type" value="4" />
-            <span className="ml-2">4</span>
-          </label>
+    <>
+      <Loader active={isLoading} />
+      <div>
+        <div className="w-full py-3 px-3">
+          <span className="text-gray-600 text-lg">{assignment.question}</span>
+          <div className="mt-2 flex flex-col">
+            <label className="inline-flex items-center">
+              <input
+                type="radio"
+                className="form-radio"
+                name="Type"
+                value="1"
+                defaultChecked
+              />
+              <span className="ml-2">1</span>
+            </label>
+            <label className="inline-flex items-center">
+              <input
+                type="radio"
+                className="form-radio"
+                name="Type"
+                value="2"
+              />
+              <span className="ml-2">2</span>
+            </label>
+            <label className="inline-flex items-center">
+              <input
+                type="radio"
+                className="form-radio"
+                name="Type"
+                value="3"
+              />
+              <span className="ml-2">3</span>
+            </label>
+            <label className="inline-flex items-center">
+              <input
+                type="radio"
+                className="form-radio"
+                name="Type"
+                value="4"
+              />
+              <span className="ml-2">4</span>
+            </label>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
