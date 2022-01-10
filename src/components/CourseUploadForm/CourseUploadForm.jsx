@@ -8,18 +8,24 @@ import Footer from '../Footer/Footer.jsx'
 
 const CourseUploadForm = () => {
   const [image, setImage] = useState(null)
+  const [imgUrl, setImgUrl] = useState('')
+  const [video1Url, setVideo1Url] = useState('')
+  const [video2Url, setVideo2Url] = useState('')
+  const [video3Url, setVideo3Url] = useState('')
+  const [video4Url, setVideo4Url] = useState('')
+  const [video5Url, setVideo5Url] = useState('')
   const [courseName, setCourseName] = useState('')
   const [courseCategory, setCourseCategory] = useState('')
   const [courseDescription, setCourseDescription] = useState('')
   const [loading, setLoading] = useState(false)
 
-  const uploadFileAndSubmit = async () => {
+  const uploadFileAndSubmit = async (file, setFile) => {
     if (image == null) {
       return
     }
     setLoading(true)
-    const storageRef = ref(storage, `files/${image.name}`)
-    const uploadTask = uploadBytesResumable(storageRef, image)
+    const storageRef = ref(storage, `files/${file.name}`)
+    const uploadTask = uploadBytesResumable(storageRef, file.name)
 
     uploadTask.on(
       'state_changed',
@@ -39,27 +45,14 @@ const CourseUploadForm = () => {
         }
       },
       (error) => {
-        // Handle unsuccessful uploads
+        setLoading(false)
+        alert(error.message)
       },
       () => {
         // Handle successful uploads on complete
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          fetch(`${process.env.REACT_APP_API}/course`, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              Authorization: `Bearer ${sessionStorage.getItem('token')}`,
-            },
-            body: JSON.stringify({
-              name: courseName,
-              category: courseCategory,
-              description: courseDescription,
-              imgUrl: downloadURL,
-            }),
-          }).then(() => {
-            setLoading(false)
-            alert('Course Uploaded Successfully')
-          })
+          setFile(downloadURL)
+          setLoading(false)
         })
       }
     )
@@ -67,7 +60,23 @@ const CourseUploadForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    uploadFileAndSubmit()
+    fetch(`${process.env.REACT_APP_API}/course`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+      },
+      body: JSON.stringify({
+        name: courseName,
+        category: courseCategory,
+        description: courseDescription,
+        imgUrl: imgUrl,
+        videos: [video1Url, video2Url, video3Url, video4Url, video5Url],
+      }),
+    }).then(() => {
+      setLoading(false)
+      alert('Course Uploaded Successfully')
+    })
   }
 
   return (
@@ -128,7 +137,87 @@ const CourseUploadForm = () => {
               required
               placeholder="Enter Image Url"
               accept="image/*"
-              onChange={(e) => setImage(e.target.files[0])}
+              onChange={(e) => {
+                setImage(e.target.files[0])
+              }}
+              onBlur={(e) => {
+                uploadFileAndSubmit(e.target.files[0], setImgUrl)
+              }}
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-800 text-sm font-light mb-2">
+              Week 1 Video
+            </label>
+            <input
+              className="shadow appearance-none text-xs border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+              type="file"
+              required
+              placeholder="Enter Image Url"
+              accept="video/*"
+              onChange={(e) => {
+                uploadFileAndSubmit(e.target.files[0], setVideo1Url)
+              }}
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-800 text-sm font-light mb-2">
+              Week 2 Video
+            </label>
+            <input
+              className="shadow appearance-none text-xs border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+              type="file"
+              required
+              placeholder="Enter Image Url"
+              accept="video/*"
+              onChange={(e) => {
+                uploadFileAndSubmit(e.target.files[0], setVideo2Url)
+              }}
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-800 text-sm font-light mb-2">
+              Week 3 Video
+            </label>
+            <input
+              className="shadow appearance-none text-xs border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+              type="file"
+              required
+              placeholder="Enter Image Url"
+              accept="video/*"
+              onChange={(e) => {
+                uploadFileAndSubmit(e.target.files[0], setVideo3Url)
+              }}
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-800 text-sm font-light mb-2">
+              Week 4 Video
+            </label>
+            <input
+              className="shadow appearance-none text-xs border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+              type="file"
+              required
+              placeholder="Enter Image Url"
+              accept="video/*"
+              onChange={(e) => {
+                uploadFileAndSubmit(e.target.files[0], setVideo4Url)
+              }}
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-800 text-sm font-light mb-2">
+              Week 5 Video
+            </label>
+            <input
+              className="shadow appearance-none text-xs border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+              type="file"
+              required
+              placeholder="Enter Image Url"
+              accept="video/*"
+              onChange={(e) => {
+                uploadFileAndSubmit(e.target.files[0], setVideo5Url)
+              }}
             />
           </div>
 

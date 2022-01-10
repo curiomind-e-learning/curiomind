@@ -61,7 +61,7 @@ const WelcomeBanner = () => {
             </p>
             <div className="self-start flex items-center p-6">
               <IoMdCompass className="text-blue-500 text-3xl font-nunito" />
-              <Link to="/courses">
+              <Link to="/allcourses">
                 <p className="p-2 font-semibold">Explore Courses</p>
               </Link>
             </div>
