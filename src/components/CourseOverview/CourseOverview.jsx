@@ -11,8 +11,38 @@ const CourseOverview = () => {
   const [description, setDescription] = useState('')
   const [courseId, setCourseId] = useState('')
   const [imgUrl, setImgUrl] = useState('')
+  const [enrolled, setEnrolled] = useState(true)
   const [isLoading, setisLoading] = useState(false)
   let params = useParams()
+
+  const enrollCourse = () => {
+    setisLoading(true)
+    fetch(`${process.env.REACT_APP_API}/course/enroll/`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+      },
+      body: JSON.stringify({
+        course: params.id,
+      }),
+    }).then(() => {
+      setisLoading(false)
+    })
+  }
+
+  const fetchCourses = useCallback(() => {
+    fetch(`${process.env.REACT_APP_API}/course/explore`).then((res) => {
+      res.json().then((data) => {
+        const course = data.find((course) => course.id === params.id)
+        if (course) {
+          setEnrolled(true)
+        } else {
+          setEnrolled(false)
+        }
+      })
+    })
+  }, [params.id])
 
   const getCourseDetails = useCallback(async () => {
     setisLoading(true)
@@ -36,6 +66,7 @@ const CourseOverview = () => {
   }, [params.id])
 
   useEffect(() => {
+    fetchCourses()
     getCourseDetails()
     return () => {
       setCourseName('')
@@ -44,7 +75,7 @@ const CourseOverview = () => {
       setCourseId('')
       setisLoading(false)
     }
-  }, [getCourseDetails])
+  }, [getCourseDetails, fetchCourses])
 
   return (
     <>
@@ -55,15 +86,28 @@ const CourseOverview = () => {
         </div>
         {!isLoading ? (
           <div className=" mt-20">
-            <div className="w-4/5 mx-10 h-40 bg-veryLightBlue rounded-3xl shadow-xl p-10 flex flex-row">
+            <div className="w-4/5 mx-10 h-40 bg-veryLightBlue shadow-xl rounded-3xl pr-8 flex flex-row items-center justify-between">
               <img
-                className="rounded-3xl mr-4"
+                className="rounded-l-3xl h-full"
                 src={`${imgUrl}`}
                 alt="..."
               ></img>
-              <div className="font-regular text-2xl px-10 pt-5">
-                {courseName}
-              </div>
+              <div className="font-regular text-2xl">{courseName}</div>
+              {!enrolled ? (
+                <button
+                  className="bg-blue-500 shadow-lg text-white font-bold py-4 px-8 justify-self-start rounded-lg"
+                  onClick={enrollCourse}
+                >
+                  Enroll
+                </button>
+              ) : (
+                <button
+                  className="bg-blue-300 shadow-lg text-white font-bold py-4 px-8 justify-self-start rounded-lg"
+                  disabled
+                >
+                  Already Enrolled
+                </button>
+              )}
             </div>
             <div className=" mx-8 text-lg font-light text-gray-600 py-10 flex justify-center p-4">
               {description}
