@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { useParams } from 'react-router-dom'
 import Loader from '../../components/Loader/Loader'
 const CourseAssignment = () => {
@@ -33,7 +33,23 @@ const CourseAssignment = () => {
     }
   }, [getCourseDetails])
 
-  const checkAnswers = (score) => {
+  const checkAnswers = async (score) => {
+    await fetch(
+      `${process.env.REACT_APP_API}/course/update/score/${params.id}`,
+      {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+        },
+        body: JSON.stringify({
+          score: {
+            assignment: score,
+          },
+        }),
+      }
+    )
+
     if (!alert(`Your Score is ${score}`)) {
       window.location.reload()
     }
@@ -49,13 +65,16 @@ const CourseAssignment = () => {
         <div className="w-full py-5 px-16">
           {assignment &&
             assignment.map((no, key) => (
-              <>
+              <React.Fragment key={no._id}>
                 <div className="text-gray-900 text-xl py-5 font-nunito">
                   {key + 1}) {no.question}
                 </div>
                 <div className="mt-2 flex flex-col">
-                  {no.options.map((questionOpt) => (
-                    <label className="inline-flex items-center">
+                  {no.options.map((questionOpt, idx) => (
+                    <label
+                      className="inline-flex items-center"
+                      key={`${questionOpt}-${idx}`}
+                    >
                       <input
                         type="radio"
                         className="form-radio"
@@ -73,7 +92,7 @@ const CourseAssignment = () => {
                     </label>
                   ))}
                 </div>
-              </>
+              </React.Fragment>
             ))}
         </div>
         <button
