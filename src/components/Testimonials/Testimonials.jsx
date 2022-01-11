@@ -19,7 +19,7 @@ const Testimonials = () => {
             className="p-2"
             style={{
               width: '21rem',
-              border: '2px solid gray',
+              padding: '1rem',
             }}
             key={testimonal}
           >

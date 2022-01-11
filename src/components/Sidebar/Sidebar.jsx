@@ -41,12 +41,21 @@ const Sidebar = ({ courseId }) => {
           </div>
         ) : (
           <div className="flex py-2" key={name}>
-            <Link
-              to={`/course/${courseId}/${name}`}
-              className="px-10 py-4 w-full text-gray-600 text-xl font-regular hover:text-blue-400 rounded-3xl hover:bg-blue-100 transition-all duration-500 ease-in-out"
-            >
-              <div>{name}</div>
-            </Link>
+            {name === 'About' ? (
+              <Link
+                to={`/course/${courseId}`}
+                className="px-10 py-4 w-full text-gray-600 text-xl font-regular hover:text-blue-400 rounded-3xl hover:bg-blue-100 transition-all duration-500 ease-in-out"
+              >
+                <div>{name}</div>
+              </Link>
+            ) : (
+              <Link
+                to={`/course/${courseId}/${name}`}
+                className="px-10 py-4 w-full text-gray-600 text-xl font-regular hover:text-blue-400 rounded-3xl hover:bg-blue-100 transition-all duration-500 ease-in-out"
+              >
+                <div>{name}</div>
+              </Link>
+            )}
           </div>
         )
       )}
