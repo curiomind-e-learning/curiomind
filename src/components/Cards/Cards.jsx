@@ -3,7 +3,7 @@ import CardContent from './Cards.json'
 import Title from '../Title/Title'
 const Cards = () => {
   return (
-    <section>
+    <section id="Services">
       <Title
         title="Why choose Curiomind?"
         desc1="We offer a wide range of opportunity for you."
