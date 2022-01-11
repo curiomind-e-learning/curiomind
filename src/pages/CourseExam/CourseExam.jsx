@@ -4,7 +4,7 @@ import Loader from '../../components/Loader/Loader'
 import Navbar from '../../components/Navbar/Navbar'
 import Sidebar from '../../components/Sidebar/Sidebar'
 
-const CourseAssignment = () => {
+const CourseExam = () => {
   const [assignment, setAssignment] = useState([])
   const [isLoading, setisLoading] = useState(false)
   let params = useParams()
@@ -12,7 +12,7 @@ const CourseAssignment = () => {
 
   const getCourseDetails = useCallback(async () => {
     const response = await fetch(
-      `${process.env.REACT_APP_API}/assignment/${params.id}`,
+      `${process.env.REACT_APP_API}/assignment/e/${params.id}`,
       {
         method: 'GET',
         headers: {
@@ -48,7 +48,7 @@ const CourseAssignment = () => {
         },
         body: JSON.stringify({
           score: {
-            assignment: score,
+            exam: score,
           },
         }),
       }
@@ -112,4 +112,4 @@ const CourseAssignment = () => {
   )
 }
 
-export default CourseAssignment
+export default CourseExam
