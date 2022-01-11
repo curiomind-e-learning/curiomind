@@ -45,9 +45,9 @@ const Grades = () => {
         <div className="flex flex-col col-span-4 pt-24 border-l-2 pl-5">
           <p className="text-5xl font-nunito font-extralight px-10">Grades</p>
           {grade && (
-            <div className="w-full py-5 px-16">
-              {JSON.stringify(grade.achievement)}
-            </div>
+            <pre className="w-full py-5 px-16">
+              {JSON.stringify(grade.achievement, null, 4)}
+            </pre>
           )}
         </div>
       </div>
