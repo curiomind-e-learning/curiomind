@@ -9,7 +9,7 @@ const CourseBanner = ({ toShow, course }) => {
       case 'Ongoing':
         return course
       case 'Completed':
-        return course.slice(0, 0)
+        return course.filter((item) => item.isCompleted === true)
       default:
         return []
     }
