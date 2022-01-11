@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from 'react'
 import storage from '../../firebase/firebase.config.js'
 import Loader from '../../components/Loader/Loader'

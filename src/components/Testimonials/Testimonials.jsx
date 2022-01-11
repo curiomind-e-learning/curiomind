@@ -1,6 +1,6 @@
 import Carousel from 'react-elastic-carousel'
+import Card from '../Card/Card'
 import Title from '../Title/Title'
-import styles from './asset/Testimonials.module.css'
 import testimonials from './Testimonials.json'
 
 const breakPoints = [
@@ -14,34 +14,16 @@ const Testimonials = () => {
       <Title title="Testimonials" desc1="What our users say..." desc2="" />
 
       <Carousel breakPoints={breakPoints}>
-        {testimonials.map((item, index) => (
+        {testimonials.map(({ imgUrl, testimonal }) => (
           <div
+            className="p-2"
             style={{
-              backgroundImage: `url(${item.imgUrl})`,
-              backgroundSize: 'contain',
+              width: '21rem',
+              border: '2px solid gray',
             }}
-            className={styles.TestimonialsBox}
-            key={`${item}${index}`}
+            key={testimonal}
           >
-            <div className="absolute bottom-0 right-0 ">
-              <svg
-                width="361"
-                height="338"
-                viewBox="0 0 250 265"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M357.838 5.75146C357.838 5.75146 119.005 180.327 3 94.461V214.723V334.986H357.838V5.75146Z"
-                  fill="#83C6CF"
-                  stroke="#83C6CF"
-                  strokeOpacity="0.8"
-                  strokeWidth="5.6865"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </div>
-            <div className={styles.TestimonialsText}>{item.testimonal}</div>
+            <Card imgUrl={imgUrl} text={testimonal} color="#83C6CF" />
           </div>
         ))}
       </Carousel>
