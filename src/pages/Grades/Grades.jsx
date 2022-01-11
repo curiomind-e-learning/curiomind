@@ -9,7 +9,7 @@ const Grades = () => {
   const [grade, setGrade] = useState({})
   const [isLoading, setisLoading] = useState(false)
   let params = useParams()
-
+  console.log(params.id)
   const fetchGrades = useCallback(async () => {
     const response = await fetch(
       `${process.env.REACT_APP_API}/course/score/${params.id}`,
@@ -23,7 +23,6 @@ const Grades = () => {
     )
     const data = await response.json()
     setGrade(data)
-    console.log(data)
     setisLoading(false)
     //eslint-disable-next-line
   }, [params])
@@ -32,7 +31,7 @@ const Grades = () => {
     setisLoading(true)
     fetchGrades()
     return () => {
-      setGrade([])
+      setGrade({})
       setisLoading(false)
     }
   }, [fetchGrades])
@@ -47,7 +46,7 @@ const Grades = () => {
           <p className="text-5xl font-nunito font-extralight px-10">Grades</p>
           {grade && (
             <div className="w-full py-5 px-16">
-              {JSON.stringify(grade.data)}
+              {JSON.stringify(grade.achievement)}
             </div>
           )}
         </div>
