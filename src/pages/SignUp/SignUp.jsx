@@ -47,7 +47,7 @@ const SignUp = () => {
             </div>
             <div className="flex flex-col justify-center items-center h-full">
               <h1 className="text-center text-white text-3xl font-bold">
-                Already a customer?
+                Already a User?
               </h1>
               <p className="text-center text-white text-xl"> Sign in here</p>
               <Link
