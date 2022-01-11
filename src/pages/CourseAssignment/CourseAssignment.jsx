@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { useParams } from 'react-router-dom'
 import Loader from '../../components/Loader/Loader'
+import Navbar from '../../components/Navbar/Navbar'
+import Sidebar from '../../components/Sidebar/Sidebar'
+
 const CourseAssignment = () => {
   const [assignment, setAssignment] = useState([])
   const [isLoading, setisLoading] = useState(false)
@@ -58,49 +61,51 @@ const CourseAssignment = () => {
   return (
     <>
       <Loader active={isLoading} />
-      <div>
-        <div className="flex justify-center text-center pt-5 text-3xl underline font-nunito">
-          ASSIGNMENT
+      <Navbar />
+      <div className="grid grid-flow-col grid-cols-5">
+        <Sidebar courseId={params.id} />
+        <div className="flex flex-col col-span-4 pt-24 border-l-2 pl-5">
+          <p className="text-5xl font-nunito font-extralight">Assignment</p>
+          <div className="w-full py-5 px-16">
+            {assignment &&
+              assignment.map((no, key) => (
+                <React.Fragment key={no._id}>
+                  <div className="text-gray-900 text-xl py-5 font-nunito">
+                    {key + 1}) {no.question}
+                  </div>
+                  <div className="mt-2 flex flex-col">
+                    {no.options.map((questionOpt, idx) => (
+                      <label
+                        className="inline-flex items-center"
+                        key={`${questionOpt}-${idx}`}
+                      >
+                        <input
+                          type="radio"
+                          className="form-radio"
+                          name={no.question}
+                          value={questionOpt}
+                          onChange={(e) => {
+                            no.answer === questionOpt
+                              ? score++
+                              : console.log(score)
+                          }}
+                        />
+                        <span className="text-gray-500 ml-2 font-nunito">
+                          {questionOpt}
+                        </span>
+                      </label>
+                    ))}
+                  </div>
+                </React.Fragment>
+              ))}
+          </div>
+          <button
+            className="flex justify-center text-center py-2 m-10 rounded-xl hover:bg-green-900  text-xl w-36 h-10 bg-green-700 text-white font-nunito"
+            onClick={(e) => checkAnswers(score)}
+          >
+            SUBMIT
+          </button>
         </div>
-        <div className="w-full py-5 px-16">
-          {assignment &&
-            assignment.map((no, key) => (
-              <React.Fragment key={no._id}>
-                <div className="text-gray-900 text-xl py-5 font-nunito">
-                  {key + 1}) {no.question}
-                </div>
-                <div className="mt-2 flex flex-col">
-                  {no.options.map((questionOpt, idx) => (
-                    <label
-                      className="inline-flex items-center"
-                      key={`${questionOpt}-${idx}`}
-                    >
-                      <input
-                        type="radio"
-                        className="form-radio"
-                        name={no.question}
-                        value={questionOpt}
-                        onChange={(e) => {
-                          no.answer === questionOpt
-                            ? score++
-                            : console.log(score)
-                        }}
-                      />
-                      <span className="text-gray-500 ml-2 font-nunito">
-                        {questionOpt}
-                      </span>
-                    </label>
-                  ))}
-                </div>
-              </React.Fragment>
-            ))}
-        </div>
-        <button
-          className="flex justify-center text-center py-2 m-10 rounded-xl hover:bg-green-900  text-xl w-36 h-10 bg-green-700 text-white font-nunito"
-          onClick={(e) => checkAnswers(score)}
-        >
-          SUBMIT
-        </button>
       </div>
     </>
   )
