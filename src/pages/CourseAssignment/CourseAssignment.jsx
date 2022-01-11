@@ -54,66 +54,24 @@ const CourseAssignment = () => {
                   {key + 1}) {no.question}
                 </div>
                 <div className="mt-2 flex flex-col">
-                  <label className="inline-flex items-center">
-                    <input
-                      type="radio"
-                      className="form-radio"
-                      value={no.options[0]}
-                      onChange={(e) => {
-                        no.answer === no.options[0]
-                          ? score++
-                          : console.log(score)
-                      }}
-                    />
-                    <span className="text-gray-500 ml-2 font-nunito">
-                      {no.options[0]}
-                    </span>
-                  </label>
-                  <label className="inline-flex items-center">
-                    <input
-                      type="radio"
-                      className="form-radio"
-                      value={no.options[1]}
-                      onChange={(e) => {
-                        no.answer === no.options[1]
-                          ? score++
-                          : console.log(score)
-                      }}
-                    />
-                    <span className="text-gray-500 ml-2 font-nunito">
-                      {no.options[1]}
-                    </span>
-                  </label>
-                  <label className="inline-flex items-center">
-                    <input
-                      type="radio"
-                      className="form-radio"
-                      value={no.options[2]}
-                      onChange={(e) => {
-                        no.answer === no.options[2]
-                          ? score++
-                          : console.log(score)
-                      }}
-                    />
-                    <span className="text-gray-500 ml-2 font-nunito">
-                      {no.options[2]}
-                    </span>
-                  </label>
-                  <label className="inline-flex items-center">
-                    <input
-                      type="radio"
-                      className="form-radio"
-                      value={no.options[3]}
-                      onChange={(e) => {
-                        no.answer === no.options[3]
-                          ? score++
-                          : console.log(score)
-                      }}
-                    />
-                    <span className="text-gray-500 ml-2 font-nunito">
-                      {no.options[3]}
-                    </span>
-                  </label>
+                  {no.options.map((questionOpt) => (
+                    <label className="inline-flex items-center">
+                      <input
+                        type="radio"
+                        className="form-radio"
+                        name={no.question}
+                        value={questionOpt}
+                        onChange={(e) => {
+                          no.answer === questionOpt
+                            ? score++
+                            : console.log(score)
+                        }}
+                      />
+                      <span className="text-gray-500 ml-2 font-nunito">
+                        {questionOpt}
+                      </span>
+                    </label>
+                  ))}
                 </div>
               </>
             ))}
