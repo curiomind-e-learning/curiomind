@@ -8,7 +8,7 @@ import Navbar from '../Navbar/Navbar.jsx'
 import Footer from '../Footer/Footer.jsx'
 
 const CourseUploadForm = () => {
-  const [isSubmit, setIsSubmit] = useState(false)
+  // const [isSubmit, setIsSubmit] = useState(false)
   // const [image, setImage] = useState(null)
   const [imgUrl, setImgUrl] = useState('')
   const [video1Url, setVideo1Url] = useState('')
@@ -77,7 +77,7 @@ const CourseUploadForm = () => {
       }),
     }).then(() => {
       setLoading(false)
-      setIsSubmit(true)
+      // setIsSubmit(true)
       alert('Course Uploaded Successfully')
     })
   }
@@ -119,7 +119,7 @@ const CourseUploadForm = () => {
           </div>
           <div className="mb-4">
             <label className="block text-gray-800  text-sm font-light mb-2">
-              Course Descriptiom
+              Course Description <span className="text-red-500 text-xl">*</span>
             </label>
             <input
               className="shadow appearance-none border text-xs rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
@@ -132,7 +132,7 @@ const CourseUploadForm = () => {
           </div>
           <div className="mb-4">
             <label className="block text-gray-800 text-sm font-light mb-2">
-              Image Url
+              Image Url <span className="text-red-500 text-xl">*</span>
             </label>
             <input
               className="shadow appearance-none text-xs border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
@@ -145,6 +145,9 @@ const CourseUploadForm = () => {
               }}
             />
           </div>
+          <label className="block text-gray-900 text-sm font-light mb-2">
+            WEEK VIDEOS <span className="text-red-500 text-xl">*</span>
+          </label>
           <div className="mb-4">
             <label className="block text-gray-800 text-sm font-light mb-2">
               Week 1 Video
@@ -234,16 +237,16 @@ const CourseUploadForm = () => {
             >
               Submit
             </button>
-            {isSubmit ? (
-              <Link
-                className="bg-green-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                to="/question-upload"
-              >
-                Add Questions
-              </Link>
-            ) : (
+            {/* {isSubmit ? ( */}
+            <Link
+              className="bg-green-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              to="/question-upload"
+            >
+              Add Questions
+            </Link>
+            {/* ) : (
               <></>
-            )}
+            )} */}
           </div>
         </form>
       </div>
