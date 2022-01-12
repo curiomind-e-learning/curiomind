@@ -85,11 +85,9 @@ const CourseExam = () => {
                           className="form-radio"
                           name={no.question}
                           value={questionOpt}
-                          onChange={(e) => {
-                            no.answer === questionOpt
-                              ? score++
-                              : console.log(score)
-                          }}
+                          onChange={() =>
+                            no.answer === questionOpt ? score++ : null
+                          }
                         />
                         <span className="text-gray-500 ml-2 font-nunito">
                           {questionOpt}
@@ -102,7 +100,7 @@ const CourseExam = () => {
           </div>
           <button
             className="flex justify-center text-center py-2 m-10 rounded-xl hover:bg-green-900  text-xl w-36 h-10 bg-green-700 text-white font-nunito"
-            onClick={(e) => checkAnswers(score)}
+            onClick={() => checkAnswers(score)}
           >
             SUBMIT
           </button>

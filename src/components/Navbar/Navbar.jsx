@@ -91,7 +91,7 @@ const Navbar = () => {
                     {({ active }) => (
                       <div>
                         <Link
-                          onClick={(e) => {
+                          onClick={() => {
                             sessionStorage.removeItem('token')
                             navigate('/')
                           }}

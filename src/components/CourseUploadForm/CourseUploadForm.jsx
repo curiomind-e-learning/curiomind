@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useState } from 'react'
 import storage from '../../firebase/firebase.config.js'
 import Loader from '../../components/Loader/Loader'
@@ -10,7 +9,7 @@ import Footer from '../Footer/Footer.jsx'
 
 const CourseUploadForm = () => {
   const [isSubmit, setIsSubmit] = useState(false)
-  const [image, setImage] = useState(null)
+  // const [image, setImage] = useState(null)
   const [imgUrl, setImgUrl] = useState('')
   const [video1Url, setVideo1Url] = useState('')
   const [video2Url, setVideo2Url] = useState('')
@@ -23,10 +22,9 @@ const CourseUploadForm = () => {
   const [loading, setLoading] = useState(false)
 
   const uploadFileAndSubmit = async (file, setFile) => {
-    if (file == null) {
+    if (file === null) {
       return
     }
-    console.log(file)
     setLoading(true)
     const storageRef = ref(storage, `files/${file.name}`)
     const uploadTask = uploadBytesResumable(storageRef, file)
@@ -37,16 +35,16 @@ const CourseUploadForm = () => {
         // Get task progress
         // const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
         // console.log('Upload is ' + progress + '% done')
-        switch (snapshot.state) {
-          case 'paused':
-            console.log('Upload is paused')
-            break
-          case 'running':
-            console.log('Upload is running')
-            break
-          default:
-            break
-        }
+        // switch (snapshot.state) {
+        //   case 'paused':
+        //     console.log('Upload is paused')
+        //     break
+        //   case 'running':
+        //     console.log('Upload is running')
+        //     break
+        //   default:
+        //     break
+        // }
       },
       (error) => {
         setLoading(false)
@@ -141,9 +139,6 @@ const CourseUploadForm = () => {
               placeholder="Enter Image Url"
               accept="image/*"
               onChange={(e) => {
-                setImage(e.target.files[0])
-              }}
-              onBlur={(e) => {
                 uploadFileAndSubmit(e.target.files[0], setImgUrl)
               }}
             />

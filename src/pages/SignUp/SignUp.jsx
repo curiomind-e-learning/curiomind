@@ -27,7 +27,7 @@ const SignUp = () => {
         password,
         role,
       }),
-    }).then((res) => {
+    }).then(() => {
       navigate('/signin')
     })
   }
@@ -42,7 +42,7 @@ const SignUp = () => {
               <GrClose
                 size={20}
                 className="cursor-pointer"
-                onClick={(e) => navigate('/')}
+                onClick={() => navigate('/')}
               />
             </div>
             <div className="flex flex-col justify-center items-center h-full">
@@ -134,9 +134,7 @@ const SignUp = () => {
                   <button
                     className="bg-green-500 hover:bg-green-700 text-white rounded-full font-bold py-2 px-5 focus:outline-none focus:shadow-outline"
                     type="submit"
-                    onClick={(e) => {
-                      handleSubmit(e)
-                    }}
+                    onClick={handleSubmit}
                   >
                     Register
                   </button>

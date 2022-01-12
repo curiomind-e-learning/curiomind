@@ -31,10 +31,10 @@ const Profile = () => {
             navigate('/signin')
             break
           default:
-            console.log('error')
+          // console.log('error')
         }
       } catch (error) {
-        console.log(error)
+        // console.log(error)
       }
     }
     fetchData()
@@ -89,8 +89,7 @@ const Profile = () => {
                       email: user.email,
                       phone: user.phone,
                     }),
-                  }).then((res) => {
-                    console.log(res)
+                  }).then(() => {
                     setEdit(!edit)
                   })
                 }

@@ -86,7 +86,7 @@ const CourseDetails = () => {
             <button
               className="bg-lightBlue flex items-center justify-evenly text-gradientBlue1
              font-semibold py-2 px-4 rounded-2xl drop-shadow-sm"
-              onClick={(e) => {
+              onClick={() => {
                 if (edit) {
                   fetch(`${process.env.REACT_APP_API}/course/${params.id}`, {
                     method: 'PUT',
@@ -102,8 +102,7 @@ const CourseDetails = () => {
                       category,
                       videos: videoUrls,
                     }),
-                  }).then((res) => {
-                    console.log(res)
+                  }).then(() => {
                     setEdit(!edit)
                   })
                 }
@@ -221,16 +220,11 @@ const CourseDetails = () => {
                   setCourse({
                     ...course,
                     videos: setVideoUrls(
-                      videoUrls.map((url, index) => {
-                        if (index === idx) {
-                          return e.target.value
-                        } else {
-                          return url
-                        }
-                      })
+                      videoUrls.map((url, index) =>
+                        index === idx ? e.target.value : url
+                      )
                     ),
                   })
-                  console.log(videoUrls)
                 }}
               />
             </div>
