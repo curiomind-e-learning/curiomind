@@ -124,6 +124,7 @@ const CourseUploadForm = () => {
             <input
               className="shadow appearance-none border text-xs rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
               type="text"
+              required
               placeholder="Enter Course Description"
               value={courseDescription}
               onChange={(e) => setCourseDescription(e.target.value)}
@@ -136,6 +137,7 @@ const CourseUploadForm = () => {
             <input
               className="shadow appearance-none text-xs border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
               type="file"
+              required
               placeholder="Enter Image Url"
               accept="image/*"
               onChange={(e) => {
@@ -150,6 +152,7 @@ const CourseUploadForm = () => {
             <input
               className="shadow appearance-none text-xs border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
               type="file"
+              required
               placeholder="Enter Image Url"
               accept="video/*"
               onChange={(e) => {
@@ -165,6 +168,7 @@ const CourseUploadForm = () => {
             <input
               className="shadow appearance-none text-xs border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
               type="file"
+              required
               placeholder="Enter Image Url"
               accept="video/*"
               onChange={(e) => {
@@ -182,6 +186,7 @@ const CourseUploadForm = () => {
               type="file"
               placeholder="Enter Image Url"
               accept="video/*"
+              required
               onChange={(e) => {
                 e.target.files[0] &&
                   uploadFileAndSubmit(e.target.files[0], setVideo3Url)

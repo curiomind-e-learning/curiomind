@@ -16,6 +16,7 @@ import CourseAssignment from './pages/CourseAssignment/CourseAssignment'
 import CourseExam from './pages/CourseExam/CourseExam'
 import Grades from './pages/Grades/Grades'
 import QuestionUpload from './components/QuestionUpload/QuestionUpload'
+import QuestionUploadForm from './components/QuestionUploadForm/QuestionUploadForm'
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/course-upload" element={<CourseUploadForm />} />
           <Route path="/question-upload" element={<QuestionUpload />} />
+          <Route path="/question-upload/:id" element={<QuestionUploadForm />} />
           <Route path="/allcourses" element={<AllCourses />} />
           <Route path="/edit/course/:id" element={<CourseDetails />} />
         </Routes>
