@@ -21,7 +21,7 @@ const Achievements = () => {
         }
       )
       const data = await result.json()
-      console.log(data)
+
       if (result.status === 200) {
         setAchievements(data)
       }

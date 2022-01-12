@@ -85,11 +85,9 @@ const CourseExam = () => {
                           className="form-radio"
                           name={no.question}
                           value={questionOpt}
-                          onChange={() => {
-                            no.answer === questionOpt
-                              ? score++
-                              : console.log(score)
-                          }}
+                          onChange={() =>
+                            no.answer === questionOpt ? score++ : null
+                          }
                         />
                         <span className="text-gray-500 ml-2 font-nunito">
                           {questionOpt}

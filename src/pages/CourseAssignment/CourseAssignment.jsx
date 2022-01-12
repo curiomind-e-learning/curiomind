@@ -23,7 +23,6 @@ const CourseAssignment = () => {
     )
     const data = await response.json()
     setAssignment(data)
-    console.log(assignment)
     setisLoading(false)
     //eslint-disable-next-line
   }, [params])
@@ -87,11 +86,9 @@ const CourseAssignment = () => {
                           className="form-radio"
                           name={no.question}
                           value={questionOpt}
-                          onChange={() => {
-                            no.answer === questionOpt
-                              ? score++
-                              : console.log(score)
-                          }}
+                          onChange={() =>
+                            no.answer === questionOpt ? score++ : null
+                          }
                         />
                         <span className="text-gray-500 ml-2 font-nunito">
                           {questionOpt}
