@@ -9,7 +9,6 @@ const Grades = () => {
   const [grade, setGrade] = useState({})
   const [isLoading, setisLoading] = useState(false)
   let params = useParams()
-  console.log(params.id)
   const fetchGrades = useCallback(async () => {
     const response = await fetch(
       `${process.env.REACT_APP_API}/course/score/${params.id}`,

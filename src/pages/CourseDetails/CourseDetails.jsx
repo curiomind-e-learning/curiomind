@@ -102,8 +102,7 @@ const CourseDetails = () => {
                       category,
                       videos: videoUrls,
                     }),
-                  }).then((res) => {
-                    console.log(res)
+                  }).then(() => {
                     setEdit(!edit)
                   })
                 }

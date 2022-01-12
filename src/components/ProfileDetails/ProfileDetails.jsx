@@ -31,10 +31,10 @@ const Profile = () => {
             navigate('/signin')
             break
           default:
-            console.log('error')
+          // console.log('error')
         }
       } catch (error) {
-        console.log(error)
+        // console.log(error)
       }
     }
     fetchData()
@@ -74,7 +74,7 @@ const Profile = () => {
             <button
               className="bg-lightBlue flex items-center justify-evenly text-gradientBlue1
            font-semibold py-2 px-4 rounded-2xl drop-shadow-sm"
-              onClick={() => {
+              onClick={(e) => {
                 if (edit) {
                   fetch(`${process.env.REACT_APP_API}/user/${user._id}`, {
                     method: 'PUT',
@@ -89,8 +89,7 @@ const Profile = () => {
                       email: user.email,
                       phone: user.phone,
                     }),
-                  }).then((res) => {
-                    console.log(res)
+                  }).then(() => {
                     setEdit(!edit)
                   })
                 }
