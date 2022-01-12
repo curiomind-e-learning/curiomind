@@ -2,12 +2,14 @@
 import { useState } from 'react'
 import storage from '../../firebase/firebase.config.js'
 import Loader from '../../components/Loader/Loader'
+import { Link } from 'react-router-dom'
 
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 import Navbar from '../Navbar/Navbar.jsx'
 import Footer from '../Footer/Footer.jsx'
 
 const CourseUploadForm = () => {
+  const [isSubmit, setIsSubmit] = useState(false)
   const [image, setImage] = useState(null)
   const [imgUrl, setImgUrl] = useState('')
   const [video1Url, setVideo1Url] = useState('')
@@ -77,6 +79,7 @@ const CourseUploadForm = () => {
       }),
     }).then(() => {
       setLoading(false)
+      setIsSubmit(true)
       alert('Course Uploaded Successfully')
     })
   }
@@ -123,7 +126,6 @@ const CourseUploadForm = () => {
             <input
               className="shadow appearance-none border text-xs rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
               type="text"
-              required
               placeholder="Enter Course Description"
               value={courseDescription}
               onChange={(e) => setCourseDescription(e.target.value)}
@@ -136,7 +138,6 @@ const CourseUploadForm = () => {
             <input
               className="shadow appearance-none text-xs border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
               type="file"
-              required
               placeholder="Enter Image Url"
               accept="image/*"
               onChange={(e) => {
@@ -154,7 +155,6 @@ const CourseUploadForm = () => {
             <input
               className="shadow appearance-none text-xs border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
               type="file"
-              required
               placeholder="Enter Image Url"
               accept="video/*"
               onChange={(e) => {
@@ -170,7 +170,6 @@ const CourseUploadForm = () => {
             <input
               className="shadow appearance-none text-xs border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
               type="file"
-              required
               placeholder="Enter Image Url"
               accept="video/*"
               onChange={(e) => {
@@ -186,7 +185,6 @@ const CourseUploadForm = () => {
             <input
               className="shadow appearance-none text-xs border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
               type="file"
-              required
               placeholder="Enter Image Url"
               accept="video/*"
               onChange={(e) => {
@@ -228,7 +226,7 @@ const CourseUploadForm = () => {
             />
           </div>
 
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-around">
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
@@ -236,6 +234,16 @@ const CourseUploadForm = () => {
             >
               Submit
             </button>
+            {isSubmit ? (
+              <Link
+                className="bg-green-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                to="/question-upload"
+              >
+                Add Questions
+              </Link>
+            ) : (
+              <></>
+            )}
           </div>
         </form>
       </div>
