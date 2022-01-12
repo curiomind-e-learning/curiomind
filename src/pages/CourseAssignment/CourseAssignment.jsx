@@ -87,7 +87,7 @@ const CourseAssignment = () => {
                           className="form-radio"
                           name={no.question}
                           value={questionOpt}
-                          onChange={(e) => {
+                          onChange={() => {
                             no.answer === questionOpt
                               ? score++
                               : console.log(score)
@@ -104,7 +104,7 @@ const CourseAssignment = () => {
           </div>
           <button
             className="flex justify-center text-center py-2 m-10 rounded-xl hover:bg-green-900  text-xl w-36 h-10 bg-green-700 text-white font-nunito"
-            onClick={(e) => checkAnswers(score)}
+            onClick={() => checkAnswers(score)}
           >
             SUBMIT
           </button>

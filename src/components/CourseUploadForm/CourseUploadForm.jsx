@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useState } from 'react'
 import storage from '../../firebase/firebase.config.js'
 import Loader from '../../components/Loader/Loader'
@@ -8,7 +7,6 @@ import Navbar from '../Navbar/Navbar.jsx'
 import Footer from '../Footer/Footer.jsx'
 
 const CourseUploadForm = () => {
-  const [image, setImage] = useState(null)
   const [imgUrl, setImgUrl] = useState('')
   const [video1Url, setVideo1Url] = useState('')
   const [video2Url, setVideo2Url] = useState('')
@@ -21,7 +19,7 @@ const CourseUploadForm = () => {
   const [loading, setLoading] = useState(false)
 
   const uploadFileAndSubmit = async (file, setFile) => {
-    if (file == null) {
+    if (file === null) {
       return
     }
     console.log(file)
@@ -140,9 +138,6 @@ const CourseUploadForm = () => {
               placeholder="Enter Image Url"
               accept="image/*"
               onChange={(e) => {
-                setImage(e.target.files[0])
-              }}
-              onBlur={(e) => {
                 uploadFileAndSubmit(e.target.files[0], setImgUrl)
               }}
             />

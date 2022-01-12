@@ -20,9 +20,7 @@ const Sidebar = ({ courseId }) => {
           <div key={name}>
             <div className="px-10 py-4 w-full text-gray-600 text-xl rounded-3xl font-regular hover:text-blue-400 hover:bg-blue-100 transition-all duration-500 ease-in-out">
               <div>
-                <button onClick={(e) => setIsVisible(!isVisible)}>
-                  {name}
-                </button>
+                <button onClick={() => setIsVisible(!isVisible)}>{name}</button>
               </div>
             </div>
             {week.map((no) => (
