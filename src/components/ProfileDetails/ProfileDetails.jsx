@@ -2,6 +2,7 @@ import User from './User.svg'
 import EditProfileIcon from './EditProfileIcon.svg'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Achievements from '../../components/Achievements/Achievements.jsx'
 
 const Profile = () => {
   const [user, setUser] = useState({})
@@ -187,6 +188,7 @@ const Profile = () => {
           </div>
         </div>
       </div>
+      {user.role === 'student' ? <Achievements /> : <></>}
     </>
   )
 }
