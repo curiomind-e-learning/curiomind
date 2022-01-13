@@ -86,7 +86,7 @@ const CourseUploadForm = () => {
       <Loader active={loading} />
       <Navbar />
       <div className="w-2/5 m-auto py-28">
-        <p className="flex justify-center text-2xl p-2 border-b-4 border-primary mb-5 font-nunito">
+        <p className="flex justify-center text-2xl p-2 border-b-4 border-cornflowerBlue mb-5 font-nunito">
           UPLOAD COURSE
         </p>
         <form className="bg-white shadow-xl rounded px-8 pt-6 pb-8 mb-4 border-2 border-gray-200">
@@ -230,7 +230,7 @@ const CourseUploadForm = () => {
 
           <div className="flex items-center justify-around">
             <button
-              className="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-blue-800 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
               onClick={handleSubmit}
             >

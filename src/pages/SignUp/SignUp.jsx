@@ -52,7 +52,7 @@ const SignUp = () => {
               <p className="text-center text-white text-xl"> Sign in here</p>
               <Link
                 to="/signin"
-                className="ring-2 ring-whitecolor text-white rounded-full
+                className="ring-2 ring-white text-white rounded-full
               mt-5 py-2 px-4 bg-transparent"
               >
                 {' '}

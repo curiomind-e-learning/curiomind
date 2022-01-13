@@ -8,6 +8,8 @@ module.exports = {
         cornflowerBlue: '#7996d0',
         lightCyan: '#daf0ee',
         middleBlueGreen: '#94d1be',
+        gradientBlue: '#24BDDE',
+        gradientGreen: '#35EF48',
       },
       fontFamily: {
         sans: ['sans-serif', 'Pacifico'],

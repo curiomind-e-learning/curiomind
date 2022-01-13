@@ -86,7 +86,10 @@ const CourseOverview = () => {
         </div>
         {!isLoading ? (
           <div className=" my-20">
-            <div className="w-4/5 mx-10 h-40 bg-lightCyan shadow-xl rounded-3xl pr-8 flex flex-row items-center justify-between">
+            <div
+              className="mx-10 h-40 bg-lightCyan shadow-xl rounded-3xl pr-8 flex flex-row items-center justify-between"
+              style={{ width: '70vw' }}
+            >
               <img
                 className="rounded-l-3xl h-full"
                 src={`${imgUrl}`}

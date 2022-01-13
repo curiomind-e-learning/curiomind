@@ -111,7 +111,7 @@ const Navbar = () => {
             </Menu>
           ) : (
             <Link to="/signin">
-              <div className="rounded-full py-3 px-6 bg-purple-400 text-white shadow-sm hover:shadow-md">
+              <div className="rounded-full py-3 px-6 bg-cornflowerBlue text-white shadow-sm hover:shadow-md">
                 Login
               </div>
             </Link>

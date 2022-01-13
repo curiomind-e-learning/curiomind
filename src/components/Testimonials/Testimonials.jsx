@@ -23,7 +23,12 @@ const Testimonials = () => {
             }}
             key={testimonal}
           >
-            <Card imgUrl={imgUrl} text={testimonal} color="#83C6CF" />
+            <Card
+              imgUrl={imgUrl}
+              text={testimonal}
+              color="#94D1BE"
+              imgRadius="rounded-full"
+            />
           </div>
         ))}
       </Carousel>
