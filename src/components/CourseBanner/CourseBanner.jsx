@@ -24,7 +24,7 @@ const CourseBanner = ({ toShow, course }) => {
             to={`/course/${card.course._id}`}
             className="w-full"
           >
-            <Card title={card.course.name} courseId={card._id} />
+            <Card title={card.course.name} courseId={card.course._id} />
           </Link>
         ))
       ) : (
