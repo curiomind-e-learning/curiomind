@@ -51,7 +51,7 @@ const SignUp = () => {
               </p>
               <Link
                 to="/signup"
-                className="ring-2 ring-whitecolor text-white rounded-full
+                className="ring-2 ring-white text-white rounded-full
               mt-5 py-2 px-4 bg-transparent"
               >
                 {' '}

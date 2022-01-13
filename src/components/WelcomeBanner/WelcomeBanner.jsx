@@ -26,10 +26,7 @@ const WelcomeBanner = () => {
   }, [])
   return (
     <>
-      <div
-        className="flex flex-row justify-around items-center h-96 "
-        style={{ backgroundColor: '#C4D1EA' }}
-      >
+      <div className="flex flex-row justify-around items-center h-96 bg-middleBlueGreen text-black">
         <div className="flex flex-row items-center justify-center">
           <img
             width={'70px'}
@@ -56,13 +53,15 @@ const WelcomeBanner = () => {
           </div>
         ) : (
           <div className="flex flex-col w-1/3 rounded-2xl items-center bg-white">
-            <p className="w-full text-2xl p-6 border-b-4 border-blue-500">
+            <p className="w-full text-2xl p-6 border-b-4 border-cornflowerBlue text-blackOlive">
               Set your learning paths
             </p>
             <div className="self-start flex items-center p-6">
-              <IoMdCompass className="text-blue-500 text-3xl font-nunito" />
+              <IoMdCompass className="text-cornflowerBlue text-3xl font-nunito" />
               <Link to="/allcourses">
-                <p className="p-2 font-semibold">Explore Courses</p>
+                <p className="p-2 font-semibold text-cornflowerBlue">
+                  Explore Courses
+                </p>
               </Link>
             </div>
           </div>

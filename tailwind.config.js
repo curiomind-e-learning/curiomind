@@ -3,14 +3,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        secondary: '#7F7F7F',
-        whitecolor: '#F7F7F7',
-        greycolor: '#C4C4C4',
+        white: '#ffffff',
+        blackOlive: '#3b413c',
+        cornflowerBlue: '#7996d0',
+        lightCyan: '#daf0ee',
+        middleBlueGreen: '#94d1be',
         gradientBlue: '#24BDDE',
         gradientGreen: '#35EF48',
-        gradientBlue1: "#589398",
-        lightBlue: "#DAEFF1",
-        veryLightBlue: '#C4E5EAED'
       },
       fontFamily: {
         sans: ['sans-serif', 'Pacifico'],

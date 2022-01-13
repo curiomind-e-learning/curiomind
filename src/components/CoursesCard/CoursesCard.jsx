@@ -1,14 +1,15 @@
-import styles from './asset/Courses.module.css'
-
 const CoursesCard = ({ imgUrl, courseName, courseDetail }) => {
   return (
-    <figure className={styles.CoursesBox}>
-      <img className={styles.CourseImg} src={imgUrl} alt="" />
-      <div className="pt-6 space-y-4">
+    <figure
+      className="flex bg-lightCyan h-36 rounded-3xl items-center shadow-lg shadow-gray-400 font-nunito"
+      style={{ width: '22rem' }}
+    >
+      <img className="h-full w-36 rounded-3xl p-4" src={imgUrl} alt="" />
+      <div className="space-y-4 p-2">
         <blockquote>
-          <p className="text-m font-semibold">{courseName}</p>
+          <p className="text-lg">{courseName}</p>
         </blockquote>
-        <p className="font-medium text-gray-dark">{courseDetail}</p>
+        <p className="text-base text-gray-dark">{courseDetail}</p>
       </div>
     </figure>
   )

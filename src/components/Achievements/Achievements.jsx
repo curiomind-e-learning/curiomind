@@ -46,7 +46,7 @@ const Achievements = () => {
       {error || (
         <div className="container mx-auto mt-10">
           <div className="flex flex-col">
-            <div className="flex justify-left text-3xl px-8 pb-2">
+            <div className="flex justify-left text-3xl text-blackOlive px-8 pb-2">
               Achievements
             </div>
           </div>

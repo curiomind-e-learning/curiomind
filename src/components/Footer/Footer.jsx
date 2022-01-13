@@ -9,13 +9,13 @@ const Footer = () => {
     twitterUrl: 'https://github.com/curiomind-e-learning',
   }
   return (
-    <div className="w-full bottom-0 flex items-center justify-center bg-gray-200">
+    <div className="w-full bottom-0 flex items-center justify-center bg-gray-200 text-cornflowerBlue">
       <div className="md:w-2/3 w-full px-4 text-white flex flex-col">
         <div className="flex flex-col">
           <div className="flex mt-24 mb-12 flex-row justify-between items-center">
             <Link
               to="/"
-              className="text-4xl text-blue-900"
+              className="text-4xl text-cornflowerBlue"
               style={{ fontFamily: 'Pacifico' }}
             >
               {' '}
@@ -25,7 +25,7 @@ const Footer = () => {
               <Link
                 to={item}
                 key={item}
-                className="hidden md:block cursor-pointer text-blue-900 hover:opacity-80"
+                className="hidden md:block cursor-pointer text-cornflowerBlue hover:opacity-80"
               >
                 {item}
               </Link>
@@ -34,8 +34,8 @@ const Footer = () => {
               <Social {...socialUrls} />
             </div>
           </div>
-          <hr className="border-blue-900 text-blue-900" />
-          <p className="w-full text-center my-12 text-blue-900">
+          <hr className="border-cornflowerBlue leading-loose text-cornflowerBlue" />
+          <p className="w-full text-center my-12 text-cornflowerBlue">
             Copyright © 2021 Curiomind. All rights reserved.
           </p>
         </div>

@@ -85,7 +85,7 @@ const CourseDetails = () => {
         <div className="flex flex-col">
           <div className="block ml-auto justify-between mr-20 mt-40 items-center">
             <button
-              className="bg-lightBlue flex items-center justify-evenly text-gradientBlue1
+              className="bg-middleBlueGreen flex items-center justify-evenly text-blackOlive
              font-semibold py-2 px-4 rounded-2xl drop-shadow-sm"
               onClick={() => {
                 if (edit) {
