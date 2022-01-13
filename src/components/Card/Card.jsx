@@ -1,4 +1,4 @@
-const Card = ({ imgUrl, text, color, imgRadius }) => {
+const Card = ({ imgUrl, text, color, imgRadius, quotes }) => {
   return (
     <figure
       className="rounded-3xl p-8 border-solid border-4 font-nunito text-blackOlive"
@@ -17,12 +17,17 @@ const Card = ({ imgUrl, text, color, imgRadius }) => {
       <div className="pt-6 text-center space-y-4">
         <blockquote>
           <p className="text-lg font-light antialiased">
-            <span className="text-5xl">“</span>
-            {text}
-
-            <span className="text-5xl inline-block w-full justify-end text-right">
-              ”
-            </span>
+            {quotes ? (
+              <>
+                <span className="text-5xl">“</span>
+                {text}
+                <span className="text-5xl inline-block w-full justify-end text-right">
+                  ”
+                </span>
+              </>
+            ) : (
+              text
+            )}
           </p>
         </blockquote>
       </div>

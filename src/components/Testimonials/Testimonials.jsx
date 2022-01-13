@@ -28,6 +28,7 @@ const Testimonials = () => {
               text={testimonal}
               color="#94D1BE"
               imgRadius="rounded-full"
+              quotes
             />
           </div>
         ))}
