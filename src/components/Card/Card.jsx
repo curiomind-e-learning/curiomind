@@ -16,7 +16,9 @@ const Card = ({ imgUrl, text, color }) => {
       />
       <div className="pt-6 text-center space-y-4">
         <blockquote>
-          <p className="text-lg font-light">{text}</p>
+          <p className="text-lg font-light text-blackOlive antialiased">
+            {text}
+          </p>
         </blockquote>
       </div>
     </figure>

@@ -33,7 +33,7 @@ const CourseNavbar = () => {
   return (
     <>
       <Loader active={isLoading} />
-      <div className="flex justify-between items-center text-secondary w-full border-b-4 border-blue-400">
+      <div className="flex justify-between items-center text-secondary w-full border-b-4 border-primary">
         <div className="flex">
           {menuItems.map((item) => (
             <button

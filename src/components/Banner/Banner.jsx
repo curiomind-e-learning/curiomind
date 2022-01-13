@@ -4,7 +4,7 @@ const Banner = () => {
   return (
     <section
       id="Home"
-      className="grid grid-cols-1 md:grid-cols-2 grid-flow-col bg-gray-light place-items-center pt-24"
+      className="grid grid-cols-1 md:grid-cols-2 grid-flow-col bg-gray-light place-items-center pt-24 text-blackOlive"
     >
       <div className="col-span-1">
         <div>
@@ -13,7 +13,7 @@ const Banner = () => {
             <br />
             centre for education
           </p>
-          <p className="font-extralight text-gray-500 text-2xl mx-auto px-6">
+          <p className="font-extralight text-slate-500 text-2xl mx-auto px-6">
             Curiomind is the online learning platform that offers <br />
             various courses for your development
           </p>

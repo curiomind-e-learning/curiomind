@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="flex mt-24 mb-12 flex-row justify-between items-center">
             <Link
               to="/"
-              className="text-4xl text-blue-900"
+              className="text-4xl text-primary"
               style={{ fontFamily: 'Pacifico' }}
             >
               {' '}
@@ -25,7 +25,7 @@ const Footer = () => {
               <Link
                 to={item}
                 key={item}
-                className="hidden md:block cursor-pointer text-blue-900 hover:opacity-80"
+                className="hidden md:block cursor-pointer text-primary hover:opacity-80"
               >
                 {item}
               </Link>
@@ -34,8 +34,8 @@ const Footer = () => {
               <Social {...socialUrls} />
             </div>
           </div>
-          <hr className="border-blue-900 text-blue-900" />
-          <p className="w-full text-center my-12 text-blue-900">
+          <hr className="border-primary text-primary" />
+          <p className="w-full text-center my-12 text-primary">
             Copyright © 2021 Curiomind. All rights reserved.
           </p>
         </div>

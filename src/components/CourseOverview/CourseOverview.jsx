@@ -85,8 +85,8 @@ const CourseOverview = () => {
           <Sidebar courseId={courseId} />
         </div>
         {!isLoading ? (
-          <div className=" mt-20">
-            <div className="w-4/5 mx-10 h-40 bg-veryLightBlue shadow-xl rounded-3xl pr-8 flex flex-row items-center justify-between">
+          <div className=" my-20">
+            <div className="w-4/5 mx-10 h-40 bg-lightCyan shadow-xl rounded-3xl pr-8 flex flex-row items-center justify-between">
               <img
                 className="rounded-l-3xl h-full"
                 src={`${imgUrl}`}
@@ -95,7 +95,7 @@ const CourseOverview = () => {
               <div className="font-regular text-2xl">{courseName}</div>
               {!enrolled ? (
                 <button
-                  className="bg-blue-500 shadow-lg text-white font-bold py-4 px-8 justify-self-start rounded-lg"
+                  className="bg-cornflowerBlue -hue-rotate-30 drop-shadow-md text-white font-bold py-4 px-8 justify-self-start rounded-lg"
                   onClick={enrollCourse}
                 >
                   Enroll

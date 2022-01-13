@@ -20,7 +20,7 @@ const Navbar = () => {
       className={`w-full fixed bg-gray-100 backdrop-blur-sm`}
       style={{ zIndex: '1' }}
     >
-      <div className="flex flex-col md:flex-row justify-center md:justify-between items-start md:items-center text-secondary">
+      <div className="flex flex-col md:flex-row justify-center md:justify-between items-start md:items-center text-blackOlive">
         <Link to="/">
           <div
             className="leading-loose text-3xl p-3 md:px-8 md:py-0"
@@ -42,9 +42,9 @@ const Navbar = () => {
         </div>
         <div className="flex p-2">
           {token ? (
-            <Menu as="div" className="relative ">
+            <Menu as="div" className="relative text-blackOlive">
               <Menu.Button>
-                <HiUserCircle size={40} className="text-blue-400" />
+                <HiUserCircle size={40} className="text-primary" />
               </Menu.Button>
 
               <Transition
@@ -56,7 +56,7 @@ const Navbar = () => {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                <Menu.Items className="origin-top-right absolute right-2 mt-2 w-32  rounded-xl shadow-lg shadow-gray-300 py-2 bg-white">
+                <Menu.Items className="origin-top-right absolute right-2 mt-2 w-32  rounded-xl shadow-lg shadow-blackOlive py-2 bg-white">
                   <Menu.Item>
                     {({ active }) => (
                       <div>

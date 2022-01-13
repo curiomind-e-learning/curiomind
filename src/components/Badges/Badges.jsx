@@ -5,7 +5,7 @@ const Badges = () => {
       <div className="flex flex-col md:flex-row justify-around items-center">
         {badges.map(({ imgUrl, text }) => (
           <div
-            className="flex flex-col justify-around items-center p-3 text-secondary"
+            className="flex flex-col justify-around items-center p-3 text-blackOlive"
             key={text}
           >
             <img src={imgUrl} alt="badge"></img>

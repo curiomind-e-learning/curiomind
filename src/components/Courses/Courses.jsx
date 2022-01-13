@@ -47,7 +47,7 @@ const Courses = () => {
         <div className="flex justify-end">
           <Link
             to="/allcourses"
-            className="text-xl text-blue-900 underline px-11 pb-3"
+            className="text-xl text-primary underline px-11 pb-3"
             style={{ fontFamily: 'Nunito' }}
           >
             View All
