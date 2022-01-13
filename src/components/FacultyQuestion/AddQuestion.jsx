@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import Loader from '../Loader/Loader'
+import DisplayQuestion from './DisplayQuestion'
 
 export default function AddQuestion({ courseId }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -38,7 +39,7 @@ export default function AddQuestion({ courseId }) {
   return (
     <>
       <Loader active={loading} />
-      <div className="container mx-auto pb-16">
+      <div className="container mx-auto pb-6">
         <div className="grid grid-cols-1 md:grid-cols-2 p-8 gap-4">
           <div className="col-span-1">
             <button
@@ -146,6 +147,7 @@ export default function AddQuestion({ courseId }) {
           </div>
         </div>
       </Dialog>
+      <DisplayQuestion />
     </>
   )
 }

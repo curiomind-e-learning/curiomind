@@ -8,10 +8,7 @@ function FacultyQuestion() {
     <>
       <div className="container mx-auto">
         <div className="flex flex-col">
-          <div
-            className="flex justify-left text-3xl px-8 py-4"
-            style={{ fontFamily: 'Nunito' }}
-          >
+          <div className="flex justify-left text-3xl px-8 py-4 font-nunito">
             Questions
           </div>
         </div>
