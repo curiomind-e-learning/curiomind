@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useParams } from 'react-router-dom'
+import FacultyQuestion from '../../components/FacultyQuestion/FacultyQuestion'
 import Footer from '../../components/Footer/Footer'
 import Navbar from '../../components/Navbar/Navbar'
 import EditProfileIcon from '../../components/ProfileDetails/EditProfileIcon.svg'
@@ -115,7 +116,7 @@ const CourseDetails = () => {
           </div>
         </div>
       </div>
-      <div className="container mx-auto pb-16">
+      <div className="container mx-auto">
         <div className="flex flex-col">
           <div
             className="flex justify-left text-3xl px-8 py-4"
@@ -231,6 +232,7 @@ const CourseDetails = () => {
           ))}
         </div>
       </div>
+      <FacultyQuestion />
       <Footer />
     </>
   )
