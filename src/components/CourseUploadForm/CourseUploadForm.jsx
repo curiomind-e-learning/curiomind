@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import storage from '../../firebase/firebase.config.js'
 import Loader from '../../components/Loader/Loader'
-import { Link } from 'react-router-dom'
 
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 import Navbar from '../Navbar/Navbar.jsx'
@@ -237,16 +236,6 @@ const CourseUploadForm = () => {
             >
               Submit
             </button>
-            {/* {isSubmit ? ( */}
-            <Link
-              className="bg-green-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              to="/question-upload"
-            >
-              Add Questions
-            </Link>
-            {/* ) : (
-              <></>
-            )} */}
           </div>
         </form>
       </div>
