@@ -73,8 +73,8 @@ const Profile = () => {
         <div className="flex flex-col">
           <div className="block ml-auto justify-between mr-20 mt-40 items-center">
             <button
-              className="bg-lightBlue flex items-center justify-evenly text-gradientBlue1
-           font-semibold py-2 px-4 rounded-2xl drop-shadow-sm"
+              className="bg-middleBlueGreen flex items-center justify-evenly text-blackOlive
+              font-semibold py-2 px-4 rounded-2xl drop-shadow-sm"
               onClick={(e) => {
                 if (edit) {
                   fetch(`${process.env.REACT_APP_API}/user/${user._id}`, {
