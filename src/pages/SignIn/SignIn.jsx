@@ -30,13 +30,20 @@ const SignUp = () => {
         res.json().then((data) => {
           sessionStorage.setItem('token', data.token)
         })
-        setTimeout(() => {
-          navigate('/dashboard')
-        }, 500)
+        Swal.fire({
+          title: 'Successful',
+          text: 'You will be logged in few seconds',
+          icon: 'success',
+          confirmButtonText: 'OK',
+        }).then(() =>
+          setTimeout(() => {
+            navigate('/dashboard')
+          }, 500)
+        )
       } else {
         Swal.fire({
           title: 'Error!',
-          text: 'Invalid username and password',
+          text: 'Invalid username or password',
           icon: 'error',
           confirmButtonText: 'Try again',
         }).then(() => setLoading(false))

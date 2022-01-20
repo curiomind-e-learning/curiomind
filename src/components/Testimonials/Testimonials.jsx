@@ -16,9 +16,8 @@ const Testimonials = () => {
       <Carousel breakPoints={breakPoints}>
         {testimonials.map(({ imgUrl, testimonal }) => (
           <div
-            className="p-2"
             style={{
-              width: '21rem',
+              width: '20rem',
             }}
             key={testimonal}
           >

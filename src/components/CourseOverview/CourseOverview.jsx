@@ -12,7 +12,7 @@ const CourseOverview = () => {
   const [description, setDescription] = useState('')
   const [courseId, setCourseId] = useState('')
   const [imgUrl, setImgUrl] = useState('')
-  const [enrolled, setEnrolled] = useState(true)
+  const [enrolled, setEnrolled] = useState(false)
   const [isLoading, setisLoading] = useState(false)
   let params = useParams()
 
@@ -61,9 +61,15 @@ const CourseOverview = () => {
   }
 
   const fetchCourses = useCallback(() => {
-    fetch(`${process.env.REACT_APP_API}/course/explore`).then((res) => {
+    fetch(`${process.env.REACT_APP_API}/course/`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+      },
+    }).then((res) => {
       res.json().then((data) => {
-        const course = data.find((course) => course.id === params.id)
+        const course = data.find((course) => course.course._id === params.id)
         if (course) {
           setEnrolled(true)
         } else {
