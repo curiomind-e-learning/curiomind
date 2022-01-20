@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { useParams } from 'react-router-dom'
+import { IoMdTrash } from 'react-icons/io'
+import Swal from 'sweetalert2'
 
 const DisplayQuestion = () => {
   const [assignment, setAssignment] = useState([])
@@ -7,7 +9,7 @@ const DisplayQuestion = () => {
 
   let params = useParams()
 
-  const getAssignmnetDetails = useCallback(async () => {
+  const getAssignmentDetails = useCallback(async () => {
     const response = await fetch(
       `${process.env.REACT_APP_API}/assignment/${params.id}`,
       {
@@ -38,12 +40,40 @@ const DisplayQuestion = () => {
   }, [params])
 
   useEffect(() => {
-    getAssignmnetDetails()
+    getAssignmentDetails()
     getExamDetails()
     return () => {
       setAssignment([])
     }
-  }, [getAssignmnetDetails, getExamDetails])
+  }, [getAssignmentDetails, getExamDetails])
+
+  const deleteQuestion = (id) => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+    }).then((result) => {
+      if (result.value) {
+        fetch(`${process.env.REACT_APP_API}/assignment/q/${id}`, {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+          },
+        }).then((res) => {
+          if (res.status === 200) {
+            getAssignmentDetails()
+            getExamDetails()
+            Swal.fire('Deleted!', 'The question has been deleted.', 'success')
+          }
+        })
+      }
+    })
+  }
+
   return (
     <div className="grid grid-cols-2 divide-x divide-gray-400 pb-16">
       <div className="px-10">
@@ -51,12 +81,20 @@ const DisplayQuestion = () => {
           Assignment Questions
         </div>
         {assignment && console.log(assignment)}
-        <div className="w-full py-5 px-16">
+        <div className="w-full py-5 px-10">
           {assignment &&
             assignment.map((no, key) => (
               <React.Fragment key={no._id}>
-                <div className="text-gray-900 text-xl py-5 font-nunito">
-                  {key + 1}) {no.question}
+                <div className="flex text-gray-900 text-lg py-5 font-nunito items-start justify-between">
+                  <div>
+                    {key + 1}) {no.question}
+                  </div>
+                  <div
+                    className="text-center rounded-full cursor-pointer shadow-inner p-1"
+                    onClick={() => deleteQuestion(no._id)}
+                  >
+                    <IoMdTrash className="text-2xl" />
+                  </div>
                 </div>
                 <div className=" text-sm py-2 font-nunito">
                   Ans: {no.answer}
@@ -85,12 +123,20 @@ const DisplayQuestion = () => {
           Exam Questions
         </div>
         {exam && console.log(exam)}
-        <div className="w-full py-5 px-16">
+        <div className="w-full py-5 px-10">
           {exam &&
             exam.map((no, key) => (
               <React.Fragment key={no._id}>
-                <div className="text-gray-900 text-xl py-5 font-nunito">
-                  {key + 1}) {no.question}
+                <div className="flex text-gray-900 text-lg py-5 font-nunito items-start justify-between">
+                  <div>
+                    {key + 1}) {no.question}
+                  </div>
+                  <div
+                    className="text-center rounded-full cursor-pointer shadow-inner p-1"
+                    onClick={() => deleteQuestion(no._id)}
+                  >
+                    <IoMdTrash className="text-2xl" />
+                  </div>
                 </div>
                 <div className=" text-sm py-2 font-nunito">
                   Ans: {no.answer}
