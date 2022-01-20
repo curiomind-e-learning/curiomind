@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Loader from '../../components/Loader/Loader'
 import { GrClose } from 'react-icons/gr'
+import Swal from 'sweetalert2'
 
 const SignUp = () => {
   const [email, setEmail] = useState('')
@@ -27,9 +28,22 @@ const SignUp = () => {
         password,
         role,
       }),
-    }).then(() => {
-      navigate('/signin')
-    })
+    }).then(
+      (response) => {
+        setLoading(false)
+        if (response.status === 200) {
+          navigate('/signin')
+        }
+      },
+      (error) => {
+        Swal.fire({
+          title: 'Error!',
+          text: 'Invalid Details',
+          icon: 'error',
+          confirmButtonText: 'Try again',
+        }).then(() => setLoading(false))
+      }
+    )
   }
 
   return (

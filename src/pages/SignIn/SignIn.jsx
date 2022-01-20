@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Loader from '../../components/Loader/Loader'
 import { GrClose } from 'react-icons/gr'
+import Swal from 'sweetalert2'
 
 const SignUp = () => {
   const [email, setEmail] = useState('')
@@ -29,10 +30,17 @@ const SignUp = () => {
         res.json().then((data) => {
           sessionStorage.setItem('token', data.token)
         })
+        setTimeout(() => {
+          navigate('/dashboard')
+        }, 500)
+      } else {
+        Swal.fire({
+          title: 'Error!',
+          text: 'Invalid username and password',
+          icon: 'error',
+          confirmButtonText: 'Try again',
+        }).then(() => setLoading(false))
       }
-      setTimeout(() => {
-        navigate('/dashboard')
-      }, 500)
     })
   }
 
