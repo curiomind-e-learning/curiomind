@@ -4,6 +4,7 @@ import Footer from '../Footer/Footer.jsx'
 import Sidebar from '../Sidebar/Sidebar'
 import { useParams } from 'react-router-dom'
 import Loader from '../Loader/Loader'
+import Swal from 'sweetalert2'
 
 const CourseOverview = () => {
   const [courseName, setCourseName] = useState('')
@@ -26,8 +27,36 @@ const CourseOverview = () => {
       body: JSON.stringify({
         course: params.id,
       }),
-    }).then(() => {
+    }).then((res) => {
       setisLoading(false)
+      switch (res.status) {
+        case 201:
+          Swal.fire({
+            title: 'Success',
+            text: 'You have successfully enrolled in this course',
+            icon: 'success',
+            confirmButtonText: 'Ok',
+          })
+          break
+
+        case 409:
+          Swal.fire({
+            title: 'Error',
+            text: 'You are already enrolled in this course',
+            icon: 'error',
+            confirmButtonText: 'Ok',
+          })
+          break
+
+        default:
+          Swal.fire({
+            title: 'Error',
+            text: 'Something went wrong',
+            icon: 'error',
+            confirmButtonText: 'Ok',
+          })
+      }
+      setEnrolled(true)
     })
   }
 
