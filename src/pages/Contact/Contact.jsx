@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Navbar from '../../components/Navbar/Navbar.jsx'
 import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
 import Footer from '../../components/Footer/Footer.jsx'
+import ContactImg from './contact.svg'
+import FeedbackImg from './feedback.svg'
 
 const Contact = () => {
   const [firstName, setFirstName] = useState('')
@@ -54,7 +56,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="w-1/2 h-full select-none p-5">
-            <img src="https://www.linkpicture.com/q/contact.svg" alt="" />
+            <img src={ContactImg} alt="" />
           </div>
         </div>
       </section>
@@ -68,11 +70,7 @@ const Contact = () => {
         </div>
         <div className="flex w-full">
           <div className="w-1/2 h-full select-none p-5">
-            <img
-              src="https://www.linkpicture.com/q/feedback.svg"
-              width="500px"
-              alt=""
-            />
+            <img src={FeedbackImg} width="500px" alt="" />
           </div>
           <div className=" w-1/2 h-40">
             <form className="w-full max-w-lg p-6 ml-20">
