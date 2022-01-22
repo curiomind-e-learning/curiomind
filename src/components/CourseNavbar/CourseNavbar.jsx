@@ -46,7 +46,7 @@ const CourseNavbar = () => {
           ))}
         </div>
       </div>
-      <CourseBanner toShow={toShow} course={course} />
+      <CourseBanner toShow={toShow} course={course} active={isLoading} />
     </>
   )
 }
