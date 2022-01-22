@@ -10,7 +10,8 @@ module.exports = {
         middleBlueGreen: '#94d1be',
         gradientBlue: '#24BDDE',
         gradientGreen: '#35EF48',
-        whitish:'#F7F7F7'
+        whitish: '#F7F7F7',
+        dirtyGreen: '#5F8D75'
       },
       fontFamily: {
         sans: ['sans-serif', 'Pacifico'],

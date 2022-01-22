@@ -15,6 +15,7 @@ import CourseDetails from './pages/CourseDetails/CourseDetails'
 import CourseAssignment from './pages/CourseAssignment/CourseAssignment'
 import CourseExam from './pages/CourseExam/CourseExam'
 import Grades from './pages/Grades/Grades'
+import Forbidden from './pages/Forbidden/Forbidden'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="*" element={<NotFound />} />
+          <Route path="/403" element={<Forbidden />} />
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/signup" element={<SignUp />} />

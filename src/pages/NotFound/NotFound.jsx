@@ -17,9 +17,11 @@ const NotFound = () => {
         <p className="font-nunito text-lg text-center absolute right-0.5 left-0.5 bottom-48 text-gray-500">
           the page you are looking for not avaible!
         </p>
-        <button className="bg-green-500 hover:bg-green-600 text-white font-nunito w-32 h-90 p-3">
-          Go to Home
-        </button>
+        <a href="/" className="cursor-pointer">
+          <button className="bg-green-500 hover:bg-green-600 text-white font-nunito w-32 h-90 p-3">
+            Go to Home
+          </button>
+        </a>
       </div>
     </div>
   )
