@@ -1,5 +1,3 @@
-import Title from '../../components/Title/Title'
-
 const NotFound = () => {
   return (
     <div className="h-screen">
