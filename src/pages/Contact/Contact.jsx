@@ -4,12 +4,74 @@ import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
 import Footer from '../../components/Footer/Footer.jsx'
 import ContactImg from './contact.svg'
 import FeedbackImg from './feedback.svg'
+import Swal from 'sweetalert2'
 
 const Contact = () => {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
+
+  const sendFeedback = () => {
+    if (firstName === '' || lastName === '' || email === '' || message === '') {
+      Swal.fire({
+        title: 'Oops...',
+        text: 'Please fill in all the fields',
+        icon: 'error',
+        confirmButtonText: 'Ok',
+      })
+    } else {
+      fetch(`${process.env.REACT_APP_API_URL}/feedback`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: `${firstName.trim()} ${lastName.trim()}`,
+          email,
+          message,
+        }),
+      }).then(() => {
+        fetch('https://api.emailjs.com/api/v1.0/email/send', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            service_id: process.env.REACT_APP_EMAILJS_SERVICE_ID,
+            template_id: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+            user_id: process.env.REACT_APP_EMAILJS_USER_ID,
+            template_params: {
+              name: firstName.trim() + ' ' + lastName.trim(),
+              email: email,
+              message: message,
+            },
+          }),
+        }).then(
+          () => {
+            Swal.fire({
+              title: 'Thank you!',
+              text: 'Your message has been sent',
+              icon: 'success',
+              confirmButtonText: 'Ok',
+            })
+            setFirstName('')
+            setLastName('')
+            setEmail('')
+            setMessage('')
+          },
+          (err) => {
+            Swal.fire({
+              title: 'Oops...',
+              text: 'Something went wrong!',
+              icon: 'error',
+              confirmButtonText: 'Ok',
+            })
+          }
+        )
+      })
+    }
+  }
 
   return (
     <>
@@ -135,7 +197,13 @@ const Contact = () => {
                   </label>
                 </div>
               </div>
-              <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+              <button
+                className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                onClick={(e) => {
+                  e.preventDefault()
+                  sendFeedback()
+                }}
+              >
                 Send
               </button>
             </form>
