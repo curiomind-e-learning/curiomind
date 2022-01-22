@@ -4,8 +4,9 @@ import { Link, useNavigate } from 'react-router-dom'
 const Footer = () => {
   const menuItems = ['Services', 'About', 'Courses', 'Contact Us']
   const navigate = useNavigate()
-  const getPath = (page) => {
-    return `/#${page}`
+  const page = (item) => {
+    if (item === 'Contact Us') navigate('/contact')
+    else if (item === 'About') navigate('/about-us')
   }
   const socialUrls = {
     instaUrl: 'https://github.com/curiomind-e-learning',
@@ -27,13 +28,14 @@ const Footer = () => {
 
             {menuItems.map((item) => (
               <div className="hidden md:block cursor-pointer text-cornflowerBlue hover:opacity-80">
-                {item === 'Contact Us' ? (
-                  <button onClick={() => navigate('/contact')}>{item}</button>
+                {item === 'Contact Us' || item === 'About' ? (
+                  <button onClick={() => page(item)}>{item}</button>
                 ) : (
-                  <a href={getPath(item)}>{item}</a>
+                  <a href={`/#${item}`}>{item}</a>
                 )}
               </div>
             ))}
+
             <div className="flex flex-row space-x-8 items-center justify-between">
               <Social {...socialUrls} />
             </div>

@@ -8,13 +8,20 @@ function classNames(...classes) {
 }
 
 const Navbar = () => {
-  const menuItems = ['Home', 'Services', 'Courses', 'Testimonial', 'Contact Us']
+  const menuItems = [
+    'Home',
+    'Services',
+    'Courses',
+    'Testimonial',
+    'About',
+    'Contact Us',
+  ]
   const navigate = useNavigate()
   let token = sessionStorage.getItem('token')
-  const getPath = (page) => {
-    return `/#${page}`
+  const page = (item) => {
+    if (item === 'Contact Us') navigate('/contact')
+    else if (item === 'About') navigate('/about-us')
   }
-
   return (
     <div
       className={`w-full fixed bg-gray-100 backdrop-blur-sm`}
@@ -32,10 +39,10 @@ const Navbar = () => {
         <div className="flex flex-col md:flex-row md:space-x-14">
           {menuItems.map((item) => (
             <div key={item} className="text-xl font-medium p-3 md:p-0">
-              {item === 'Contact Us' ? (
-                <button onClick={() => navigate('/contact')}>{item}</button>
+              {item === 'Contact Us' || item === 'About' ? (
+                <button onClick={() => page(item)}>{item}</button>
               ) : (
-                <a href={getPath(item)}>{item}</a>
+                <a href={`/#${item}`}>{item}</a>
               )}
             </div>
           ))}
