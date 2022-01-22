@@ -14,6 +14,7 @@ const CourseOverview = () => {
   const [imgUrl, setImgUrl] = useState('')
   const [enrolled, setEnrolled] = useState(false)
   const [isLoading, setisLoading] = useState(false)
+  const [user, setUser] = useState([])
   let params = useParams()
 
   const enrollCourse = () => {
@@ -79,6 +80,25 @@ const CourseOverview = () => {
     })
   }, [params.id])
 
+  const getName = async () => {
+    const res = await fetch(`${process.env.REACT_APP_API}/user/profile/`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+      },
+    })
+    const data = await res.json()
+    setUser(data)
+  }
+
+  useEffect(() => {
+    getName()
+    return () => {
+      setUser({})
+    }
+  }, [])
+
   const getCourseDetails = useCallback(async () => {
     setisLoading(true)
     const response = await fetch(
@@ -131,20 +151,26 @@ const CourseOverview = () => {
                 alt="..."
               ></img>
               <div className="font-regular text-2xl">{courseName}</div>
-              {!enrolled ? (
-                <button
-                  className="bg-cornflowerBlue -hue-rotate-30 drop-shadow-md text-white font-bold py-4 px-8 justify-self-start rounded-lg"
-                  onClick={enrollCourse}
-                >
-                  Enroll
-                </button>
+              {user.role === 'faculty' ? (
+                <></>
               ) : (
-                <button
-                  className="bg-blue-300 shadow-lg text-white font-bold py-4 px-8 justify-self-start rounded-lg"
-                  disabled
-                >
-                  Already Enrolled
-                </button>
+                <>
+                  {!enrolled ? (
+                    <button
+                      className="bg-cornflowerBlue -hue-rotate-30 drop-shadow-md text-white font-bold py-4 px-8 justify-self-start rounded-lg"
+                      onClick={enrollCourse}
+                    >
+                      Enroll
+                    </button>
+                  ) : (
+                    <button
+                      className="bg-blue-300 shadow-lg text-white font-bold py-4 px-8 justify-self-start rounded-lg"
+                      disabled
+                    >
+                      Already Enrolled
+                    </button>
+                  )}
+                </>
               )}
             </div>
             <div className=" mx-8 text-lg font-light text-gray-600 py-10 flex justify-center p-4">
