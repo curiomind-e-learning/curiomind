@@ -32,7 +32,7 @@ const FacultyCourse = () => {
   return (
     <>
       <Loader active={loading} />
-      <div id="Courses">
+      <div id="editcourses">
         <Title
           title="Uploaded Courses"
           desc1="Browse the courses you have uploaded"

@@ -44,12 +44,12 @@ const WelcomeBanner = () => {
                 <span>Upload Course</span>
               </button>
             </Link>
-            <Link to="#">
+            <a href={'#editcourses'}>
               <button className="flex items-center justify-evenly px-5 py-3 rounded-xl bg-white shadow-slate-500 shadow-lg ">
                 <MdEdit size={25} />
-                <span>Edit Course</span>
+                <span>Edit Courses</span>
               </button>
-            </Link>
+            </a>
           </div>
         ) : (
           <div className="flex flex-col w-1/3 rounded-2xl items-center bg-white">
