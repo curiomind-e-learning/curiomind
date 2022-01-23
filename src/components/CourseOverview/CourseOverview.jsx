@@ -61,6 +61,61 @@ const CourseOverview = () => {
     })
   }
 
+  const unenrollCourse = () => {
+    setisLoading(true)
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+    }).then((result) => {
+      if (result.value) {
+        fetch(`${process.env.REACT_APP_API}/course/unenroll/${params.id}`, {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+          },
+        }).then((res) => {
+          setisLoading(false)
+          switch (res.status) {
+            case 200:
+              Swal.fire({
+                title: 'Success',
+                text: 'You have successfully unenrolled from the course',
+                icon: 'success',
+                confirmButtonText: 'Ok',
+              }).then(() => {
+                fetchCourses()
+              })
+              break
+
+            case 400:
+              Swal.fire({
+                title: 'Error',
+                text: 'You are not enrolled in this course',
+                icon: 'error',
+                confirmButtonText: 'Ok',
+              })
+              break
+
+            default:
+              Swal.fire({
+                title: 'Error',
+                text: 'Something went wrong',
+                icon: 'error',
+                confirmButtonText: 'Ok',
+              })
+          }
+        })
+      }
+      fetchCourses()
+      getCourseDetails()
+    })
+  }
+
   const fetchCourses = useCallback(() => {
     fetch(`${process.env.REACT_APP_API}/course/`, {
       method: 'GET',
@@ -164,10 +219,10 @@ const CourseOverview = () => {
                     </button>
                   ) : (
                     <button
-                      className="bg-blue-300 shadow-lg text-white font-bold py-4 px-8 justify-self-start rounded-lg"
-                      disabled
+                      className="bg-red-400 shadow-lg text-white font-bold py-4 px-8 justify-self-start rounded-lg"
+                      onClick={unenrollCourse}
                     >
-                      Already Enrolled
+                      Unenroll
                     </button>
                   )}
                 </>
