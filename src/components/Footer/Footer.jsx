@@ -1,8 +1,13 @@
 import Social from '../Social/Social.jsx'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Footer = () => {
-  const menuItems = ['Services', 'About', 'Courses', 'Contact us']
+  const menuItems = ['Services', 'About', 'Courses', 'Contact Us']
+  const navigate = useNavigate()
+  const page = (item) => {
+    if (item === 'Contact Us') navigate('/contact')
+    else if (item === 'About') navigate('/about-us')
+  }
   const socialUrls = {
     instaUrl: 'https://github.com/curiomind-e-learning',
     fbUrl: 'https://github.com/curiomind-e-learning',
@@ -18,18 +23,19 @@ const Footer = () => {
               className="text-4xl text-cornflowerBlue"
               style={{ fontFamily: 'Pacifico' }}
             >
-              {' '}
               Curiomind
             </Link>
+
             {menuItems.map((item) => (
-              <Link
-                to={item}
-                key={item}
-                className="hidden md:block cursor-pointer text-cornflowerBlue hover:opacity-80"
-              >
-                {item}
-              </Link>
+              <div className="hidden md:block cursor-pointer text-cornflowerBlue hover:opacity-80">
+                {item === 'Contact Us' || item === 'About' ? (
+                  <button onClick={() => page(item)}>{item}</button>
+                ) : (
+                  <a href={`/#${item}`}>{item}</a>
+                )}
+              </div>
             ))}
+
             <div className="flex flex-row space-x-8 items-center justify-between">
               <Social {...socialUrls} />
             </div>

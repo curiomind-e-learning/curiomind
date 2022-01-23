@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import Card from './Card/Card'
 
-const CourseBanner = ({ toShow, course }) => {
+const CourseBanner = ({ toShow, course, active }) => {
   const getCards = () => {
     switch (toShow) {
       case 'Home':
@@ -28,9 +28,17 @@ const CourseBanner = ({ toShow, course }) => {
           </Link>
         ))
       ) : (
-        <div className="text-3xl font-nunito leading-relaxed text-gray-700">
-          No enrolled courses
-        </div>
+        <>
+          {active ? (
+            <div className="text-3xl font-nunito leading-relaxed text-gray-700">
+              Loading...
+            </div>
+          ) : (
+            <div className="text-3xl font-nunito leading-relaxed text-gray-700">
+              No enrolled courses
+            </div>
+          )}
+        </>
       )}
     </section>
   )
