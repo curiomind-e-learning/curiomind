@@ -15,6 +15,8 @@ const CourseOverview = () => {
   const [enrolled, setEnrolled] = useState(false)
   const [isLoading, setisLoading] = useState(false)
   const [user, setUser] = useState([])
+  const [isCompleted, setIsCompleted] = useState(false)
+
   let params = useParams()
 
   const enrollCourse = () => {
@@ -62,6 +64,15 @@ const CourseOverview = () => {
   }
 
   const unenrollCourse = () => {
+    if (isCompleted) {
+      Swal.fire({
+        title: 'Error',
+        text: 'You have already completed this course',
+        icon: 'error',
+        confirmButtonText: 'Ok',
+      })
+      return
+    }
     setisLoading(true)
     Swal.fire({
       title: 'Are you sure?',
@@ -128,6 +139,7 @@ const CourseOverview = () => {
         const course = data.find((course) => course.course._id === params.id)
         if (course) {
           setEnrolled(true)
+          course.isCompleted ? setIsCompleted(true) : setIsCompleted(false)
         } else {
           setEnrolled(false)
         }
