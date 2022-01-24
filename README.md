@@ -1,8 +1,8 @@
-<h1 align=center> 🎓 Friday </h1>
+<h1 align=center>📚Curiomind </h1>
 
 <p align="center">
-  <a href="https://github.com/avinashkranjan/Friday">
-    <img src="https://user-images.githubusercontent.com/55796944/95674682-5eb52e00-0bcf-11eb-969b-cb7add59921c.png" alt="Logo" height="150px" width="150px">
+  <a href="https://github.com/curiomind-e-learning">
+    <img src="curio-logo.png" alt="Logo" height="150px" width="150px">
   </a>
 
 <h2 align=center> "Friday - Your Personal Class Assistant, It'll never let you miss another assignment deadline or any upcoming test."
