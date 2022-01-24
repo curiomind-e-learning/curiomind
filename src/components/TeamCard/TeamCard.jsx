@@ -18,7 +18,7 @@ const TeamCard = ({ name, imgUrl }) => {
         <div class="pt-6 md:p-7 text-center md:text-left space-y-4">
           <figcaption class="font-medium ml-6 mb-10">
             <div class="text-sky-400 text-xl">{name}</div>
-            <div class="text-slate-400">3rd Year Student, CIEM</div>
+            <div class="text-slate-400">3rd Yr Student, CIEM</div>
           </figcaption>
           <Social {...socialUrls} />
         </div>
