@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+<h1 align=center> 🎓 Friday </h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <a href="https://github.com/avinashkranjan/Friday">
+    <img src="https://user-images.githubusercontent.com/55796944/95674682-5eb52e00-0bcf-11eb-969b-cb7add59921c.png" alt="Logo" height="150px" width="150px">
+  </a>
 
-## Available Scripts
+<h2 align=center> "Friday - Your Personal Class Assistant, It'll never let you miss another assignment deadline or any upcoming test."
 
-In the project directory, you can run:
+![Issues](https://img.shields.io/github/issues/avinashkranjan/Friday)
+![Pull Requests](https://img.shields.io/github/issues-pr/avinashkranjan/Friday)
+![Forks](https://img.shields.io/github/forks/avinashkranjan/Friday)
+![Stars](https://img.shields.io/github/stars/avinashkranjan/Friday)
+[![License](https://img.shields.io/github/license/avinashkranjan/Friday)](https://github.com/avinashkranjan/Friday)
+![](https://img.shields.io/github/repo-size/avinashkranjan/Friday.svg?label=Repo%20size&style=flat-square)&nbsp;
+  
+  
+<h1 align=center> Introduction 🚩 </h1>
 
-### `npm start`
+  <p align="center">
+    Since after the pandemic almost everything has been moved on to the virtual world So has <b>Education</b>. All our classes have been moved online and with that, all our <b><em> assignments, test, exams, Viva</b></em> are being held on an online platform as well, With so many <b><em>assignment deadlines, upcoming exam dates, and being busy with our life</b></em> we forget the deadlines and exam dates on most occasion. I don't know how many of you but it happens to me frequently. So I came up with this <b>app</b> which once fed with all the required data it'll remind you of the <b><em>assignment deadlines, upcoming exams, unfinished homework</b></em>. So, you can plan your schedule accordingly.
+    
+<h1 align=center> Tech Stack 🔥 </h1>  
+  <p align="center">
+  <img src="https://img.shields.io/badge/dart-%230175C2.svg?&style=for-the-badge&logo=dart&logoColor=white"/> <img src="https://img.shields.io/badge/Flutter%20-%2302569B.svg?&style=for-the-badge&logo=Flutter&logoColor=white" /> <img src="https://img.shields.io/badge/figma%20-%23F24E1E.svg?&style=for-the-badge&logo=figma&logoColor=white"/>  <img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/>
+    
+<h1 align=center> Application Preview 👀 </h1> 
+  <p align="center">
+    <img src="https://user-images.githubusercontent.com/55796944/95674880-cb7cf800-0bd0-11eb-94fd-20b50ab35219.png" height="363px" width="181px">  <img src="https://user-images.githubusercontent.com/55796944/95674883-cddf5200-0bd0-11eb-9b9a-f22d94217089.png" height="363px" width="181px">  <img src="https://user-images.githubusercontent.com/55796944/95674884-d041ac00-0bd0-11eb-9eb3-299fd123973a.png" height="363px" width="181px">  <img src="https://user-images.githubusercontent.com/55796944/95674885-d172d900-0bd0-11eb-9259-d22fb91cfad6.png" height="363px" width="181px">
+  
+  <p align="center">
+  <a href="https://github.com/avinashkranjan/Friday/releases/download/v1.0.0/friday.apk">
+    <img src="https://forthebadge.com/images/badges/check-it-out.svg">
+  </a>
+    
+<h1 align=center> Working Preview ▶ </h1>
+  <p align="center">
+    <img src="https://user-images.githubusercontent.com/55796944/95675411-b904bd80-0bd4-11eb-945d-810010a86da8.gif" height="408px" width="204px">
+  
+   <h2 align="center"> Video Preview ⏩ <a href="https://youtu.be/IJCo80Y0wjI">  <img src="https://img.shields.io/badge/Click Me%20-%23FF0000.svg?& style=for-the-badge logo=YouTube&logoColor=white"/> </a>
+  
+</br>
+ 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<h1 align=center> Project Mentors [GSSOC] 👨🏻‍💻 </h1>
+<table>
+<tr>	
+<td align="center"><a href="https://github.com/HimeshNayak"><img src="https://avatars.githubusercontent.com/u/30944790?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Himesh Nayak</h4><a href="https://www.linkedin.com/in/himeshnayak015/"><img src="https://mpng.subpng.com/20180324/vhe/kisspng-linkedin-computer-icons-logo-social-networking-ser-facebook-5ab6ebfe5f5397.2333748215219374063905.jpg" width="32px" height="32px"></a></td>
 
-### `npm test`
+<td align="center" ><a href="https://github.com/hareshnayak"><img src="https://avatars.githubusercontent.com/u/61956975?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Haresh Nayak</h4>
+<a href="https://www.linkedin.com/in/hareshnayak08/"><img src="https://mpng.subpng.com/20180324/vhe/kisspng-linkedin-computer-icons-logo-social-networking-ser-facebook-5ab6ebfe5f5397.2333748215219374063905.jpg" width="32px" height="32px"></a></td>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<td align="center"><a href="https://github.com/oshi36"><img src="https://avatars.githubusercontent.com/u/47573417?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Oshi Gupta</h4>
+<a href="https://www.linkedin.com/in/oshi36/"><img src="https://mpng.subpng.com/20180324/vhe/kisspng-linkedin-computer-icons-logo-social-networking-ser-facebook-5ab6ebfe5f5397.2333748215219374063905.jpg" width="32px" height="32px"></a></td>
 
-### `npm run build`
+<td align="center"><a href="https://github.com/vatsalcode"><img src="https://avatars.githubusercontent.com/u/55058681?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Vatsal Verma</h4>   
+<a href="https://www.linkedin.com/in/vatsal-verma22/"><img src="https://mpng.subpng.com/20180324/vhe/kisspng-linkedin-computer-icons-logo-social-networking-ser-facebook-5ab6ebfe5f5397.2333748215219374063905.jpg" width="32px" height="32px"></a></td>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<td align="center"><a href="https://github.com/alphaX86"><img src="https://avatars.githubusercontent.com/u/59508546?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Aadhitya A</h4>   
+<a href="https://www.linkedin.com/in/alphaX86/"><img src="https://mpng.subpng.com/20180324/vhe/kisspng-linkedin-computer-icons-logo-social-networking-ser-facebook-5ab6ebfe5f5397.2333748215219374063905.jpg" width="32px" height="32px"></a></td>
+</tr>
+</table>
+	 
