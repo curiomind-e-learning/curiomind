@@ -64,7 +64,7 @@ const CourseAssignment = () => {
       <Navbar />
       <div className="grid grid-flow-col grid-cols-5">
         <Sidebar courseId={params.id} />
-        <div className="flex flex-col col-span-4 pt-24 border-l-2 pl-5">
+        <div className="flex flex-col col-span-4 pt-24 border-l-2 pl-5 education-bg">
           <p className="text-5xl font-nunito font-extralight px-10">
             Assignment
           </p>
