@@ -34,27 +34,29 @@
 
 
 <h1 align=center> Team 👨🏻‍💻 </h1>
+<div align="center">
 <table>
 <tr>	
-<td align="center"><a href="https://github.com/geekymeeky"><img src="https://avatars.githubusercontent.com/u/66238394?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Srijan Kr. Gupta</h4></td>
+<td align="center"><a href="https://github.com/geekymeeky"><img src="https://github.com/geekymeeky.png?size=200" width=150px height=150px /></a></br> <h4 style="color:red;">Srijan Kr. Gupta</h4></td>
 
-<td align="center" ><a href="https://github.com/madihamallick"><img src="https://avatars.githubusercontent.com/u/70858557?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Madiha Mallick</h4>
+<td align="center" ><a href="https://github.com/madihamallick"><img src="https://github.com/madihamallick.png?size=200" width=150px height=150px /></a></br> <h4 style="color:red;">Madiha Mallick</h4>
 </td>
 
-<td align="center"><a href="https://github.com/avinashkranjan"><img src="https://avatars.githubusercontent.com/u/55796944?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Avinash Kr. Ranjan</h4>
+<td align="center"><a href="https://github.com/avinashkranjan"><img src="https://github.com/avinashkranjan.png?size=200" width=150px height=150px /></a></br> <h4 style="color:red;">Avinash Kr. Ranjan</h4>
 </td>
 </tr>
 </table>
 
 <table>
 <tr>
-<td align="center"><a href="https://github.com/Manidipaaa"><img src="https://avatars.githubusercontent.com/u/70858710?s=200&v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Manidipa Bhattacharjee</h4>   
+<td align="center"><a href="https://github.com/Manidipaaa"><img src="https://github.com/Manidipaaa.png?size=200" width=150px height=150px /></a></br> <h4 style="color:red;">Manidipa</h4>   
 </td>
 
-<td align="center"><a href="https://github.com/Ananya-012"><img src="https://avatars.githubusercontent.com/u/69920299?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Ananya Chatterjee</h4>   
+<td align="center"><a href="https://github.com/Ananya-012"><img src="https://github.com/Ananya-012.png?size=200" width=150px height=150px /></a></br> <h4 style="color:red;">Ananya Chatterjee</h4>   
 </td>
 
-<td align="center"><a href="https://github.com/DIVYA-KUMARI12"><img src="https://avatars.githubusercontent.com/u/70780478?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Divya Kumari</h4>   
+<td align="center"><a href="https://github.com/DIVYA-KUMARI12"><img src="https://github.com/DIVYA-KUMARI12.png?size=200" width=150px height=150px /></a></br> <h4 style="color:red;">Divya Kumari</h4>   
 </td>
 </tr>
 </table>
+</div>
