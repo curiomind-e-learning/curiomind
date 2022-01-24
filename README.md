@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+<h1 align=center>📚Curiomind </h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <a href="https://github.com/curiomind-e-learning">
+    <img src="https://user-images.githubusercontent.com/66238394/150757460-8ae92cc8-114f-4209-9a64-de32df3dbda0.svg" alt="Logo" height="150px" width="150px">
+  </a>
 
-## Available Scripts
+<h2 align=center> "Curiomind - Adding A Whole New Dimension To Modern E-Learning!  "  
+<h1 align=center> Introduction 🚩 </h1>
 
-In the project directory, you can run:
+  <p align="center">
+   Curiomind is your one stop destination for an ultimate online learning experience. We offer you with all of the latest technological tools to make your e-learning process smooth and hassle free. Curiomind is an organization developed by the students, for the students. In the era of a raging pandemic, education is on eof the domains that has been massively affected, and Curiomind is just a small initiative to help students get back on track and catch up with their academic lives. We offer an array of features including a huge range of courses to choose from, each equipped with a series of lectures, assignments, and tests. On successful completion of a course, students will receive a badge, as a means of encouragement and to provide further inspiration. Say goodbye to unproductive days spent scrolling on your phone, with Curiomind it’s time for you to level up your skills and take a step towards bright career opportunities!
 
-### `npm start`
+    
+<h1 align=center> Tech Stack 🔥 </h1>  
+  <p align="center">
+  <img src="https://badges.aleen42.com/src/react.svg" alt="badge" height="26px" width="90px"/>  <img src="https://badges.aleen42.com/src/node.svg" height="26px" width="90px" /> <img src="https://badges.aleen42.com/src/tailwindcss.svg" height="26px" width="90px"/> <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" height="26px" width="90px" /> <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" height="26px" width="90px"/> <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" height="26px" width="90px"/> <img src="https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black" height="26px" width="90px"/>   <img src="https://badges.aleen42.com/src/github.svg" height="26px" width="90px"/>
+    
+<h1 align=center> Application Preview 👀 </h1> 
+  <p align="center">
+    <img src="https://user-images.githubusercontent.com/70858557/150777300-2f78830a-5976-4d46-8c3c-dea1fbbdfe0a.PNG" height="200px" width="400px" > <img src="https://user-images.githubusercontent.com/70858557/150777322-9a944e77-60cc-4a1b-996a-7ce1cd13990f.PNG" height="200px" width="400px" >  <img src="https://user-images.githubusercontent.com/70858557/150777343-6d506126-897d-4c22-bf9a-6da2404ddfa2.PNG" height="200px" width="400px" >  <img src="https://user-images.githubusercontent.com/70858557/150777375-2303aea7-de8d-494d-8d7b-ab5c343f5973.PNG" height="200px" width="400px" >
+  
+  <p align="center">
+  <a href="https://curiomind.netlify.app/">
+    <img src="https://forthebadge.com/images/badges/check-it-out.svg">
+  </a>
+    
+<h1 align=center> Working Preview ▶ </h1>
+  <p align="center">
+    <img src="https://user-images.githubusercontent.com/70858557/150796926-14e08b9b-1be7-41a4-83ba-81847885f18c.gif" height="300px" width="600px">
+  
+   <h2 align="center"> Video Preview ⏩ 
+  
+</br>
+ 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<h1 align=center> Team 👨🏻‍💻 </h1>
+<table>
+<tr>	
+<td align="center"><a href="https://github.com/geekymeeky"><img src="https://avatars.githubusercontent.com/u/66238394?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Srijan Kr. Gupta</h4></td>
 
-### `npm test`
+<td align="center" ><a href="https://github.com/madihamallick"><img src="https://avatars.githubusercontent.com/u/70858557?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Madiha Mallick</h4>
+</td>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<td align="center"><a href="https://github.com/avinashkranjan"><img src="https://avatars.githubusercontent.com/u/55796944?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Avinash Kr. Ranjan</h4>
+</td>
+</tr>
+</table>
 
-### `npm run build`
+<table>
+<tr>
+<td align="center"><a href="https://github.com/Manidipaaa"><img src="https://avatars.githubusercontent.com/u/70858710?s=200&v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Manidipa Bhattacharjee</h4>   
+</td>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<td align="center"><a href="https://github.com/Ananya-012"><img src="https://avatars.githubusercontent.com/u/69920299?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Ananya Chatterjee</h4>   
+</td>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<td align="center"><a href="https://github.com/DIVYA-KUMARI12"><img src="https://avatars.githubusercontent.com/u/70780478?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Divya Kumari</h4>   
+</td>
+</tr>
+</table>
+	 
