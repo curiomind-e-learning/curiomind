@@ -16,6 +16,7 @@ import CourseAssignment from './pages/CourseAssignment/CourseAssignment'
 import CourseExam from './pages/CourseExam/CourseExam'
 import Grades from './pages/Grades/Grades'
 import Forbidden from './pages/Forbidden/Forbidden'
+import About from './pages/About/About'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/about-us" element={<About />} />
           <Route path="/course/:id" element={<Course />} />
           <Route path="/course/:id/assignment" element={<CourseAssignment />} />
           <Route path="/course/:id/Exam" element={<CourseExam />} />
