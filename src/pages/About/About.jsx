@@ -14,12 +14,14 @@ const About = () => {
           className="grid md:grid-cols-2 place-items-center text-center py-9 px-8 w-3/4"
           style={{ backgroundColor: 'rgba(121, 150, 208, 0.46)' }}
         >
-          <div className="col-span-1">
-            <h1 className="text-5xl font-nunito " style={{ color: '#3F3D56' }}>
-              About
-            </h1>
-            <div className="flex justify-center pb-6 pt-2">
-              <hr className="w-1/4 border-b-2 border-gray-400"></hr>
+          <div className="col-span-1 flex flex-col h-full justify-between">
+            <div>
+              <h1 className="text-5xl font-nunito" style={{ color: '#3F3D56' }}>
+                About
+              </h1>
+              <div className="flex justify-center pt-2">
+                <hr className="w-1/4 border-b-2 border-gray-400"></hr>
+              </div>
             </div>
             <img src={AboutImg} alt="" style={{ height: '67vh' }} />
           </div>
