@@ -11,7 +11,7 @@ const TeamCard = ({ name, imgUrl }) => {
     <div>
       <figure class="md:flex rounded-xl p-8 md:p-0 bg-slate-800">
         <img
-          class="w-24 h-24 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
+          class="w-24 h-24 md:w-48 md:h-auto md:rounded-l-xl md:rounded-r-none rounded-full mx-auto"
           src={`${imgUrl}`}
           alt=""
         />
