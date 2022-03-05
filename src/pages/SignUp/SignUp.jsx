@@ -59,7 +59,7 @@ const SignUp = () => {
                 onClick={() => navigate('/')}
               />
             </div>
-            <div className="flex flex-col justify-center items-center h-full">
+            <div className="flex flex-col justify-center items-center h-full"  style={{minHeight : "160px"}}>
               <h1 className="text-center text-white text-3xl font-bold">
                 Already a User?
               </h1>
