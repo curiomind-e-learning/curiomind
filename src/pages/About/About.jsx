@@ -4,6 +4,7 @@ import Footer from '../../components/Footer/Footer'
 import AboutImg from './aboutimg.svg'
 import TeamCard from '../../components/TeamCard/TeamCard'
 import team from '../../components/Testimonials/Testimonials.json'
+import './about.styles.css';
 
 const About = () => {
   return (
@@ -63,7 +64,7 @@ const About = () => {
       <div className="flex justify-center pb-6 pt-2">
         <hr className="w-1/12 border-b-2 border-gray-400"></hr>
       </div>
-      <div className="grid grid-flow-row grid-cols-3  gap-9 px-16 py-8">
+      <div className="team-card-div">
         {team.map(({ name, imgUrl }) => (
           <TeamCard name={name} imgUrl={imgUrl} />
         ))}
