@@ -1,5 +1,6 @@
 import React from 'react'
 import Social from '../Social/Social'
+import './TeamCard.styles.css';
 
 const TeamCard = ({ name, imgUrl }) => {
   const socialUrls = {
@@ -9,20 +10,16 @@ const TeamCard = ({ name, imgUrl }) => {
   }
   return (
     <div>
-      <figure class="md:flex rounded-xl p-8 md:p-0 bg-slate-800">
-        <img
-          class="w-24 h-24 md:w-48 md:h-auto md:rounded-l-xl md:rounded-r-none rounded-full mx-auto"
-          src={`${imgUrl}`}
-          alt=""
-        />
-        <div class="pt-6 md:p-7 text-center md:text-left space-y-4">
-          <figcaption class="font-medium ml-6 mb-10">
+      <div className="team-card">
+      <div className='image' style={{backgroundImage:`url(${imgUrl})`}}></div>
+        <div className='details'>
+          <div className='name'>
             <div class="text-sky-400 text-xl">{name}</div>
             <div class="text-slate-400">3rd Yr Student, CIEM</div>
-          </figcaption>
+          </div>
           <Social {...socialUrls} />
         </div>
-      </figure>
+      </div>
     </div>
   )
 }

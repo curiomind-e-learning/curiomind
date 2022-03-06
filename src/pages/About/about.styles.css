@@ -1,0 +1,17 @@
+.team-card-div{
+    padding: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width:1200px) {
+    .team-card-div{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width:750px) {
+    .team-card-div{
+        grid-template-columns: 1fr;
+    }
+}
