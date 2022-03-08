@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import Loader from '../../components/Loader/Loader'
 import { GrClose } from 'react-icons/gr'
 import Swal from 'sweetalert2'
+import {BsFillEyeFill,BsFillEyeSlashFill} from "react-icons/bs"
 
 const SignUp = () => {
   const [email, setEmail] = useState('')
@@ -10,6 +11,7 @@ const SignUp = () => {
   const [name, setName] = useState('')
   const [role, setRole] = useState('student')
   const [loading, setLoading] = useState(false)
+  const [visiblePassword,setVisiblePassword] = useState(false);
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
@@ -45,6 +47,10 @@ const SignUp = () => {
       }
     )
   }
+
+  function togglePasswordVisibility(){
+    setVisiblePassword(!visiblePassword);
+  };
 
   return (
     <section className="overflow-hidden max-h-screen">
@@ -102,15 +108,18 @@ const SignUp = () => {
                       required
                     />
                   </div>
-                  <div className="col-span-1">
+                  <div className="col-span-1 form-control password">
                     <input
                       className="appearance-none border rounded-full w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      type="password"
+                      type={!visiblePassword?"password":"text"}
                       placeholder="Password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       required
                     />
+                    <div onClick={togglePasswordVisibility} className='togglebtn'>
+                      {!visiblePassword ? <BsFillEyeSlashFill /> : <BsFillEyeFill />}
+                    </div>
                   </div>
                   <div>
                     <div className="w-full py-3 px-3">

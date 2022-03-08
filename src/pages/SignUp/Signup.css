@@ -1,0 +1,19 @@
+.togglebtn {
+    background: var(--clr-grey-10);
+    display: inline-block;
+    min-width: min-content;
+    margin: 0.5rem;
+  }
+
+  .password {
+    display: flex;
+    background: var(--clr-grey-10);
+  }
+
+  .form-control {
+    margin-bottom: 1.25rem;
+  }
+
+  .input{
+      width: 100%;
+  }
