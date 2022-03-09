@@ -108,9 +108,9 @@ const SignUp = () => {
                       required
                     />
                   </div>
-                  <div className="col-span-1 form-control password">
+                  <div className="col-span-1 password">
                     <input
-                      className="appearance-none border rounded-full w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="appearance-none meinput w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       type={!visiblePassword?"password":"text"}
                       placeholder="Password"
                       value={password}

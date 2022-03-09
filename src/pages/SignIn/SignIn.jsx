@@ -105,18 +105,18 @@ const SignUp = () => {
                       required
                     />
                   </div>
-                  <div className="col-span-1 form-control password">
+                  <div className="col-span-1 password">
                     <input
-                      className="appearance-none input border rounded-full w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className=" appearance-none meinput w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       type={!visible?"password":"text"}
                       placeholder="Password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       required
                     />
-                    <div onClick={togglePasswordVisibility} className="togglebtn">
+                    <button onClick={togglePasswordVisibility} className="togglebtn appearance-none leading-tight focus:outline-none focus:shadow-outline">
                         {!visible ? <BsFillEyeSlashFill /> : <BsFillEyeFill />}
-                    </div>
+                    </button>
                   </div>
                 </div>
 
