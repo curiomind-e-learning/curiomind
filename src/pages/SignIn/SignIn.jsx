@@ -3,11 +3,14 @@ import { Link, useNavigate } from 'react-router-dom'
 import Loader from '../../components/Loader/Loader'
 import { GrClose } from 'react-icons/gr'
 import Swal from 'sweetalert2'
+import "./Signin.css"
+import {BsFillEyeFill,BsFillEyeSlashFill} from "react-icons/bs"
 
 const SignUp = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
+  const [visible,setVisible] = useState(false);
 
   let navigate = useNavigate()
 
@@ -49,6 +52,10 @@ const SignUp = () => {
         }).then(() => setLoading(false))
       }
     })
+  }
+
+  function togglePasswordVisibility(){
+    setVisible(!visible);
   }
 
   return (
@@ -98,15 +105,18 @@ const SignUp = () => {
                       required
                     />
                   </div>
-                  <div className="col-span-1">
+                  <div className="col-span-1 password">
                     <input
-                      className="appearance-none border rounded-full w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      type="password"
+                      className=" appearance-none meinput w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      type={!visible?"password":"text"}
                       placeholder="Password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       required
                     />
+                    <button onClick={togglePasswordVisibility} className="togglebtn appearance-none leading-tight focus:outline-none focus:shadow-outline">
+                        {!visible ? <BsFillEyeSlashFill /> : <BsFillEyeFill />}
+                    </button>
                   </div>
                 </div>
 
