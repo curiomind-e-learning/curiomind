@@ -1,0 +1,26 @@
+.team-card{
+    display: flex;
+    background: rgb(30 41 59);
+    border-radius: 28px;
+    overflow: hidden;
+}
+
+.image{
+    width: 50%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.name{
+    margin-bottom: 40px;
+    text-align: center;
+}
+
