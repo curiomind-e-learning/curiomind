@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { HiUserCircle } from 'react-icons/hi'
-import { Fragment } from 'react'
+import { Fragment,useEffect,useState } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import "./nav-style.css"
 
@@ -18,18 +18,42 @@ const Navbar = () => {
     'About',
     'Contact Us',
   ]
+  const [navbar, setNavbar] = useState(false)
   const navigate = useNavigate()
   let token = sessionStorage.getItem('token')
   const page = (item) => {
     if (item === 'Contact Us') navigate('/contact')
     else if (item === 'About') navigate('/about-us')
   }
+  
+  
+  //navbar scroll changeBackground function
+  const changeBackground = () => {
+    if (window.scrollY >= 100) {
+      setNavbar(true)
+    } 
+    else {
+      setNavbar(false)
+    }
+  }
+
+  useEffect(() => {
+    changeBackground()
+    // adding the event when scroll change background
+    window.addEventListener("scroll", changeBackground)
+  })
+
+  
+ 
   return (
+
+    
     <div
-      className={`w-full fixed bg-gray-100 backdrop-blur-sm`}
+      className={`${navbar ? 'navbar active ' : 'navbar'} w-full fixed bg-gray-100 backdrop-blur-sm`}
+      
       style={{ zIndex: '1' }}
     >
-      <div className="flex flex-col md:flex-row justify-center md:justify-between items-start md:items-center text-blackOlive">
+      <div className="flex flex-col md:flex-row justify-center md:justify-between items-start md:items-center text-blackOlive ">
         <Link to="/">
           <div
             className="leading-loose text-3xl p-3 md:px-8 md:py-0"
@@ -120,7 +144,7 @@ const Navbar = () => {
             </Menu>
           ) : (
             <Link to="/signin">
-              <div className="rounded-full py-3 px-6 bg-cornflowerBlue text-white shadow-sm hover:shadow-md">
+              <div className="login active rounded-full py-3 px-6 bg-cornflowerBlue text-white shadow-sm hover:shadow-md">
                 Login
               </div>
             </Link>
