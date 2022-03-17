@@ -24,7 +24,7 @@ const Testimonials = () => {
             <Card
               imgUrl={imgUrl}
               text={testimonal}
-              color="#94D1BE"
+              color="zinc"
               imgRadius="rounded-full"
               quotes
             />

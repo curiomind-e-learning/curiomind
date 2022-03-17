@@ -1,33 +1,30 @@
 const Social = ({ instaUrl, twitterUrl, fbUrl }) => {
   return (
-    <div className="flex items-baseline justify-center">
+    <div className="flex items-baseline justify-center space-x-4">
       {fbUrl ? (
         <a href={fbUrl} rel="noreferrer" target="_blank">
           <img
-            className="px-5"
-            src="https://www.linkpicture.com/q/Vector-1_1.svg"
+            className="w-7 hover:scale-95 transition-all ease-in-out"
+            src="/fb.png"
             alt=""
-            width="70px"
           />
         </a>
       ) : null}
       {instaUrl ? (
         <a href={instaUrl} rel="noreferrer" target="_blank">
           <img
-            className="px-5"
-            src="https://www.linkpicture.com/q/akar-icons_instagram-fill.svg"
+            className="w-7 hover:scale-95 transition-all ease-in-out"
+            src="/instagram.png"
             alt=""
-            width="70px"
           />
         </a>
       ) : null}
       {twitterUrl ? (
         <a href={twitterUrl} rel="noreferrer" target="_blank">
           <img
-            className="px-5"
-            src="https://www.linkpicture.com/q/akar-icons_twitter-fill.svg"
+            className="w-7 hover:scale-95 transition-all ease-in-out"
+            src="/twitter.png"
             alt=""
-            width="70px"
           />
         </a>
       ) : null}
