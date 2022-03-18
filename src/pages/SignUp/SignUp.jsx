@@ -3,7 +3,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import Loader from '../../components/Loader/Loader'
 import { GrClose } from 'react-icons/gr'
 import Swal from 'sweetalert2'
-import {BsFillEyeFill,BsFillEyeSlashFill} from "react-icons/bs"
+import { BsFillEyeFill, BsFillEyeSlashFill } from 'react-icons/bs'
+import isEmail from 'is-email'
 
 const SignUp = () => {
   const [email, setEmail] = useState('')
@@ -11,46 +12,50 @@ const SignUp = () => {
   const [name, setName] = useState('')
   const [role, setRole] = useState('student')
   const [loading, setLoading] = useState(false)
-  const [visiblePassword,setVisiblePassword] = useState(false);
+  const [visiblePassword, setVisiblePassword] = useState(false)
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-
-    setLoading(true)
-    fetch(`${process.env.REACT_APP_API}/user/`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        password,
-        role,
-      }),
-    }).then(
-      (response) => {
-        setLoading(false)
-        if (response.status === 200) {
-          navigate('/signin')
+    // Checking Email
+    if (isEmail(email)) {
+      setLoading(true)
+      fetch(`${process.env.REACT_APP_API}/user/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+          role,
+        }),
+      }).then(
+        (response) => {
+          setLoading(false)
+          if (response.status === 200) {
+            navigate('/signin')
+          }
+        },
+        (error) => {
+          Swal.fire({
+            title: 'Error!',
+            text: 'Invalid Details',
+            icon: 'error',
+            confirmButtonText: 'Try again',
+          }).then(() => setLoading(false))
         }
-      },
-      (error) => {
-        Swal.fire({
-          title: 'Error!',
-          text: 'Invalid Details',
-          icon: 'error',
-          confirmButtonText: 'Try again',
-        }).then(() => setLoading(false))
-      }
-    )
+      )
+    } else {
+      alert('Invalid Email !')
+    }
   }
 
-  function togglePasswordVisibility(){
-    setVisiblePassword(!visiblePassword);
-  };
+  function togglePasswordVisibility() {
+    setVisiblePassword(!visiblePassword)
+  }
 
   return (
     <section className="overflow-hidden max-h-screen">
@@ -65,7 +70,10 @@ const SignUp = () => {
                 onClick={() => navigate('/')}
               />
             </div>
-            <div className="flex flex-col justify-center items-center h-full"  style={{minHeight : "160px"}}>
+            <div
+              className="flex flex-col justify-center items-center h-full"
+              style={{ minHeight: '160px' }}
+            >
               <h1 className="text-center text-white text-3xl font-bold">
                 Already a User?
               </h1>
@@ -111,14 +119,21 @@ const SignUp = () => {
                   <div className="col-span-1 password">
                     <input
                       className="appearance-none meinput w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      type={!visiblePassword?"password":"text"}
+                      type={!visiblePassword ? 'password' : 'text'}
                       placeholder="Password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       required
                     />
-                    <div onClick={togglePasswordVisibility} className='togglebtn'>
-                      {!visiblePassword ? <BsFillEyeSlashFill /> : <BsFillEyeFill />}
+                    <div
+                      onClick={togglePasswordVisibility}
+                      className="togglebtn"
+                    >
+                      {!visiblePassword ? (
+                        <BsFillEyeSlashFill />
+                      ) : (
+                        <BsFillEyeFill />
+                      )}
                     </div>
                   </div>
                   <div>
