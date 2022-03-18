@@ -44,11 +44,10 @@ const Courses = () => {
             </Link>
           ))}
         </div>
-        <div className="flex justify-end">
+        <div className="flex justify-center">
           <Link
             to="/allcourses"
-            className="text-xl text-primary underline px-11 pb-3"
-            style={{ fontFamily: 'Nunito' }}
+            className="text-xl text-primary opacity-80 hover:ml-2 transition-all ease-in-out duration-500 flex w-max active:scale-95"
           >
             View All
           </Link>
