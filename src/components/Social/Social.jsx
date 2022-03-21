@@ -1,6 +1,15 @@
-const Social = ({ instaUrl, twitterUrl, fbUrl }) => {
+const Social = ({ instaUrl, twitterUrl, fbUrl, githubUrl }) => {
   return (
     <div className="flex items-baseline justify-center space-x-4">
+      {githubUrl ? (
+        <a href={githubUrl} rel="noreferrer" target="_blank">
+          <img
+            className="w-7 hover:scale-95 transition-all ease-in-out"
+            src="/github.png"
+            alt=""
+          />
+        </a>
+      ) : null}
       {fbUrl ? (
         <a href={fbUrl} rel="noreferrer" target="_blank">
           <img
