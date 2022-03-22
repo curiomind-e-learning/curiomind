@@ -14,8 +14,8 @@ const TeamCard = ({ name, imgUrl }) => {
       <div className='image' style={{backgroundImage:`url(${imgUrl})`}}></div>
         <div className='details'>
           <div className='name'>
-            <div class="text-sky-400 text-xl">{name}</div>
-            <div class="text-slate-400">3rd Yr Student, CIEM</div>
+            <div className="text-sky-400 text-xl">{name}</div>
+            <div className="text-slate-400">3rd Yr Student, CIEM</div>
           </div>
           <Social {...socialUrls} />
         </div>

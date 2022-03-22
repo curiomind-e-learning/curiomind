@@ -27,7 +27,7 @@ const Footer = () => {
             </Link>
 
             {menuItems.map((item) => (
-              <div className="hidden md:block cursor-pointer text-cornflowerBlue hover:opacity-80">
+              <div key={item} className="hidden md:block cursor-pointer text-cornflowerBlue hover:opacity-80">
                 {item === 'Contact Us' || item === 'About' ? (
                   <button onClick={() => page(item)}>{item}</button>
                 ) : (
