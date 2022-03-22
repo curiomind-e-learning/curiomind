@@ -7,10 +7,14 @@ import "./Signin.css"
 import {BsFillEyeFill,BsFillEyeSlashFill} from "react-icons/bs"
 
 const SignUp = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [inputValues, setInputValues] = useState({
+    email: "",
+    password: ""
+  });
   const [loading, setLoading] = useState(false)
   const [visible,setVisible] = useState(false);
+
+  const {email, password} = inputValues;
 
   let navigate = useNavigate()
 
@@ -52,6 +56,15 @@ const SignUp = () => {
         }).then(() => setLoading(false))
       }
     })
+  }
+
+  const handleInputChange = (e) => {
+    const {name, value} = e.target;
+
+    setInputValues({
+      ...inputValues,
+      [name]: value
+    });
   }
 
   function togglePasswordVisibility(){
@@ -97,21 +110,23 @@ const SignUp = () => {
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
                   <div className="col-span-1">
                     <input
+                      name="email"
                       className="rounded-full appearance-none border w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       type="email"
                       placeholder="Email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      value={inputValues.email}
+                      onChange={handleInputChange}
                       required
                     />
                   </div>
                   <div className="col-span-1 password">
                     <input
+                      name="password"
                       className=" appearance-none meinput w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       type={!visible?"password":"text"}
                       placeholder="Password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
+                      value={inputValues.password}
+                      onChange={handleInputChange}
                       required
                     />
                     <button onClick={togglePasswordVisibility} className="togglebtn appearance-none leading-tight focus:outline-none focus:shadow-outline">
