@@ -1,0 +1,31 @@
+.togglebtn {
+
+  min-width: min-content;
+  background-color: white;
+  padding-bottom: 0.4rem;
+  border-top-right-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+  padding: 0.75rem;
+  border-width: 1px 1px 1px 0px;
+
+  
+  }
+
+  .meinput{
+    border-width: 1px 0px 1px 1px;
+    border-top-left-radius: 9999px;
+    border-bottom-left-radius: 9999px;
+  }
+
+  .password {
+    display: flex;
+    background: var(--clr-grey-10);
+  }
+
+  .form-control {
+    margin-bottom: 1.25rem;
+  }
+
+  .input{
+      /* width: 100%; */
+  }

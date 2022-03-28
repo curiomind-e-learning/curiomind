@@ -1,17 +1,17 @@
 [
   {
-    "imgUrl": "https://www.linkpicture.com/q/Vector_1.svg",
+    "imgUrl": "/SVGs/bookmark.svg",
     "text": "We provide courses from the best industry experts",
-    "color": "rgba(105, 161, 132, 0.4)"
+    "color": "emerald"
   },
   {
-    "imgUrl": "https://www.linkpicture.com/q/ph_student-bold.svg",
+    "imgUrl": "/SVGs/student.svg",
     "text": "You can Join our platform and avail some quality free courses",
-    "color": "rgba(161, 105, 105, 0.4)"
+    "color": "rose"
   },
   {
-    "imgUrl": "https://www.linkpicture.com/q/fa-solid_chalkboard-teacher.svg",
+    "imgUrl": "/SVGs/teacher.svg",
     "text": "Get registered as a faculty member to start teaching.",
-    "color": "rgba(113, 105, 161, 0.4)"
+    "color": "fuchsia"
   }
 ]

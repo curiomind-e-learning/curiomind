@@ -2,6 +2,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import { HiUserCircle } from 'react-icons/hi'
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
+import "./nav-style.css"
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -38,7 +40,7 @@ const Navbar = () => {
         </Link>
         <div className="flex flex-col md:flex-row md:space-x-14">
           {menuItems.map((item) => (
-            <div key={item} className="text-xl font-medium p-3 md:p-0">
+            <div key={item} className="text-xl font-medium p-3 md:p-0 nav-btn">
               {item === 'Contact Us' || item === 'About' ? (
                 <button onClick={() => page(item)}>{item}</button>
               ) : (
