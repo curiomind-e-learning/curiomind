@@ -12,7 +12,7 @@ const TeamCard = ({ name, imgUrl }) => {
     <div>
       <div className="team-card">
       <div className='image' style={{backgroundImage:`url(${imgUrl})`}}></div>
-        <div className='details'>
+        <div className='details flex flex-col items-center justify-center pl-5'>
           <div className='name'>
             <div class="text-sky-400 text-xl">{name}</div>
             <div class="text-slate-400">3rd Yr Student, CIEM</div>
