@@ -2,8 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { HiUserCircle } from 'react-icons/hi'
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
-import "./nav-style.css"
-
+import './nav-style.css'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -26,7 +25,7 @@ const Navbar = () => {
   }
   return (
     <div
-      className={`w-full relative bg-gray-100 backdrop-blur-sm`}
+      className={`w-full fixed bg-gray-100 backdrop-blur-sm`}
       style={{ zIndex: '1' }}
     >
       <div className="flex flex-col md:flex-row justify-center md:justify-between items-start md:items-center text-blackOlive">
