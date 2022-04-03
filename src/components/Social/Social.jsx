@@ -1,40 +1,21 @@
-const Social = ({ instaUrl, twitterUrl, fbUrl, githubUrl }) => {
+import { FaFacebook, FaTwitter } from 'react-icons/fa'
+
+const Social = ({ instaUrl, twitterUrl, fbUrl }) => {
   return (
-    <div className="flex items-baseline justify-center space-x-4">
-      {githubUrl ? (
-        <a href={githubUrl} rel="noreferrer" target="_blank">
-          <img
-            className="w-7 hover:scale-95 transition-all ease-in-out"
-            src="/github.png"
-            alt=""
-          />
-        </a>
-      ) : null}
+    <div className="flex items-center ml-8 justify-center space-x-4">
       {fbUrl ? (
         <a href={fbUrl} rel="noreferrer" target="_blank">
-          <img
-            className="w-7 hover:scale-95 transition-all ease-in-out"
-            src="/fb.png"
-            alt=""
-          />
+          <FaFacebook className='text-3xl text-blue-500 transform hover:animate-bounce transition duration-500 ease-in-out' />
         </a>
       ) : null}
       {instaUrl ? (
         <a href={instaUrl} rel="noreferrer" target="_blank">
-          <img
-            className="w-7 hover:scale-95 transition-all ease-in-out"
-            src="/instagram.png"
-            alt=""
-          />
+          <FaTwitter className='text-3xl text-sky-400 transform hover:animate-bounce transition duration-500 ease-in-out' />
         </a>
       ) : null}
       {twitterUrl ? (
         <a href={twitterUrl} rel="noreferrer" target="_blank">
-          <img
-            className="w-7 hover:scale-95 transition-all ease-in-out"
-            src="/twitter.png"
-            alt=""
-          />
+          <img className='h-10 w-10 transform hover:animate-bounce transition duration-500 ease-in-out rounded-full' src="https://img.icons8.com/fluency/48/000000/instagram-new.png"/>
         </a>
       ) : null}
     </div>
