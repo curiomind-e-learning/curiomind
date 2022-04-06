@@ -7,10 +7,24 @@ import FeedbackImg from './feedback.svg'
 import Swal from 'sweetalert2'
 
 const Contact = () => {
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
+  const [inputValues, setInputValues] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: ""
+  })
+
+  const {firstName, lastName, email, message} = inputValues;
+
+  const handleInputChange = (e) => {
+    const {name, value} = e.target;
+    
+    setInputValues({
+      ...inputValues,
+      [name]: value
+    });
+  }
+
 
   const sendFeedback = () => {
     if (firstName === '' || lastName === '' || email === '' || message === '') {
@@ -55,10 +69,12 @@ const Contact = () => {
               icon: 'success',
               confirmButtonText: 'Ok',
             })
-            setFirstName('')
-            setLastName('')
-            setEmail('')
-            setMessage('')
+            setInputValues({
+              firstName: "",
+              lastName: "",
+              email: "",
+              message: ""
+            })
           },
           (err) => {
             Swal.fire({
@@ -123,7 +139,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="pt-24 px-28 container mx-auto pb-20">
+      <section className="pt-24 px-28 container mx-auto pb-72">
         <div className="divide-y-2">
           <h1 className="text-5xl font-nunito leading-loose">
             Send us your feedback
@@ -144,12 +160,13 @@ const Contact = () => {
                   >
                     First Name
                     <input
+                      name="firstName"
                       className="appearance-none  w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                       id="first-name"
                       type="text"
                       placeholder="Jane"
-                      value={firstName}
-                      onChange={(e) => setFirstName(e.target.value)}
+                      value={inputValues.firstName}
+                      onChange={handleInputChange}
                     />
                   </label>
                   <label
@@ -158,12 +175,13 @@ const Contact = () => {
                   >
                     Last Name
                     <input
+                      name="lastName"
                       className="appearance-none  w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                       id="last-name"
                       type="text"
                       placeholder="Doe"
-                      value={lastName}
-                      onChange={(e) => setLastName(e.target.value)}
+                      value={inputValues.lastName}
+                      onChange={handleInputChange}
                     />
                   </label>
                   <label
@@ -172,12 +190,13 @@ const Contact = () => {
                   >
                     Email
                     <input
+                      name="email"
                       className="appearance-none  w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                       id="email"
                       type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
                       placeholder="you@example.com"
+                      value={inputValues.email}
+                      onChange={handleInputChange}
                     />
                   </label>
                   <label
@@ -186,19 +205,20 @@ const Contact = () => {
                   >
                     Feedback
                     <textarea
+                      name="message"
                       className="appearance-none  w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                       id="feedback"
                       type="text"
                       placeholder="Your feedback here"
                       style={{ height: '10rem' }}
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
+                      value={inputValues.message}
+                      onChange={handleInputChange}
                     />
                   </label>
                 </div>
               </div>
               <button
-                className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                className="bg-green-500 hover:bg-green-700 w-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 onClick={(e) => {
                   e.preventDefault()
                   sendFeedback()

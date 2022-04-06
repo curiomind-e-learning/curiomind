@@ -31,7 +31,6 @@ const Footer = () => {
                 An Exellence center for education
               </p>
             </div>
-
             <div className="flex flex-col md:pr-8 px-8 ">
               <div className="flex flex-row space-x-8 items-center justify-between">
                 {menuItems.map((item, index) => (

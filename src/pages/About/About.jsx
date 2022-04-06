@@ -66,7 +66,7 @@ const About = () => {
       </div>
       <div className="team-card-div">
         {team.map(({ name, imgUrl }) => (
-          <TeamCard name={name} imgUrl={imgUrl} />
+          <TeamCard key={name} name={name} imgUrl={imgUrl} />
         ))}
       </div>
       <Footer />
