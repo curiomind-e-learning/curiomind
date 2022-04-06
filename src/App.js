@@ -17,11 +17,13 @@ import CourseExam from './pages/CourseExam/CourseExam'
 import Grades from './pages/Grades/Grades'
 import Forbidden from './pages/Forbidden/Forbidden'
 import About from './pages/About/About'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <ScrollToTop />
         <Routes>
           <Route path="*" element={<NotFound />} />
           <Route path="/403" element={<Forbidden />} />
