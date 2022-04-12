@@ -61,7 +61,7 @@
 
     .navbar-links {
         display: none;
-        align-items: center;
+        align-items: flex-start;
     }
 
     .navbar-links {
