@@ -8,7 +8,7 @@ const Banner = () => {
     >
       <div className="col-span-1">
         <div>
-          <p className="font-semibold text-5xl mx-auto p-6">
+          <p className="font-semibold text-5xl mx-auto p-12 mt-2">
             An excellence
             <br />
             centre for education
