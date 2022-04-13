@@ -92,18 +92,18 @@ const Contact = () => {
   return (
     <>
       <Navbar />
-      <section className="pt-24 px-28 container mx-auto text-blackOlive">
-        <div className="divide-y-2">
-          <h1 className="text-5xl font-nunito leading-loose">Contact Us</h1>
-          <div className="w-full"></div>
+      <section className="pt-24 text-blackOlive md:px-28">
+        <div>
+          <h1 className='text-5xl font-nunito leading-loose px-5 leading-normal'> Contact Us </h1>
+          <hr />
         </div>
-        <div className="flex w-full">
-          <div className=" w-1/2 h-40">
-            <div className="flex flex-col items-start p-3">
-              <h3 className=" leading-loose text-2xl font-nunito">
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-4">
+          <div>
+            <div className="flex flex-col items-start md:p-0 p-5">
+              <h3 className=" leading-loose text-2xl font-nunito md:pl-5">
                 Location Information
               </h3>
-              <div className="p-5">
+              <div className="sm:p-5 p-0">
                 <p className="text-gray-700">
                   <span className="font-bold leading-loose text-lg">
                     Our Address:
@@ -117,7 +117,7 @@ const Contact = () => {
                 </p>
               </div>
 
-              <div className="px-5">
+              <div className="sm:px-5 p-0">
                 <a href="tel:+852 1234 5678 910">
                   <div className="flex items-center text-gray-700">
                     <FaPhoneAlt />
@@ -133,26 +133,26 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="w-1/2 h-full select-none p-5">
+          <div className="select-none p-5">
             <img src={ContactImg} alt="" />
           </div>
         </div>
       </section>
 
-      <section className="pt-24 px-28 container mx-auto pb-72">
-        <div className="divide-y-2">
-          <h1 className="text-5xl font-nunito leading-loose">
+      <section className="pt-24 md:px-28 text-blackOlive pb-20">
+        <div>
+          <h1 className="text-5xl font-nunito leading-loose px-5 leading-normal">
             Send us your feedback
           </h1>
-          <div className="w-full pb-5"></div>
+          <hr />
         </div>
-        <div className="flex w-full">
-          <div className="w-1/2 h-full select-none p-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center w-full gap-4">
+          <div className="select-none p-5">
             <img src={FeedbackImg} width="500px" alt="" />
           </div>
-          <div className=" w-1/2 h-40">
-            <form className="w-full max-w-lg p-6 ml-20">
-              <div className="flex flex-wrap -mx-3 mb-6">
+          <div>
+            <form className="w-full max-w-lg p-6">
+              <div className="flex flex-wrap -mx-3 md:mb-6">
                 <div className="w-full px-3 mb-6 md:mb-0">
                   <label
                     className=" uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -170,13 +170,12 @@ const Contact = () => {
                     />
                   </label>
                   <label
-                    className=" uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                    className="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                     htmlFor="last-name"
                   >
                     Last Name
                     <input
-                      name="lastName"
-                      className="appearance-none  w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      className="appearance-none  w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 mb-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                       id="last-name"
                       type="text"
                       placeholder="Doe"
@@ -190,8 +189,7 @@ const Contact = () => {
                   >
                     Email
                     <input
-                      name="email"
-                      className="appearance-none  w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      className="appearance-none  w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 mb-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                       id="email"
                       type="email"
                       placeholder="you@example.com"
@@ -218,7 +216,7 @@ const Contact = () => {
                 </div>
               </div>
               <button
-                className="bg-green-500 hover:bg-green-700 w-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                className="bg-green-500 w-full hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 onClick={(e) => {
                   e.preventDefault()
                   sendFeedback()
