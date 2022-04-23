@@ -15,7 +15,7 @@ const Social = ({ instaUrl, twitterUrl, fbUrl }) => {
       ) : null}
       {twitterUrl ? (
         <a href={twitterUrl} rel="noreferrer" target="_blank">
-          <img className='h-10 w-10 transform hover:animate-bounce transition duration-500 ease-in-out rounded-full' src="https://img.icons8.com/fluency/48/000000/instagram-new.png"/>
+          <img className='h-10 w-10 transform hover:animate-bounce transition duration-500 ease-in-out rounded-full' src="https://img.icons8.com/fluency/48/000000/instagram-new.png" alt='' />
         </a>
       ) : null}
     </div>
