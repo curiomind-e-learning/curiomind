@@ -8,12 +8,12 @@ const Banner = () => {
     >
       <div className="col-span-1">
         <div>
-          <p className="font-semibold text-5xl mx-auto p-6">
+          <p className="font-semibold text-5xl mx-auto p-12 ">
             An excellence
             <br />
             centre for education
           </p>
-          <p className="font-extralight text-slate-500 text-2xl mx-auto px-6">
+          <p className="font-extralight text-slate-500 text-2xl mx-auto px-10">
             Curiomind is the online learning platform that offers <br />
             various courses for your development
           </p>

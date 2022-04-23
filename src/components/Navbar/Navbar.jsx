@@ -3,7 +3,7 @@ import { HiUserCircle } from 'react-icons/hi'
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import './nav-style.css'
-
+import './hamburger.js'
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
@@ -15,7 +15,7 @@ const Navbar = () => {
     'Courses',
     'Testimonial',
     'About',
-    'Contact Us',
+    'Contact Us'
   ]
   const navigate = useNavigate()
   let token = sessionStorage.getItem('token')
@@ -23,6 +23,7 @@ const Navbar = () => {
     if (item === 'Contact Us') navigate('/contact')
     else if (item === 'About') navigate('/about-us')
   }
+
   return (
     <div
       className={`w-full fixed bg-gray-100 backdrop-blur-sm`}
@@ -37,18 +38,25 @@ const Navbar = () => {
             Curiomind
           </div>
         </Link>
-        <div className="flex flex-col md:flex-row md:space-x-14">
-          {menuItems.map((item) => (
-            <div key={item} className="text-xl font-medium p-3 md:p-0 nav-btn">
-              {item === 'Contact Us' || item === 'About' ? (
-                <button onClick={() => page(item)}>{item}</button>
-              ) : (
-                <a href={`/#${item}`}>{item}</a>
-              )}
-            </div>
-          ))}
+        <div class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </div>
-        <div className="flex p-2">
+        <nav id='navbar'>
+          <div className="flex flex-col md:flex-row md:space-x-14 navbar-links">
+            {menuItems.map((item) => (
+              <div key={item} className="text-xl font-medium p-3 md:p-0 nav-btn">
+                {item === 'Contact Us' || item === 'About' ? (
+                  <button onClick={() => page(item)}>{item}</button>
+                ) : (
+                  <a href={`/#${item}`}>{item}</a>
+                )}
+              </div>
+            ))}
+          </div>
+        </nav>
+        <div className="flex p-3 text-center">
           {token ? (
             <Menu as="div" className="relative text-blackOlive">
               <Menu.Button>
@@ -119,12 +127,14 @@ const Navbar = () => {
             </Menu>
           ) : (
             <Link to="/signin">
-              <div className="rounded-full py-3 px-6 bg-cornflowerBlue text-white shadow-sm hover:shadow-md">
+              <div className="rounded-full py-3 px-6 bg-cornflowerBlue text-white shadow-sm hover:shadow-md login-button">
                 Login
               </div>
             </Link>
           )}
         </div>
+
+     
       </div>
     </div>
   )
