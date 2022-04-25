@@ -3,7 +3,7 @@ import { HiUserCircle } from 'react-icons/hi'
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import './nav-style.css'
-import './hamburger.js'
+// import './hamburger.js'
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
@@ -15,7 +15,7 @@ const Navbar = () => {
     'Courses',
     'Testimonial',
     'About',
-    'Contact Us'
+    'Contact Us',
   ]
   const navigate = useNavigate()
   let token = sessionStorage.getItem('token')
@@ -38,15 +38,18 @@ const Navbar = () => {
             Curiomind
           </div>
         </Link>
-        <div class="toggle-button">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+        <div className="toggle-button">
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
         </div>
-        <nav id='navbar'>
+        <nav id="navbar">
           <div className="flex flex-col md:flex-row md:space-x-14 navbar-links">
             {menuItems.map((item) => (
-              <div key={item} className="text-xl font-medium p-3 md:p-0 nav-btn">
+              <div
+                key={item}
+                className="text-xl font-medium p-3 md:p-0 nav-btn"
+              >
                 {item === 'Contact Us' || item === 'About' ? (
                   <button onClick={() => page(item)}>{item}</button>
                 ) : (
@@ -133,8 +136,6 @@ const Navbar = () => {
             </Link>
           )}
         </div>
-
-     
       </div>
     </div>
   )
