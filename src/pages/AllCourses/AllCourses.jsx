@@ -33,17 +33,21 @@ const AllCourses = () => {
         </div>
         <hr className="w-1/4 border-b-2 border-gray-400"></hr>
       </div>
-
-      <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-10 grid-flow-row px-8 py-10 place-items-center">
-        {courses.map(({ imgUrl, name, category, _id }, index) => (
-          <Link key={`${name}${index}`} to={`/course/${_id}`}>
-            <CoursesCard
-              imgUrl={imgUrl}
-              courseName={name}
-              courseDetail={category}
-            />
-          </Link>
-        ))}
+      <div
+        id="Courses"
+        className="flex justify-center items-center mx-auto my-4 flex-col p-10"
+      >
+        <div className="grid grid-flow-row gap-10 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-8">
+          {courses.map(({ imgUrl, name, category, _id }, index) => (
+            <Link key={`${name}${index}`} to={`/course/${_id}`}>
+              <CoursesCard
+                imgUrl={imgUrl}
+                courseName={name}
+                courseDetail={category}
+              />
+            </Link>
+          ))}
+        </div>
       </div>
       <Footer />
     </>
