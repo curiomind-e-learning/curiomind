@@ -1,13 +1,12 @@
-.nav-btn{
-    background:  linear-gradient(-135deg,black 92% , rgb(255, 225, 0) 92%);
-    background-clip: text;
-    color: transparent;
-    background-size: 100%;
-    transition: background-size 300ms ease-in;
+.nav-btn {
+  background: linear-gradient(-135deg, black 92%, rgb(255, 225, 0) 92%);
+  background-clip: text;
+  color: transparent;
+  background-size: 100%;
+  transition: background-size 300ms ease-in;
 }
 
-.nav-btn:hover
-{
-    transform: scale(1.15);
-    background-size: 1100% ;
+.nav-btn:hover {
+  transform: scale(1.15);
+  background-size: 1100%;
 }
