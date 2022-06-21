@@ -47,10 +47,14 @@ const Courses = () => {
             </Link>
           ))}
         </div>
-        <div className="flex justify-center">
-          <Link
+        <Link
+          to="/allcourses"
+          className="flex flex-row items-center justify-center mt-4 border-2 rounded bg-[#E5E7EB] cursor-pointer "
+        >
+          <div
             to="/allcourses"
-            className="text-xl text-primary opacity-80 hover:ml-2 transition-all ease-in-out duration-500 flex w-max active:scale-95"
+            className="text-xl text-primary underline pl-5 pr-3 py-3"
+            style={{ fontFamily: 'Nunito' }}
           >
             View All
           </div>

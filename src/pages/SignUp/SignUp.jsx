@@ -7,46 +7,44 @@ import { BsFillEyeFill, BsFillEyeSlashFill } from 'react-icons/bs'
 import isEmail from 'is-email'
 
 const SignUp = () => {
-  const [name,setName]=useState('')
+  const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [confirmpassword,setconfirmPassword]=useState('')
+  const [confirmpassword, setconfirmPassword] = useState('')
   const [role, setRole] = useState('student')
   const [loading, setLoading] = useState(false)
   const [visiblePassword, setVisiblePassword] = useState(false)
-  const [visibleconfirmPassword,setVisibleconfirmPassword] = useState(false);
+  const [visibleconfirmPassword, setVisibleconfirmPassword] = useState(false)
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    if(password !== confirmpassword) {
+    if (password !== confirmpassword) {
       Swal.fire({
         title: 'Error!',
         text: 'Password and Confirm Password do not match',
         icon: 'error',
         confirmButtonText: 'Try again',
       }).then(() => setLoading(false))
-    }
-    setLoading(true)
-    fetch(`${process.env.REACT_APP_API}/user/`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        password,
-        role,
-      }),
-    }).then(
-      (response) => {
+      setLoading(true)
+      fetch(`${process.env.REACT_APP_API}/user/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+          role,
+        }),
+      }).then((response) => {
         setLoading(false)
         if (response.status === 200) {
           navigate('/signin')
         }
-      )
+      })
     } else {
       alert('Invalid Email !')
     }
@@ -55,9 +53,9 @@ const SignUp = () => {
   function togglePasswordVisibility() {
     setVisiblePassword(!visiblePassword)
   }
-  function toggleconfirmPasswordVisibility(){
-    setVisibleconfirmPassword(!visibleconfirmPassword);
-  };
+  function toggleconfirmPasswordVisibility() {
+    setVisibleconfirmPassword(!visibleconfirmPassword)
+  }
 
   return (
     <section className="overflow-hidden max-h-screen">
@@ -141,14 +139,21 @@ const SignUp = () => {
                   <div className="col-span-1 password">
                     <input
                       className="appearance-none meinput w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      type={!visibleconfirmPassword?"password":"text"}
+                      type={!visibleconfirmPassword ? 'password' : 'text'}
                       placeholder="Confirm Password"
                       value={confirmpassword}
                       onChange={(e) => setconfirmPassword(e.target.value)}
                       required
                     />
-                    <div onClick={toggleconfirmPasswordVisibility} className='togglebtn'>
-                      {!visibleconfirmPassword ? <BsFillEyeSlashFill /> : <BsFillEyeFill />}
+                    <div
+                      onClick={toggleconfirmPasswordVisibility}
+                      className="togglebtn"
+                    >
+                      {!visibleconfirmPassword ? (
+                        <BsFillEyeSlashFill />
+                      ) : (
+                        <BsFillEyeFill />
+                      )}
                     </div>
                   </div>
                   <div>
