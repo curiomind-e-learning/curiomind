@@ -60,3 +60,13 @@
 </tr>
 </table>
 </div>
+
+## ✨ Contributors
+ Thanks go to these Wonderful People 👨🏻‍💻 🚀 Contributions of any kind are welcome! `
+
+
+ <a href="https://github.com/curiomin-e-learning/curiomind/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=curiomind-e-learning/curiomind" />
+</a>
+
+
