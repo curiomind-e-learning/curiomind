@@ -4,7 +4,6 @@ import Loader from '../../components/Loader/Loader'
 import { GrClose } from 'react-icons/gr'
 import Swal from 'sweetalert2'
 import { BsFillEyeFill, BsFillEyeSlashFill } from 'react-icons/bs'
-import isEmail from 'is-email'
 
 const SignUp = () => {
   const [name, setName] = useState('')
