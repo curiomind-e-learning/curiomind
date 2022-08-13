@@ -1,18 +1,18 @@
 [
   {
-    "imgUrl": "https://www.linkpicture.com/q/courses_badge.svg",
+    "imgUrl": "/SVGs/badge1.png",
     "text": "100+ courses"
   },
   {
-    "imgUrl": "https://www.linkpicture.com/q/faculty_badge.svg",
+    "imgUrl": "/SVGs/badge2.png",
     "text": "50+ Faculty"
   },
   {
-    "imgUrl": "https://www.linkpicture.com/q/student_badge.svg",
+    "imgUrl": "/SVGs/badge3.png",
     "text": "1000+ Students"
   },
   {
-    "imgUrl": "https://www.linkpicture.com/q/badge_badge.svg",
+    "imgUrl": "/SVGs/badge4.png",
     "text": "500+ Badges earned"
   }
 ]
