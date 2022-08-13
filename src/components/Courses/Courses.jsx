@@ -38,13 +38,13 @@ const Courses = () => {
         />
         <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-8">
           {courses.map(({ imgUrl, name, category, _id }, index) => (
-            <Link key={`${name}${index}`} to={`/course/${_id}`}>
-              <CoursesCard
-                imgUrl={imgUrl}
-                courseName={name}
-                courseDetail={category}
-              />
-            </Link>
+            <CoursesCard
+              key={`${name}${index}`}
+              imgUrl={imgUrl}
+              courseName={name}
+              courseDetail={category}
+              courseId={_id}
+            />
           ))}
         </div>
         <Link
