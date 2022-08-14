@@ -10,7 +10,7 @@ const breakPoints = [
 ]
 const Testimonials = () => {
   return (
-    <div className="p-20" id="Testimonial">
+    <div className="p-20 dark:bg-[#132F4C]" id="Testimonial">
       <Title title="Testimonials" desc1="What our users say..." desc2="" />
 
       <Carousel breakPoints={breakPoints}>

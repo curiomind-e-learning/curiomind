@@ -15,7 +15,7 @@ const Footer = () => {
     githubUrl: 'https://github.com/curiomind-e-learning',
   }
   return (
-    <div className="w-full bottom-0 flex items-center justify-center bg-gray-200 text-cornflowerBlue">
+    <div className="w-full bottom-0 flex items-center justify-center bg-gray-200 text-cornflowerBlue dark:bg-[#001E3C]">
       <div className=" w-full px-4 text-white flex flex-col">
         <div className="flex flex-col">
           <div className="flex mt-24 mb-12 md:flex-row md:justify-between flex-col">

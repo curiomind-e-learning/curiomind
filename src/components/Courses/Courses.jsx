@@ -29,7 +29,7 @@ const Courses = () => {
       <Loader active={loading} />
       <div
         id="Courses"
-        className="flex justify-center items-center mx-auto my-4 flex-col sm:p-10 p-5"
+        className="flex justify-center items-center mx-auto flex-col sm:p-10 p-5 dark:bg-[#001E3C]"
       >
         <Title
           title="Explore Courses"
@@ -49,11 +49,11 @@ const Courses = () => {
         </div>
         <Link
           to="/allcourses"
-          className="flex flex-row items-center justify-center mt-4 border-2 rounded bg-[#E5E7EB] cursor-pointer "
+          className="flex flex-row items-center justify-center mt-4 rounded bg-[#E5E7EB] cursor-pointer dark:text-white dark:bg-[#007FFF] "
         >
           <div
             to="/allcourses"
-            className="text-xl text-primary underline pl-5 pr-3 py-3"
+            className="text-xl text-primary pl-5 pr-3 py-3 "
             style={{ fontFamily: 'Nunito' }}
           >
             View All

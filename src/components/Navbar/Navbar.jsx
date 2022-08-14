@@ -30,38 +30,45 @@ const Navbar = () => {
   }
   return (
     <div
-      className={`w-full fixed bg-gray-100 backdrop-blur-sm`}
+      className={`w-full fixed bg-gray-100 backdrop-blur-sm dark:bg-[#071A2F] z-20`}
       style={{ zIndex: '100' }}
     >
       <div className="absolute z-10 right-0 mr-8 mt-6 md:mt-4 lg:hidden hover:cursor-pointer">
         {isSidebarOpen ? (
-          <div onClick={clickHandler}>
+          <div onClick={clickHandler} className="dark:text-white">
             <FaTimes size="2rem" />
           </div>
         ) : (
-          <div onClick={clickHandler}>
+          <div onClick={clickHandler} className="dark:text-white">
             <FaBars size="2rem" />
           </div>
         )}
       </div>
 
       {isSidebarOpen && (
-        <div className="lg:hidden fixed flex flex-col w-full bg-gray-100 h-max">
+        <div className="lg:hidden fixed flex flex-col w-full bg-gray-100 dark:bg-[#071A2F] h-max">
           <Link to="/">
             <div
-              className="leading-loose text-3xl p-3 md:px-8 md:py-0"
+              className="leading-loose text-3xl p-3 md:px-8 md:py-0 dark:text-white"
               style={{ fontFamily: 'Pacifico' }}
             >
               Curiomind
             </div>
           </Link>
-          <div className="flex flex-col ml-8 p-6 items-center">
+          <div className="flex flex-col ml-8 p-6 items-center ">
             {menuItems.map((item) => (
-              <div key={item} className="text-xl font-medium p-3 nav-btn">
+              <div key={item} className="text-xl font-medium p-3 nav-btn ">
                 {item === 'Contact Us' || item === 'About' ? (
-                  <button onClick={() => page(item)}>{item}</button>
+                  <button
+                    className="dark:text-white"
+                    onClick={() => page(item)}
+                  >
+                    {item}
+                  </button>
                 ) : (
-                  <a href={`/#${item}`}>{item}</a>
+                  <a className="dark:text-white" href={`/#${item}`}>
+                    {item}
+                  </a>
                 )}
               </div>
             ))}
@@ -124,7 +131,7 @@ const Navbar = () => {
                             to="/"
                             className={classNames(
                               active ? 'bg-gray-100' : ' ',
-                              'px-5 tracking-widest block py-2 text-sm text-gray-900'
+                              'px-5 tracking-widest block py-2 text-sm text-gray-900 dark:bg-[#007FFF]'
                             )}
                           >
                             Logout
@@ -137,7 +144,7 @@ const Navbar = () => {
               </Menu>
             ) : (
               <Link to="/signin">
-                <div className="rounded-full py-3 px-6 bg-cornflowerBlue text-white shadow-sm hover:shadow-md">
+                <div className="rounded-full py-3 px-6 bg-cornflowerBlue text-white shadow-sm hover:shadow-md dark:bg-[#007FFF]">
                   Login
                 </div>
               </Link>
@@ -149,7 +156,7 @@ const Navbar = () => {
       <div className="flex lg:flex-row md:justify-between lg:items-center text-blackOlive">
         <Link to="/">
           <div
-            className="leading-loose text-3xl p-3 md:px-8 md:py-0"
+            className="leading-loose text-3xl p-3 md:px-8 md:py-0 dark:text-white"
             style={{ fontFamily: 'Pacifico' }}
           >
             Curiomind
@@ -159,9 +166,13 @@ const Navbar = () => {
           {menuItems.map((item) => (
             <div key={item} className="text-xl font-medium nav-btn">
               {item === 'Contact Us' || item === 'About' ? (
-                <button onClick={() => page(item)}>{item}</button>
+                <button className="dark:text-white" onClick={() => page(item)}>
+                  {item}
+                </button>
               ) : (
-                <a href={`/#${item}`}>{item}</a>
+                <a className="dark:text-white" href={`/#${item}`}>
+                  {item}
+                </a>
               )}
             </div>
           ))}
@@ -170,7 +181,10 @@ const Navbar = () => {
           {token ? (
             <Menu as="div" className="relative text-blackOlive">
               <Menu.Button>
-                <HiUserCircle size={40} className="text-primary" />
+                <HiUserCircle
+                  size={40}
+                  className="text-primary dark:bg-[#007FFF]"
+                />
               </Menu.Button>
 
               <Transition
@@ -190,7 +204,7 @@ const Navbar = () => {
                           to="/profile"
                           className={classNames(
                             active ? 'bg-gray-100' : ' ',
-                            'px-5 tracking-widest block py-2 text-sm text-gray-900'
+                            'px-5 tracking-widest block py-2 text-sm text-gray-900 dark:bg-[#007FFF]'
                           )}
                         >
                           Profile
@@ -205,7 +219,7 @@ const Navbar = () => {
                           to="/dashboard"
                           className={classNames(
                             active ? 'bg-gray-100' : ' ',
-                            'px-5 tracking-widest block py-2 text-sm text-gray-900'
+                            'px-5 tracking-widest block py-2 text-sm text-gray-900 dark:bg-[#007FFF]'
                           )}
                         >
                           Dashboard
@@ -224,7 +238,7 @@ const Navbar = () => {
                           to="/"
                           className={classNames(
                             active ? 'bg-gray-100' : ' ',
-                            'px-5 tracking-widest block py-2 text-sm text-gray-900'
+                            'px-5 tracking-widest block py-2 text-sm text-gray-900 dark:bg-[#007FFF]'
                           )}
                         >
                           Logout
@@ -237,7 +251,7 @@ const Navbar = () => {
             </Menu>
           ) : (
             <Link to="/signin">
-              <div className="rounded-full py-3 px-6 bg-cornflowerBlue text-white shadow-sm hover:shadow-md">
+              <div className="rounded-full py-3 px-6 bg-cornflowerBlue text-white shadow-sm hover:shadow-md dark:bg-[#007FFF]">
                 Login
               </div>
             </Link>
